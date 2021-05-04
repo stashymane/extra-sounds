@@ -22,6 +22,8 @@ public class SoundConfig implements ConfigData
     public SoundSource inventoryOpen = new SoundSource(SoundEvents.UI_TOAST_IN, 0.2f, 1.5f, 0.1f);
     @ConfigEntry.Gui.CollapsibleObject
     public SoundSource inventoryClose = new SoundSource(SoundEvents.UI_TOAST_OUT, 0.2f, 1.5f, 0.1f);
+    @ConfigEntry.Gui.CollapsibleObject
+    public SoundSource listScroll = new SoundSource(SoundEvents.BLOCK_NOTE_BLOCK_HAT, 0.1f, 1.5f, 0.3f);
 
     @ConfigEntry.Gui.CollapsibleObject
     public SoundSource itemDrop = new SoundSource(SoundEvents.BLOCK_DISPENSER_LAUNCH, 0.1f, 1.5f, 0.1f);
@@ -37,7 +39,7 @@ public class SoundConfig implements ConfigData
     @ConfigEntry.Gui.CollapsibleObject
     public SoundSource itemPlace = new SoundSource(SoundEvents.BLOCK_GLASS_STEP, 0.2f, 1.5f, 0.1f);
 
-    static class SoundSource
+    public static class SoundSource
     {
         public SoundEvent sound;
         @ConfigEntry.Gui.Tooltip()
