@@ -49,7 +49,7 @@
   "text.autoconfig.extrasounds.option.listScroll.pitch.@Tooltip": "Pitch must be between 0 and 2.",
   "text.autoconfig.extrasounds.option.listScroll.pitchRange": "Pitch range",
   "text.autoconfig.extrasounds.option.listScroll.pitchRange.@Tooltip": "The range of pitch that will be randomized or adjusted.",
-  "text.autoconfig.extrasounds.option.itemDrop": "Item dropped",
+  "text.autoconfig.extrasounds.option.itemDrop": "Inventory item dropped",
   "text.autoconfig.extrasounds.option.itemDrop.sound": "Sound name",
   "text.autoconfig.extrasounds.option.itemDrop.volume": "Volume",
   "text.autoconfig.extrasounds.option.itemDrop.volume.@Tooltip": "Volume must be between 0 and 1.",
