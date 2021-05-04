@@ -1,12 +1,17 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.fabricmc.example.mixin",
+  "package": "dev.stashy.extrasounds.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
   ],
   "client": [
-    "ExampleMixin"
+    "ChatSound",
+    "DropSound",
+    "InventoryClickSounds",
+    "InventoryOpenSounds",
+    "ListScroll",
+    "ScrollSound"
   ],
   "injectors": {
     "defaultRequire": 1
