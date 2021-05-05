@@ -88,7 +88,7 @@ curseforge {
         releaseType = 'release'
         addGameVersion project.minecraft_version
 
-        mainArtifact(jar) {
+        mainArtifact(remapJar) {
             displayName = "ExtraSounds $project.version"
         }
     }
