@@ -3,13 +3,12 @@
   "minVersion": "0.8",
   "package": "dev.stashy.extrasounds.mixin",
   "compatibilityLevel": "JAVA_8",
-  "mixins": [
-  ],
+  "mixins": [],
   "client": [
     "ChatSound",
     "DropSound",
     "InventoryClickSounds",
-    "InventoryOpenSounds",
+    "InventorySounds",
     "ListScroll",
     "ScrollSound"
   ],
