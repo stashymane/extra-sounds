@@ -6,11 +6,11 @@
   "mixins": [],
   "client": [
     "ChatSound",
-    "DropSound",
+    "HotbarScrollSound",
     "InventoryClickSounds",
+    "InventoryDropSound",
     "InventorySounds",
-    "ListScroll",
-    "ScrollSound"
+    "ListScroll"
   ],
   "injectors": {
     "defaultRequire": 1

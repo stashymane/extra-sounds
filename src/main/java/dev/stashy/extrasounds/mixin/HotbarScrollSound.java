@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(PlayerInventory.class)
-public class ScrollSound
+public class HotbarScrollSound
 {
     @Inject(at = @At("RETURN"), method = "scrollInHotbar")
     private void inventorySound(CallbackInfo info)
