@@ -85,7 +85,6 @@ curseforge {
         changelog = 'https://github.com/stashymane/extra-sounds/releases'
         releaseType = 'release'
         addGameVersion project.minecraft_version
-        addGameVersion "fabric"
 
         mainArtifact(remapJar) {
             displayName = "ExtraSounds $project.version"
