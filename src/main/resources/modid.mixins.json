@@ -6,11 +6,13 @@
   "mixins": [],
   "client": [
     "ChatSound",
+    "CreativeInventoryClickSounds",
     "HotbarScrollSound",
     "InventoryClickSounds",
     "InventoryDropSound",
     "InventorySounds",
-    "ListScroll"
+    "ListScroll",
+    "accessor.BucketItemAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
