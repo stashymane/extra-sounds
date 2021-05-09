@@ -1,6 +1,8 @@
 # Extra Sounds
 
-Add more response to your Minecraft
+[CurseForge](https://www.curseforge.com/minecraft/mc-mods/extrasounds)
+
+Improve your clicks, scrolls and more with Extra Sounds.
 
 ## Setup
 
