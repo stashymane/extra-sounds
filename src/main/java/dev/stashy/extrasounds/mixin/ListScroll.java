@@ -14,7 +14,6 @@ public class ListScroll
     private static long lastTime = 0L;
     private static final SoundConfig.SoundSource src = ExtraSounds.config.listScroll;
 
-    //@Inject(at = @At("HEAD"), method = "scrollItems")
     @ModifyVariable(method = "scrollItems", at = @At("STORE"), ordinal = 1)
     int scroll(int position)
     {
