@@ -13,7 +13,7 @@
   },
   "license": "CC0-1.0",
   "icon": "assets/extrasounds/icon.png",
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
     "main": [
       "dev.stashy.extrasounds.ExtraSounds"
