@@ -23,10 +23,21 @@
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "extrasounds.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.7.4",
-    "minecraft": "1.16.x"
+    "minecraft": ">=1.16",
+    "cloth-config2": ">=4.11"
+  },
+  "suggests": {
+    "modmenu": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "badges": [
+        "library"
+      ]
+    }
   }
 }
