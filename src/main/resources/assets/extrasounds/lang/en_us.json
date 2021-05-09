@@ -1,6 +1,7 @@
 {
   "text.autoconfig.extrasounds.title": "Extra Sounds configuration",
   "text.autoconfig.extrasounds.option.masterVolume": "Master volume",
+  "text.autoconfig.extrasounds.option.blockBasedSound": "Item-based click sounds",
   "text.autoconfig.extrasounds.option.chat": "Chat message received",
   "text.autoconfig.extrasounds.option.chat.sound": "Sound name",
   "text.autoconfig.extrasounds.option.chat.volume": "Volume",
@@ -57,7 +58,7 @@
   "text.autoconfig.extrasounds.option.itemDrop.pitch.@Tooltip": "Pitch must be between 0 and 2.",
   "text.autoconfig.extrasounds.option.itemDrop.pitchRange": "Pitch range",
   "text.autoconfig.extrasounds.option.itemDrop.pitchRange.@Tooltip": "The range of pitch that will be randomized or adjusted.",
-  "text.autoconfig.extrasounds.option.itemPickup": "Inventory item pickup",
+  "text.autoconfig.extrasounds.option.itemPickup": "Inventory item clicked",
   "text.autoconfig.extrasounds.option.itemPickup.sound": "Sound name",
   "text.autoconfig.extrasounds.option.itemPickup.volume": "Volume",
   "text.autoconfig.extrasounds.option.itemPickup.volume.@Tooltip": "Volume must be between 0 and 1.",
@@ -65,14 +66,6 @@
   "text.autoconfig.extrasounds.option.itemPickup.pitch.@Tooltip": "Pitch must be between 0 and 2.",
   "text.autoconfig.extrasounds.option.itemPickup.pitchRange": "Pitch range",
   "text.autoconfig.extrasounds.option.itemPickup.pitchRange.@Tooltip": "The range of pitch that will be randomized or adjusted.",
-  "text.autoconfig.extrasounds.option.itemTransfer": "Inventory item switch",
-  "text.autoconfig.extrasounds.option.itemTransfer.sound": "Sound name",
-  "text.autoconfig.extrasounds.option.itemTransfer.volume": "Volume",
-  "text.autoconfig.extrasounds.option.itemTransfer.volume.@Tooltip": "Volume must be between 0 and 1.",
-  "text.autoconfig.extrasounds.option.itemTransfer.pitch": "Pitch",
-  "text.autoconfig.extrasounds.option.itemTransfer.pitch.@Tooltip": "Pitch must be between 0 and 2.",
-  "text.autoconfig.extrasounds.option.itemTransfer.pitchRange": "Pitch range",
-  "text.autoconfig.extrasounds.option.itemTransfer.pitchRange.@Tooltip": "The range of pitch that will be randomized or adjusted.",
   "text.autoconfig.extrasounds.option.itemPickupAll": "Inventory doubleclick",
   "text.autoconfig.extrasounds.option.itemPickupAll.sound": "Sound name",
   "text.autoconfig.extrasounds.option.itemPickupAll.volume": "Volume",
@@ -88,14 +81,5 @@
   "text.autoconfig.extrasounds.option.itemClone.pitch": "Pitch",
   "text.autoconfig.extrasounds.option.itemClone.pitch.@Tooltip": "Pitch must be between 0 and 2.",
   "text.autoconfig.extrasounds.option.itemClone.pitchRange": "Pitch range",
-  "text.autoconfig.extrasounds.option.itemClone.pitchRange.@Tooltip": "The range of pitch that will be randomized or adjusted.",
-  "text.autoconfig.extrasounds.option.itemPlace": "Inventory item place",
-  "text.autoconfig.extrasounds.option.itemPlace.sound": "Sound name",
-  "text.autoconfig.extrasounds.option.itemPlace.volume": "Volume",
-  "text.autoconfig.extrasounds.option.itemPlace.volume.@Tooltip": "Volume must be between 0 and 1.",
-  "text.autoconfig.extrasounds.option.itemPlace.pitch": "Pitch",
-  "text.autoconfig.extrasounds.option.itemPlace.pitch.@Tooltip": "Pitch must be between 0 and 2.",
-  "text.autoconfig.extrasounds.option.itemPlace.pitchRange": "Pitch range",
-  "text.autoconfig.extrasounds.option.itemPlace.pitchRange.@Tooltip": "The range of pitch that will be randomized or adjusted."
+  "text.autoconfig.extrasounds.option.itemClone.pitchRange.@Tooltip": "The range of pitch that will be randomized or adjusted."
 }
-
