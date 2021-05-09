@@ -32,12 +32,5 @@
   },
   "suggests": {
     "modmenu": "*"
-  },
-  "custom": {
-    "modmenu": {
-      "badges": [
-        "library"
-      ]
-    }
   }
 }
