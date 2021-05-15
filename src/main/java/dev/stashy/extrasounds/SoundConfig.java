@@ -35,6 +35,8 @@ public class SoundConfig implements ConfigData
     public SoundSource itemPickupAll = new SoundSource(SoundEvents.ENTITY_ITEM_PICKUP, 0.02f, 2f, 0.1f);
     @ConfigEntry.Gui.CollapsibleObject
     public SoundSource itemClone = new SoundSource(SoundEvents.ENTITY_ITEM_PICKUP, 0.02f, 2f, 0.1f);
+    @ConfigEntry.Gui.CollapsibleObject
+    public SoundSource itemDelete = new SoundSource(SoundEvents.BLOCK_COMPOSTER_FILL, 0.75f, 1.5f, 0f);
 
     public static class SoundSource
     {
