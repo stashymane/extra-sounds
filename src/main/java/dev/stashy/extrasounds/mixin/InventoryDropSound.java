@@ -15,6 +15,7 @@ public class InventoryDropSound
     @Inject(at = @At("RETURN"), method = "dropItem(Lnet/minecraft/item/ItemStack;ZZ)Lnet/minecraft/entity/ItemEntity;")
     private void dropItem(ItemStack stack, boolean throwRandomly, boolean retainOwnership, CallbackInfoReturnable<ItemEntity> cir)
     {
-        ExtraSounds.playSound(ExtraSounds.config.itemDrop);
+        if (retainOwnership)
+            ExtraSounds.playSound(ExtraSounds.config.itemDrop);
     }
 }
