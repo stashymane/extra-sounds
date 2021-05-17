@@ -31,7 +31,7 @@ public abstract class CreativeInventoryClickSounds
     @Shadow
     private static int selectedTab;
 
-    @Inject(at = @At("RETURN"), method = "onMouseClick")
+    @Inject(at = @At("INVOKE"), method = "onMouseClick")
     void slotClick(Slot slot, int invSlot, int clickData, SlotActionType actionType, CallbackInfo ci)
     {
         if (slot == null || client == null || client.player == null) return;
