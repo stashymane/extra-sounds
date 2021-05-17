@@ -1,4 +1,4 @@
-package dev.stashy.extrasounds.mixin;
+package dev.stashy.extrasounds.mixin.inventory;
 
 import dev.stashy.extrasounds.ExtraSounds;
 import net.minecraft.entity.ItemEntity;

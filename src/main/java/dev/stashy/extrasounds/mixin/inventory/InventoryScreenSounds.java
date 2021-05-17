@@ -1,4 +1,4 @@
-package dev.stashy.extrasounds.mixin;
+package dev.stashy.extrasounds.mixin.inventory;
 
 import dev.stashy.extrasounds.ExtraSounds;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(HandledScreen.class)
-public class InventorySounds
+public class InventoryScreenSounds
 {
     @Inject(at = @At("HEAD"), method = "init")
     void open(CallbackInfo ci)

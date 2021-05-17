@@ -1,4 +1,4 @@
-package dev.stashy.extrasounds.mixin;
+package dev.stashy.extrasounds.mixin.inventory;
 
 import dev.stashy.extrasounds.ExtraSounds;
 import dev.stashy.extrasounds.SoundConfig;
@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 @Mixin(CreativeInventoryScreen.CreativeScreenHandler.class)
-public class ListScroll
+public class CreativeListScroll
 {
     private static int lastPos = 0;
     private static long lastTime = 0L;
