@@ -18,7 +18,7 @@ public class SoundConfig implements ConfigData
     public SoundSource chatMention = new SoundSource(SoundEvents.BLOCK_NOTE_BLOCK_BELL, 0.5f, 1.2f, 0.1f);
 
     @ConfigEntry.Gui.CollapsibleObject
-    public SoundSource hotbarScroll = new SoundSource(SoundEvents.BLOCK_NOTE_BLOCK_HAT, 0.1f, 2f, 0f);
+    public SoundSource hotbarScroll = new SoundSource(SoundEvents.BLOCK_NOTE_BLOCK_HAT, 0.1f, 2f, 0.2f);
     @ConfigEntry.Gui.CollapsibleObject
     public SoundSource inventoryOpen = new SoundSource(SoundEvents.UI_TOAST_IN, 0.2f, 1.5f, 0.1f);
     @ConfigEntry.Gui.CollapsibleObject
