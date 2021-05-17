@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class HotbarScrollSound
 {
     @Inject(at = @At("RETURN"), method = "scrollInHotbar")
-    private void inventorySound(CallbackInfo info)
+    private void hotbarSound(CallbackInfo info)
     {
         ExtraSounds.playSound(ExtraSounds.config.hotbarScroll);
     }
