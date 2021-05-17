@@ -6,14 +6,15 @@
   "mixins": [],
   "client": [
     "ChatSound",
-    "inventory.CreativeInventoryClickSounds",
     "HotbarScrollSound",
     "HotbarSlotSound",
-    "inventory.InventoryClickSounds",
-    "inventory.InventoryDropSound",
-    "inventory.InventoryScreenSounds",
+    "accessor.BucketItemAccessor",
+    "inventory.CreativeInventoryClickSounds",
     "inventory.CreativeListScroll",
-    "accessor.BucketItemAccessor"
+    "inventory.InventoryClickSounds",
+    "inventory.InventoryDragSound",
+    "inventory.InventoryDropSound",
+    "inventory.InventoryScreenSounds"
   ],
   "injectors": {
     "defaultRequire": 1
