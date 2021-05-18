@@ -72,9 +72,9 @@ public class ExtraSounds implements ModInitializer
                 return;
             default:
                 if (hasCursor)
-                    ExtraSounds.playItemSound(cursor, true);
+                    ExtraSounds.playItemSound(cursor, false);
                 else if (hasSlot)
-                    ExtraSounds.playItemSound(clicked, false);
+                    ExtraSounds.playItemSound(clicked, true);
         }
     }
 
@@ -93,7 +93,8 @@ public class ExtraSounds implements ModInitializer
         if (now - lastPlayed > 5)
         {
             InventorySound is = ((ItemSoundContainer) stack.getItem()).getInventorySound();
-            playSound(is.sound, is.baseVol * config.itemPickup.volume, config.itemPickup.pitch);
+            playSound(is.sound, is.baseVol * config.itemPickup.volume,
+                      getItemPitch(config.itemPickup.pitch, config.itemPickup.pitchRange, pickup));
             lastPlayed = now;
         }
     }
@@ -215,5 +216,13 @@ public class ExtraSounds implements ModInitializer
     public static float getPitch(float pitch, float pitchRange)
     {
         return pitch - pitchRange / 2 + r.nextFloat() * pitchRange;
+    }
+
+    public static float getItemPitch(float pitch, float pitchRange, boolean pickup)
+    {
+        if (pickup)
+            return pitch + pitchRange / 2;
+        else
+            return pitch - pitchRange / 2;
     }
 }
