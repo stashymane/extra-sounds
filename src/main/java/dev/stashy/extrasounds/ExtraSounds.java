@@ -85,10 +85,17 @@ public class ExtraSounds implements ModInitializer
     private static final List<Item> paperItems = Arrays
             .asList(Items.PAPER, Items.MAP, Items.FILLED_MAP, Items.ENCHANTED_BOOK, Items.NAME_TAG);
 
+    private static long lastPlayed = System.currentTimeMillis();
+
     public static void playItemSound(ItemStack stack, boolean pickup)
     {
+        long now = System.currentTimeMillis();
+        if (now - lastPlayed > 5)
+        {
             InventorySound is = ((ItemSoundContainer) stack.getItem()).getInventorySound();
             playSound(is.sound, is.baseVol * config.itemPickup.volume, config.itemPickup.pitch);
+            lastPlayed = now;
+        }
     }
 
     /*
