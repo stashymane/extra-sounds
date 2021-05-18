@@ -14,7 +14,9 @@
     "inventory.InventoryClickSounds",
     "inventory.InventoryDragSound",
     "inventory.InventoryDropSound",
-    "inventory.InventoryScreenSounds"
+    "inventory.InventoryScreenSounds",
+    "inventory.item.BaseItemSound",
+    "inventory.item.BlockItemSound"
   ],
   "injectors": {
     "defaultRequire": 1

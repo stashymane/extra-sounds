@@ -1,6 +1,5 @@
 package dev.stashy.extrasounds;
 
-import dev.stashy.extrasounds.mixin.accessor.BucketItemAccessor;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.gui.registry.GuiRegistry;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
@@ -9,13 +8,11 @@ import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import me.shedaniel.clothconfig2.impl.builders.DropdownMenuBuilder;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.fluid.FlowableFluid;
-import net.minecraft.fluid.Fluid;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.tag.FluidTags;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
@@ -88,8 +85,13 @@ public class ExtraSounds implements ModInitializer
     private static final List<Item> paperItems = Arrays
             .asList(Items.PAPER, Items.MAP, Items.FILLED_MAP, Items.ENCHANTED_BOOK, Items.NAME_TAG);
 
-    /*TODO find a better way to do this because it sucks
-           if any of you know how to inject new variables into classes lmk */
+    public static void playItemSound(ItemStack stack, boolean pickup)
+    {
+            InventorySound is = ((ItemSoundContainer) stack.getItem()).getInventorySound();
+            playSound(is.sound, is.baseVol * config.itemPickup.volume, config.itemPickup.pitch);
+    }
+
+    /*
     public static void playItemSound(ItemStack stack, boolean pickup)
     {
         SoundEvent snd = config.itemPickup.sound;
@@ -185,7 +187,7 @@ public class ExtraSounds implements ModInitializer
         else
             pitch -= config.itemPickup.pitchRange / 2;
         playSound(snd, config.itemPickup.volume, pitch);
-    }
+    }*/
 
     public static void playSound(SoundConfig.SoundSource src)
     {
