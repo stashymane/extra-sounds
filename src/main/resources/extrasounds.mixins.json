@@ -16,7 +16,8 @@
     "inventory.InventoryDropSound",
     "inventory.InventoryScreenSounds",
     "inventory.item.BaseItemSound",
-    "inventory.item.BlockItemSound"
+    "inventory.item.BlockItemSound",
+    "inventory.item.SoundInitializer"
   ],
   "injectors": {
     "defaultRequire": 1

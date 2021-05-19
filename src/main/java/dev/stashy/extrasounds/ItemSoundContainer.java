@@ -1,6 +1,7 @@
 package dev.stashy.extrasounds;
 
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Identifier;
 
 public interface ItemSoundContainer
 {
@@ -10,4 +11,6 @@ public interface ItemSoundContainer
     {
         return snd;
     }
+
+    void initSound(Identifier id);
 }
