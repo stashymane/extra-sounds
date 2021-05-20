@@ -17,7 +17,10 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 import java.util.function.Function;
 
 public class ExtraSounds implements ModInitializer
@@ -45,9 +48,6 @@ public class ExtraSounds implements ModInitializer
                                 ),
                                 DropdownMenuBuilder.CellCreatorBuilder.ofWidth(200, registryTextProvider)
                         )
-                                          .setTooltipSupplier(soundEvent -> Optional
-                                                  .of(new TranslatableText[]{new TranslatableText(
-                                                          "subtitles." + soundEvent.getId().getPath())}))
                                           .setSelections(Registry.SOUND_EVENT)
                                           .setDefaultValue(() -> Utils.getUnsafely(field, defaults))
                                           .setSaveConsumer(newValue -> Utils.setUnsafely(field, config, newValue))
