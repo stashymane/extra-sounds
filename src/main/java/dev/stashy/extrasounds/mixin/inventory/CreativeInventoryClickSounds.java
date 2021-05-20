@@ -31,13 +31,20 @@ public abstract class CreativeInventoryClickSounds
     @Shadow
     private static int selectedTab;
 
+    private long lastDeleteSound;
+
     @Inject(at = @At("INVOKE"), method = "onMouseClick")
     void slotClick(Slot slot, int invSlot, int clickData, SlotActionType actionType, CallbackInfo ci)
     {
         if (slot == null || client == null || client.player == null) return;
 
-        if (slot == deleteItemSlot && selectedTab == ItemGroup.INVENTORY.getIndex())
+        if (System.currentTimeMillis() - lastDeleteSound > 5
+                && slot == deleteItemSlot
+                && selectedTab == ItemGroup.INVENTORY.getIndex())
+        {
             ExtraSounds.playSound(ExtraSounds.config.itemDelete);
+            lastDeleteSound = System.currentTimeMillis();
+        }
         else
             ExtraSounds.inventoryClick(slot.getStack(), client.player.inventory.getCursorStack(),
                                        actionType);
