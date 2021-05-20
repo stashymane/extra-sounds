@@ -15,9 +15,19 @@
     "inventory.InventoryDragSound",
     "inventory.InventoryDropSound",
     "inventory.InventoryScreenSounds",
+    "inventory.item.ArmorItemSound",
     "inventory.item.BaseItemSound",
     "inventory.item.BlockItemSound",
-    "inventory.item.SoundInitializer"
+    "inventory.item.BottleItemSound",
+    "inventory.item.BucketItemSound",
+    "inventory.item.DefaultLeatherItemSound",
+    "inventory.item.DefaultPaperItemSound",
+    "inventory.item.DefaultWoodItemSound",
+    "inventory.item.DyeItemSound",
+    "inventory.item.EnderItemSound",
+    "inventory.item.ShieldItemSound",
+    "inventory.item.SoundInitializer",
+    "inventory.item.ToolItemSound"
   ],
   "injectors": {
     "defaultRequire": 1
