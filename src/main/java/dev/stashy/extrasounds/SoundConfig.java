@@ -38,7 +38,7 @@ public class SoundConfig implements ConfigData
     @ConfigEntry.Gui.CollapsibleObject
     public SoundSource itemDelete = new SoundSource(SoundEvents.BLOCK_COMPOSTER_FILL, 0.75f, 1.5f, 0f);
     @ConfigEntry.Gui.CollapsibleObject
-    public SoundSource itemDrag = new SoundSource(SoundEvents.BLOCK_GLASS_PLACE, 0.5f, 2f, 0f);
+    public SoundSource itemDrag = new SoundSource(SoundEvents.BLOCK_GLASS_PLACE, 0.1f, 2f, 0f);
 
     public static class SoundSource
     {
