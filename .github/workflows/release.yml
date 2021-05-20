@@ -15,27 +15,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK 8
-      uses: actions/setup-java@v2
-      with:
-        java-version: '8'
-        distribution: 'adopt'
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew curseforge
-      env:
-        CURSE_API_KEY: ${{ secrets.CURSE_API_KEY }}
-    - name: Release
-      uses: docker://antonyurchenko/git-release:latest
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        DRAFT_RELEASE: "false"
-        PRE_RELEASE: "false"
-        CHANGELOG_FILE: "CHANGELOG.md"
-        ALLOW_EMPTY_CHANGELOG: "false"
-        ALLOW_TAG_PREFIX: "true"
-      with:
-        args: |
-            build/libs/*.jar
+      - uses: actions/checkout@v2
+      - name: Set up JDK 8
+        uses: actions/setup-java@v2
+        with:
+          java-version: '8'
+          distribution: 'adopt'
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Publish on Curse & Modrinth
+        run: ./gradlew publishMod
+        env:
+          CURSE_API_KEY: ${{ secrets.CURSE_API_KEY }}
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+
+      - name: Publish on GitHub
+          uses: docker://antonyurchenko/git-release:latest
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            DRAFT_RELEASE: "false"
+            PRE_RELEASE: "false"
+            CHANGELOG_FILE: "CHANGELOG.md"
+            ALLOW_EMPTY_CHANGELOG: "false"
+            ALLOW_TAG_PREFIX: "true"
+          with:
+            args: |
+              build/libs/*.jar
