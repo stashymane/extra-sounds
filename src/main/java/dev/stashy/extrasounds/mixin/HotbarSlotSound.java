@@ -3,11 +3,9 @@ package dev.stashy.extrasounds.mixin;
 import dev.stashy.extrasounds.ExtraSounds;
 import dev.stashy.extrasounds.SoundConfig;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.network.ClientPlayerEntity;
 import org.jetbrains.annotations.Nullable;
 import org.objectweb.asm.Opcodes;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -21,10 +19,6 @@ public class HotbarSlotSound
     @Shadow
     @Nullable
     public ClientPlayerEntity player;
-
-    @Shadow
-    @Final
-    public InGameHud inGameHud;
 
     @Inject(method = "handleInputEvents", at = @At(value = "FIELD", opcode = Opcodes.PUTFIELD, target = "Lnet/minecraft/entity/player/PlayerInventory;selectedSlot*:I"), locals = LocalCapture.CAPTURE_FAILSOFT)
     private void hotbarKeyboardSound(CallbackInfo info, int i)
