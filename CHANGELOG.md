@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.3.0] - 2021-05-20
+
+### Added
+
+- Item stack drag sound
+- Drop sound pitch based on amount (versus max stack)
+
+### Fixed
+
+- Item transfer sound in creative inventory
+- Multiple sounds being played at the same time
+- Crash when playing sounds during a sound tick
+
+### Changed
+
+- Moved sound logic to item creation instead of click event
+
 ## [1.2.0] - 2021-05-17
 
 ### Added
