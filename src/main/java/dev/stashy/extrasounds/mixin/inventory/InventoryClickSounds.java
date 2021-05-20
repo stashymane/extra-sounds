@@ -23,7 +23,6 @@ public class InventoryClickSounds
     @Inject(at = @At("INVOKE"), method = "onMouseClick")
     void click(Slot slot, int invSlot, int clickData, SlotActionType actionType, CallbackInfo ci)
     {
-        System.out.println("Clicked: " + invSlot);
         if (slot != null)
             ExtraSounds.inventoryClick(slot.getStack(), playerInventory.getCursorStack(), actionType);
     }
