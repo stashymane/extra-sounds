@@ -12,10 +12,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(PlayerEntity.class)
 public class InventoryDropSound
 {
-    @Inject(at = @At("RETURN"), method = "dropItem(Lnet/minecraft/item/ItemStack;ZZ)Lnet/minecraft/entity/ItemEntity;")
+    @Inject(at = @At("TAIL"), method = "dropItem(Lnet/minecraft/item/ItemStack;ZZ)Lnet/minecraft/entity/ItemEntity;")
     private void dropItem(ItemStack stack, boolean throwRandomly, boolean retainOwnership, CallbackInfoReturnable<ItemEntity> cir)
     {
         if (retainOwnership && !stack.isEmpty())
-            ExtraSounds.playSound(ExtraSounds.config.itemDrop);
+        {
+            float range = ExtraSounds.config.itemDrop.pitchRange;
+            float n = ExtraSounds.config.itemDrop.pitch + range *
+                    (1f * stack.getItem().getMaxCount() / stack.getCount()) - range / 2;
+            ExtraSounds.playSound(ExtraSounds.config.itemDrop, n);
+        }
     }
 }
