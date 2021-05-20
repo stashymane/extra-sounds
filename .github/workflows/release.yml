@@ -32,14 +32,14 @@ jobs:
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
 
       - name: Publish on GitHub
-          uses: docker://antonyurchenko/git-release:latest
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            DRAFT_RELEASE: "false"
-            PRE_RELEASE: "false"
-            CHANGELOG_FILE: "CHANGELOG.md"
-            ALLOW_EMPTY_CHANGELOG: "false"
-            ALLOW_TAG_PREFIX: "true"
-          with:
-            args: |
-              build/libs/*.jar
+        uses: docker://antonyurchenko/git-release:latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRAFT_RELEASE: "false"
+          PRE_RELEASE: "false"
+          CHANGELOG_FILE: "CHANGELOG.md"
+          ALLOW_EMPTY_CHANGELOG: "false"
+          ALLOW_TAG_PREFIX: "true"
+        with:
+          args: |
+            build/libs/*.jar
