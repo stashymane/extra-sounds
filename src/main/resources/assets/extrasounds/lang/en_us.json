@@ -89,5 +89,13 @@
   "text.autoconfig.extrasounds.option.itemDelete.pitch": "Pitch",
   "text.autoconfig.extrasounds.option.itemDelete.pitch.@Tooltip": "Pitch must be between 0 and 2.",
   "text.autoconfig.extrasounds.option.itemDelete.pitchRange": "Pitch range",
-  "text.autoconfig.extrasounds.option.itemDelete.pitchRange.@Tooltip": "The range of pitch that will be randomized or adjusted."
+  "text.autoconfig.extrasounds.option.itemDelete.pitchRange.@Tooltip": "The range of pitch that will be randomized or adjusted.",
+  "text.autoconfig.extrasounds.option.itemDrag": "Inventory item drag",
+  "text.autoconfig.extrasounds.option.itemDrag.sound": "Sound name",
+  "text.autoconfig.extrasounds.option.itemDrag.volume": "Volume",
+  "text.autoconfig.extrasounds.option.itemDrag.volume.@Tooltip": "Volume must be between 0 and 1.",
+  "text.autoconfig.extrasounds.option.itemDrag.pitch": "Pitch",
+  "text.autoconfig.extrasounds.option.itemDrag.pitch.@Tooltip": "Pitch must be between 0 and 2.",
+  "text.autoconfig.extrasounds.option.itemDrag.pitchRange": "Pitch range",
+  "text.autoconfig.extrasounds.option.itemDrag.pitchRange.@Tooltip": "The range of pitch that will be randomized or adjusted."
 }
