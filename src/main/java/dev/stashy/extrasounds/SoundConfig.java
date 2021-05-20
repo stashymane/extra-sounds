@@ -30,7 +30,7 @@ public class SoundConfig implements ConfigData
     public SoundSource itemDrop = new SoundSource(SoundEvents.BLOCK_DISPENSER_LAUNCH, 0.1f, 1.5f, 0.1f);
 
     @ConfigEntry.Gui.CollapsibleObject
-    public SoundSource itemPickup = new SoundSource(SoundEvents.BLOCK_GLASS_STEP, 0.2f, 1.5f, 0.1f);
+    public SoundSource itemPickup = new SoundSource(SoundEvents.BLOCK_GLASS_STEP, 0.2f, 1.5f, 0.5f);
     @ConfigEntry.Gui.CollapsibleObject
     public SoundSource itemPickupAll = new SoundSource(SoundEvents.ENTITY_ITEM_PICKUP, 0.02f, 2f, 0.1f);
     @ConfigEntry.Gui.CollapsibleObject
