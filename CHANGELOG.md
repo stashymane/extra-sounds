@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.3.1] - 2021-05-21
+
+### Fixed
+
+- Modded items not having sounds
+- Crashing if item does not have a sound assigned
+
+### Changed
+
+- Moved more sounds from hardcoded to class based detection
+
 ## [1.3.0] - 2021-05-20
 
 ### Added
