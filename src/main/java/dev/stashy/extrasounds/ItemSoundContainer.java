@@ -12,5 +12,5 @@ public interface ItemSoundContainer
         return snd;
     }
 
-    void initSound(Identifier id);
+    default void initSound(Identifier id) {}
 }
