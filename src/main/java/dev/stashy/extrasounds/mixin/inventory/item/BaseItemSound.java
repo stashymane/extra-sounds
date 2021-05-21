@@ -19,9 +19,6 @@ import java.util.HashMap;
 public abstract class BaseItemSound implements ItemSoundContainer
 {
     @Shadow
-    public abstract Item asItem();
-
-    @Shadow
     @Final
     @Nullable
     private FoodComponent foodComponent;
