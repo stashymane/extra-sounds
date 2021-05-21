@@ -5,7 +5,6 @@ import dev.stashy.extrasounds.ItemSoundContainer;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.FoodComponents;
 import net.minecraft.item.Item;
-import net.minecraft.item.MushroomStewItem;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
@@ -40,9 +39,7 @@ public abstract class BaseItemSound implements ItemSoundContainer
             snd = idMap.get(id.getPath());
         else if (foodComponent != null)
         {
-            if (asItem() instanceof MushroomStewItem)
-                snd = SoundEvents.BLOCK_WOOD_PLACE;
-            else if (foodComponent.isMeat() ||
+            if (foodComponent.isMeat() ||
                     foodComponent.equals(FoodComponents.COD) ||
                     foodComponent.equals(FoodComponents.COOKED_COD) ||
                     foodComponent.equals(FoodComponents.SALMON) ||
@@ -54,7 +51,7 @@ public abstract class BaseItemSound implements ItemSoundContainer
                 snd = SoundEvents.ENTITY_CHICKEN_STEP;
         }
 
-        invSound = new InventorySound(snd, baseVol);
+        if (snd != null) invSound = new InventorySound(snd, baseVol);
     }
 
     static
