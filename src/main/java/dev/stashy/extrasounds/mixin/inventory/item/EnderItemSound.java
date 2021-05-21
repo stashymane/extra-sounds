@@ -11,17 +11,11 @@ import org.spongepowered.asm.mixin.Mixin;
 @Mixin({EnderEyeItem.class, EnderPearlItem.class})
 public class EnderItemSound implements ItemSoundContainer
 {
-    InventorySound snd;
+    InventorySound snd = new InventorySound(SoundEvents.BLOCK_WEEPING_VINES_PLACE, 1f);;
 
     @Override
     public InventorySound getInventorySound()
     {
         return snd;
-    }
-
-    @Override
-    public void initSound(Identifier id)
-    {
-        snd = new InventorySound(SoundEvents.BLOCK_WEEPING_VINES_PLACE, 1f);
     }
 }

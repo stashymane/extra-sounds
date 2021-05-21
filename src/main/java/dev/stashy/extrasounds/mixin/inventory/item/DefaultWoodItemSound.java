@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.Mixin;
 @Mixin({FishingRodItem.class, ItemFrameItem.class, BoatItem.class, CrossbowItem.class, BowItem.class})
 public class DefaultWoodItemSound implements ItemSoundContainer
 {
-    InventorySound snd;
+    InventorySound snd = new InventorySound(SoundEvents.BLOCK_WOOD_PLACE, 1f);;
 
     @Override
     public InventorySound getInventorySound()
@@ -18,9 +18,4 @@ public class DefaultWoodItemSound implements ItemSoundContainer
         return snd;
     }
 
-    @Override
-    public void initSound(Identifier id)
-    {
-        snd = new InventorySound(SoundEvents.BLOCK_WOOD_PLACE, 1f);
-    }
 }

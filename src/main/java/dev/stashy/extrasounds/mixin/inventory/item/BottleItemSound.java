@@ -10,17 +10,11 @@ import org.spongepowered.asm.mixin.Mixin;
 @Mixin({PotionItem.class})
 public class BottleItemSound implements ItemSoundContainer
 {
-    InventorySound snd;
+    InventorySound snd = new InventorySound(SoundEvents.ITEM_BOTTLE_FILL, 1f);;
 
     @Override
     public InventorySound getInventorySound()
     {
         return snd;
-    }
-
-    @Override
-    public void initSound(Identifier id)
-    {
-        snd = new InventorySound(SoundEvents.ITEM_BOTTLE_FILL, 1f);
     }
 }

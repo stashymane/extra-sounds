@@ -12,17 +12,11 @@ import org.spongepowered.asm.mixin.Mixin;
 @Mixin({ElytraItem.class, SaddleItem.class, LeadItem.class})
 public class DefaultLeatherItemSound implements ItemSoundContainer
 {
-    InventorySound snd;
+    InventorySound snd = new InventorySound(SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 1f);;
 
     @Override
     public InventorySound getInventorySound()
     {
         return snd;
-    }
-
-    @Override
-    public void initSound(Identifier id)
-    {
-        snd = new InventorySound(SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 1f);
     }
 }

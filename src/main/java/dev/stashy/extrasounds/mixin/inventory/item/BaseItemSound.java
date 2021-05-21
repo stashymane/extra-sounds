@@ -27,7 +27,7 @@ public abstract class BaseItemSound implements ItemSoundContainer
     @Nullable
     private FoodComponent foodComponent;
 
-    public InventorySound invSound;
+    public InventorySound invSound = new InventorySound(SoundEvents.BLOCK_GLASS_PLACE, 1f);
 
     private static final HashMap<String, SoundEvent> idMap = new HashMap<>();
 

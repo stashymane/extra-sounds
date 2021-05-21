@@ -10,17 +10,11 @@ import org.spongepowered.asm.mixin.Mixin;
 @Mixin(ShieldItem.class)
 public class ShieldItemSound implements ItemSoundContainer
 {
-    InventorySound snd;
+    InventorySound snd = new InventorySound(SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1);;
 
     @Override
     public InventorySound getInventorySound()
     {
         return snd;
-    }
-
-    @Override
-    public void initSound(Identifier id)
-    {
-        snd = new InventorySound(SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1);
     }
 }
