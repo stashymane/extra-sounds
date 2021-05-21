@@ -19,16 +19,23 @@
     "inventory.item.ArmorItemSound",
     "inventory.item.BaseItemSound",
     "inventory.item.BlockItemSound",
+    "inventory.item.BonemealItemSound",
     "inventory.item.BottleItemSound",
     "inventory.item.BucketItemSound",
+    "inventory.item.DefaultBucketFillSound",
     "inventory.item.DefaultLeatherItemSound",
     "inventory.item.DefaultPaperItemSound",
     "inventory.item.DefaultWoodItemSound",
     "inventory.item.DyeItemSound",
     "inventory.item.EnderItemSound",
+    "inventory.item.FlintAndSteelItemSound",
+    "inventory.item.HoneyBottleItemSound",
+    "inventory.item.OnAStickItemSound",
     "inventory.item.ShieldItemSound",
+    "inventory.item.SnowballItemSound",
     "inventory.item.SoundInitializer",
-    "inventory.item.ToolItemSound"
+    "inventory.item.ToolItemSound",
+    "inventory.item.TridentItemSound"
   ],
   "injectors": {
     "defaultRequire": 1

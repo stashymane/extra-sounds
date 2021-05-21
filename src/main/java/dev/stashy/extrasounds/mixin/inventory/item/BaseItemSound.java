@@ -60,10 +60,8 @@ public abstract class BaseItemSound implements ItemSoundContainer
     static
     {
         idMap.put("slime_ball", SoundEvents.BLOCK_SLIME_BLOCK_BREAK);
-        idMap.put("snowball", SoundEvents.BLOCK_SNOW_PLACE);
         idMap.put("bone", SoundEvents.BLOCK_BONE_BLOCK_HIT);
         idMap.put("clay_ball", SoundEvents.BLOCK_GRAVEL_PLACE);
-        idMap.put("bone_meal", SoundEvents.BLOCK_GRAVEL_PLACE);
         idMap.put("gunpowder", SoundEvents.BLOCK_SAND_PLACE);
         idMap.put("sugar", SoundEvents.BLOCK_SAND_PLACE);
         idMap.put("wheat", SoundEvents.BLOCK_SAND_PLACE);
@@ -75,9 +73,7 @@ public abstract class BaseItemSound implements ItemSoundContainer
         idMap.put("golden_horse_armor", SoundEvents.ITEM_ARMOR_EQUIP_GOLD);
         idMap.put("diamond_horse_armor", SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND);
         idMap.put("paper", SoundEvents.ENTITY_VILLAGER_WORK_LIBRARIAN);
-        idMap.put("book_and_quill", SoundEvents.ENTITY_VILLAGER_WORK_LIBRARIAN);
         idMap.put("honeycomb", SoundEvents.BLOCK_HONEY_BLOCK_PLACE);
-        idMap.put("honey_bottle", SoundEvents.BLOCK_CORAL_BLOCK_PLACE);
         idMap.put("dragon_breath", SoundEvents.ITEM_BOTTLE_FILL);
         idMap.put("stick", SoundEvents.BLOCK_WOOD_PLACE);
         idMap.put("bowl", SoundEvents.BLOCK_WOOD_PLACE);
@@ -85,18 +81,14 @@ public abstract class BaseItemSound implements ItemSoundContainer
         idMap.put("phantom_membrane", SoundEvents.BLOCK_WEEPING_VINES_PLACE);
         idMap.put("magma_cream", SoundEvents.BLOCK_WEEPING_VINES_PLACE);
         idMap.put("ink_sac", SoundEvents.BLOCK_WEEPING_VINES_PLACE);
-        idMap.put("trident", SoundEvents.ITEM_TRIDENT_HIT);
         idMap.put("iron_ingot", SoundEvents.BLOCK_NETHER_GOLD_ORE_HIT);
         idMap.put("iron_nugget", SoundEvents.BLOCK_NETHER_GOLD_ORE_HIT);
         idMap.put("gold_ingot", SoundEvents.BLOCK_NETHER_GOLD_ORE_HIT);
         idMap.put("gold_nugget", SoundEvents.BLOCK_NETHER_GOLD_ORE_HIT);
         idMap.put("netherite_ingot", SoundEvents.BLOCK_NETHERITE_BLOCK_HIT);
         idMap.put("netherite_scrap", SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE);
-        idMap.put("flint_and_steel", SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE);
         idMap.put("leather", SoundEvents.ITEM_ARMOR_EQUIP_LEATHER);
         idMap.put("rabbit_hide", SoundEvents.ITEM_ARMOR_EQUIP_LEATHER);
-        idMap.put("milk_bucket", SoundEvents.ITEM_BUCKET_FILL);
-        idMap.put("experience_bottle", SoundEvents.ITEM_BUCKET_FILL);
         idMap.put("scute", SoundEvents.ENTITY_COD_FLOP);
         idMap.put("rabbit_foot", SoundEvents.ENTITY_COD_FLOP);
         idMap.put("glistering_melon_slice", SoundEvents.ENTITY_COD_FLOP);
