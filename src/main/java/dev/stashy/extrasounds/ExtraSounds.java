@@ -22,6 +22,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Function;
+import java.util.logging.Logger;
 
 public class ExtraSounds implements ModInitializer
 {
@@ -85,6 +86,11 @@ public class ExtraSounds implements ModInitializer
         if (now - lastPlayed > 5)
         {
             InventorySound is = ((ItemSoundContainer) stack.getItem()).getInventorySound();
+            if (is == null)
+            {
+                Logger.getGlobal().warning(stack.getItem() + " does not have an inventory sound assigned to it.");
+                return;
+            }
             playSound(is.sound, is.baseVol * config.itemPickup.volume,
                       getItemPitch(config.itemPickup.pitch, config.itemPickup.pitchRange, pickup));
             lastPlayed = now;
