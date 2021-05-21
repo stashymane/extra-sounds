@@ -33,7 +33,7 @@ public abstract class BaseItemSound implements ItemSoundContainer
     @Override
     public void initSound(Identifier id)
     {
-        SoundEvent snd = SoundEvents.BLOCK_GLASS_PLACE;
+        SoundEvent snd = null;
         float baseVol = 1f;
         if (idMap.containsKey(id.getPath()))
             snd = idMap.get(id.getPath());
