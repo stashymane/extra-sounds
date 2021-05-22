@@ -8,7 +8,6 @@ import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import me.shedaniel.clothconfig2.impl.builders.DropdownMenuBuilder;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.sound.SoundEvent;
@@ -17,9 +16,7 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Random;
 import java.util.function.Function;
 import java.util.logging.Logger;
@@ -106,8 +103,6 @@ public class ExtraSounds implements ModInitializer
     {
         playSound(src.sound, src.volume, pitch);
     }
-
-    public static final List<PositionedSoundInstance> que = new ArrayList<>();
 
     private static void playSound(SoundEvent snd, float vol, float pitch)
     {
