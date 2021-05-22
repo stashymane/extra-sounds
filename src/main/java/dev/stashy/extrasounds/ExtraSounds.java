@@ -112,7 +112,8 @@ public class ExtraSounds implements ModInitializer
     private static void playSound(SoundEvent snd, float vol, float pitch)
     {
         if (MinecraftClient.getInstance().player != null)
-            que.add(PositionedSoundInstance.master(snd, pitch, vol * config.masterVolume));
+            MinecraftClient.getInstance().execute(
+                    () -> MinecraftClient.getInstance().player.playSound(snd, vol * config.masterVolume, pitch));
     }
 
     public static float getRandomPitch(float pitch, float pitchRange)
