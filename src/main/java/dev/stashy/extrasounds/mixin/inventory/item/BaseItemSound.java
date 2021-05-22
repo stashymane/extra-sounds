@@ -26,6 +26,7 @@ public abstract class BaseItemSound implements ItemSoundContainer
     public InventorySound invSound = new InventorySound(SoundEvents.BLOCK_GLASS_PLACE, 1f);
 
     private static final HashMap<String, SoundEvent> idMap = new HashMap<>();
+    private static final HashMap<FoodComponent, SoundEvent> foodMap = new HashMap<>();
 
     @Override
     public void initSound(Identifier id)
@@ -36,16 +37,15 @@ public abstract class BaseItemSound implements ItemSoundContainer
             snd = idMap.get(id.getPath());
         else if (foodComponent != null)
         {
-            if (foodComponent.isMeat() ||
-                    foodComponent.equals(FoodComponents.COD) ||
-                    foodComponent.equals(FoodComponents.COOKED_COD) ||
-                    foodComponent.equals(FoodComponents.SALMON) ||
-                    foodComponent.equals(FoodComponents.COOKED_SALMON) ||
-                    foodComponent.equals(FoodComponents.TROPICAL_FISH) ||
-                    foodComponent.equals(FoodComponents.PUFFERFISH))
+            if (foodMap.containsKey(foodComponent))
+                snd = foodMap.get(foodComponent);
+            else if (foodComponent.isMeat())
                 snd = SoundEvents.ENTITY_COD_FLOP;
             else
+            {
                 snd = SoundEvents.ENTITY_CHICKEN_STEP;
+                baseVol = 1.5f;
+            }
         }
 
         if (snd != null) invSound = new InventorySound(snd, baseVol);
@@ -88,6 +88,27 @@ public abstract class BaseItemSound implements ItemSoundContainer
         idMap.put("glistering_melon_slice", SoundEvents.ENTITY_COD_FLOP);
         idMap.put("ghast_tear", SoundEvents.BLOCK_BUBBLE_COLUMN_BUBBLE_POP);
         idMap.put("painting", SoundEvents.BLOCK_WOOD_PLACE);
+        idMap.put("clock", SoundEvents.ITEM_ARMOR_EQUIP_GENERIC);
+
+        foodMap.put(FoodComponents.COD, SoundEvents.ENTITY_COD_FLOP);
+        foodMap.put(FoodComponents.COOKED_COD, SoundEvents.ENTITY_COD_FLOP);
+        foodMap.put(FoodComponents.SALMON, SoundEvents.ENTITY_COD_FLOP);
+        foodMap.put(FoodComponents.COOKED_SALMON, SoundEvents.ENTITY_COD_FLOP);
+        foodMap.put(FoodComponents.TROPICAL_FISH, SoundEvents.ENTITY_COD_FLOP);
+        foodMap.put(FoodComponents.PUFFERFISH, SoundEvents.ENTITY_COD_FLOP);
+        foodMap.put(FoodComponents.BREAD, SoundEvents.BLOCK_WOOL_PLACE);
+        foodMap.put(FoodComponents.APPLE, SoundEvents.BLOCK_CORAL_BLOCK_PLACE);
+        foodMap.put(FoodComponents.GOLDEN_APPLE, SoundEvents.BLOCK_CORAL_BLOCK_PLACE);
+        foodMap.put(FoodComponents.ENCHANTED_GOLDEN_APPLE, SoundEvents.BLOCK_CORAL_BLOCK_PLACE);
+        foodMap.put(FoodComponents.BAKED_POTATO, SoundEvents.BLOCK_NETHER_SPROUTS_PLACE);
+        foodMap.put(FoodComponents.GOLDEN_CARROT, SoundEvents.BLOCK_NETHER_SPROUTS_PLACE);
+        foodMap.put(FoodComponents.POISONOUS_POTATO, SoundEvents.ITEM_NETHER_WART_PLANT);
+        foodMap.put(FoodComponents.DRIED_KELP, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PLACE);
+        foodMap.put(FoodComponents.COOKIE, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PLACE);
+        foodMap.put(FoodComponents.BEETROOT, SoundEvents.BLOCK_CORAL_BLOCK_PLACE);
+        foodMap.put(FoodComponents.MELON_SLICE, SoundEvents.BLOCK_WET_GRASS_PLACE);
+        foodMap.put(FoodComponents.PUMPKIN_PIE, SoundEvents.BLOCK_LILY_PAD_PLACE);
+
     }
 
     @Override
