@@ -11,6 +11,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.inventory.CraftingResultInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.PlayerScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.sound.SoundEvent;
@@ -72,8 +73,9 @@ public class ExtraSounds implements ModInitializer
                 ExtraSounds.playSound(ExtraSounds.config.itemClone);
                 return;
             case QUICK_MOVE:
-                if (MinecraftClient.getInstance().player != null && MinecraftClient
-                        .getInstance().player.currentScreenHandler
+                if (MinecraftClient.getInstance().player != null &&
+                        !(MinecraftClient.getInstance().player.currentScreenHandler instanceof PlayerScreenHandler)
+                        && MinecraftClient.getInstance().player.currentScreenHandler
                         .slots.parallelStream()
                               .filter((s) -> s.inventory != slot.inventory)
                               .filter((s) -> !(s.inventory instanceof CraftingInventory || s.inventory instanceof CraftingResultInventory))
