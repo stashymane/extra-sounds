@@ -8,7 +8,10 @@ import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import me.shedaniel.clothconfig2.impl.builders.DropdownMenuBuilder;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.inventory.CraftingInventory;
+import net.minecraft.inventory.CraftingResultInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
@@ -53,8 +56,9 @@ public class ExtraSounds implements ModInitializer
                 ), SoundEvent.class);
     }
 
-    public static void inventoryClick(ItemStack clicked, ItemStack cursor, SlotActionType actionType)
+    public static void inventoryClick(Slot slot, ItemStack cursor, SlotActionType actionType)
     {
+        ItemStack clicked = slot.getStack();
         boolean hasCursor = !cursor.isEmpty();
         boolean hasSlot = !clicked.isEmpty();
 
@@ -67,6 +71,17 @@ public class ExtraSounds implements ModInitializer
             case CLONE:
                 ExtraSounds.playSound(ExtraSounds.config.itemClone);
                 return;
+            case QUICK_MOVE:
+                if (MinecraftClient.getInstance().player != null && MinecraftClient
+                        .getInstance().player.currentScreenHandler
+                        .slots.parallelStream()
+                              .filter((s) -> s.inventory != slot.inventory)
+                              .filter((s) -> !(s.inventory instanceof CraftingInventory || s.inventory instanceof CraftingResultInventory))
+                              .noneMatch(
+                                      (s) -> !s.hasStack() || s.getStack().getItem()
+                                                               .equals(slot.getStack().getItem()) && s
+                                              .getStack().getCount() < s.getStack().getMaxCount()))
+                    return;
             default:
                 if (hasCursor)
                     ExtraSounds.playItemSound(cursor, false);

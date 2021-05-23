@@ -46,7 +46,7 @@ public abstract class CreativeInventoryClickSounds
             lastDeleteSound = System.currentTimeMillis();
         }
         else
-            ExtraSounds.inventoryClick(slot.getStack(), client.player.inventory.getCursorStack(),
+            ExtraSounds.inventoryClick(slot, client.player.inventory.getCursorStack(),
                                        actionType);
     }
 

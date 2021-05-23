@@ -24,6 +24,6 @@ public class InventoryClickSounds
     void click(Slot slot, int invSlot, int clickData, SlotActionType actionType, CallbackInfo ci)
     {
         if (slot != null)
-            ExtraSounds.inventoryClick(slot.getStack(), playerInventory.getCursorStack(), actionType);
+            ExtraSounds.inventoryClick(slot, playerInventory.getCursorStack(), actionType);
     }
 }
