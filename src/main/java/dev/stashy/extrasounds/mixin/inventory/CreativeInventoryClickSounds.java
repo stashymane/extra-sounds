@@ -15,6 +15,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.List;
+
 @Mixin(CreativeInventoryScreen.class)
 public abstract class CreativeInventoryClickSounds
         extends AbstractInventoryScreen<CreativeInventoryScreen.CreativeScreenHandler>
@@ -31,6 +33,9 @@ public abstract class CreativeInventoryClickSounds
     @Shadow
     private static int selectedTab;
 
+    @Shadow
+    @Nullable
+    private List<Slot> slots;
     private long lastDeleteSound;
 
     @Inject(at = @At("INVOKE"), method = "onMouseClick")
@@ -42,6 +47,10 @@ public abstract class CreativeInventoryClickSounds
                 && slot == deleteItemSlot
                 && selectedTab == ItemGroup.INVENTORY.getIndex())
         {
+            if (actionType.equals(SlotActionType.PICKUP) && playerInventory.getCursorStack().isEmpty()
+                    || actionType.equals(SlotActionType.QUICK_MOVE)
+                    && slots != null && slots.parallelStream().noneMatch(Slot::hasStack))
+                return;
             ExtraSounds.playSound(ExtraSounds.config.itemDelete);
             lastDeleteSound = System.currentTimeMillis();
         }
