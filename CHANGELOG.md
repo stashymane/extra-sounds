@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.4.0] - 2021-05-23
+
+### Added
+
+- Creative block pick sound
+
+### Fixed
+
+- Reworked crash fix, should now work when the game is not ticking (e.g. with Inventory Pause)
+- Item sound if transferring to full inventory
+- Delete sound in creative if nothing is deleted
+
+### Changed
+
+- Tweaked food & other item sounds
+
 ## [1.3.1] - 2021-05-21
 
 ### Fixed
