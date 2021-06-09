@@ -47,7 +47,7 @@ public abstract class CreativeInventoryClickSounds
                 && slot == deleteItemSlot
                 && selectedTab == ItemGroup.INVENTORY.getIndex())
         {
-            if (actionType.equals(SlotActionType.PICKUP) && playerInventory.getCursorStack().isEmpty()
+            if (actionType.equals(SlotActionType.PICKUP) && handler.getCursorStack().isEmpty()
                     || actionType.equals(SlotActionType.QUICK_MOVE)
                     && slots != null && slots.parallelStream().noneMatch(Slot::hasStack))
                 return;
@@ -55,7 +55,7 @@ public abstract class CreativeInventoryClickSounds
             lastDeleteSound = System.currentTimeMillis();
         }
         else
-            ExtraSounds.inventoryClick(slot, client.player.inventory.getCursorStack(),
+            ExtraSounds.inventoryClick(slot, handler.getCursorStack(),
                                        actionType);
     }
 

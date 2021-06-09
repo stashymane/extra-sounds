@@ -33,7 +33,7 @@ public abstract class BlockItemSound implements ItemSoundContainer
         else if (place.equals(SoundEvents.BLOCK_WOOL_PLACE))
             baseVol = 1.2f;
 
-        if (block.is(Blocks.TRIPWIRE) || block.is(Blocks.REDSTONE_WIRE) || block.is(Blocks.COBWEB))
+        if (block.equals(Blocks.TRIPWIRE) || block.equals(Blocks.REDSTONE_WIRE) || block.equals(Blocks.COBWEB))
             place = SoundEvents.BLOCK_SAND_PLACE;
         else if (block instanceof BannerBlock)
             place = SoundEvents.BLOCK_WOOL_PLACE;
