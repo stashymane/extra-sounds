@@ -17,9 +17,6 @@
   "entrypoints": {
     "main": [
       "dev.stashy.extrasounds.ExtraSounds"
-    ],
-    "modmenu": [
-      "dev.stashy.extrasounds.SoundConfigMenu"
     ]
   },
   "mixins": [
@@ -27,10 +24,6 @@
   ],
   "depends": {
     "fabricloader": ">=0.7.4",
-    "minecraft": ">=1.17",
-    "cloth-config2": ">=4.11"
-  },
-  "suggests": {
-    "modmenu": "*"
+    "minecraft": ">=1.17"
   }
 }
