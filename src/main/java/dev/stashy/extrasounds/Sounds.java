@@ -2,6 +2,7 @@ package dev.stashy.extrasounds;
 
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class Sounds
 {
@@ -41,4 +42,24 @@ public class Sounds
     public static final Identifier ITEM_DRAG_ID = new Identifier("extrasounds:item_drag");
     public static SoundEvent ITEM_DRAG = new SoundEvent(ITEM_DRAG_ID);
 
+    protected static void registerAll()
+    {
+        register(CHAT_ID, CHAT);
+        register(CHAT_MENTION_ID, CHAT_MENTION);
+        register(HOTBAR_SCROLL_ID, HOTBAR_SCROLL);
+        register(INVENTORY_OPEN_ID, INVENTORY_OPEN);
+        register(INVENTORY_CLOSE_ID, INVENTORY_CLOSE);
+        register(INVENTORY_SCROLL_ID, INVENTORY_SCROLL);
+        register(ITEM_DROP_ID, ITEM_DROP);
+        register(ITEM_PICK_ID, ITEM_PICK);
+        register(ITEM_PICK_ALL_ID, ITEM_PICK_ALL);
+        register(ITEM_CLONE_ID, ITEM_CLONE);
+        register(ITEM_DELETE_ID, ITEM_DELETE);
+        register(ITEM_DRAG_ID, ITEM_DRAG);
+    }
+
+    private static void register(Identifier id, SoundEvent e)
+    {
+        Registry.register(Registry.SOUND_EVENT, id, e);
+    }
 }

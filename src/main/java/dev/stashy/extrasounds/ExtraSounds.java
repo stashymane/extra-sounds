@@ -26,7 +26,7 @@ public class ExtraSounds implements ModInitializer
     @Override
     public void onInitialize()
     {
-
+        Sounds.registerAll();
     }
 
     public static void inventoryClick(Slot slot, ItemStack cursor, SlotActionType actionType)
