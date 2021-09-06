@@ -1,0 +1,90 @@
+{
+  "type": "object",
+  "patternProperties": {
+    "^.*$": {
+      "type": "object",
+      "description": "A sound event. The name is usually separated in categories (such as entity.enderman.stare).",
+      "additionalProperties": false,
+      "properties": {
+        "replace": {
+          "type": "boolean",
+          "description": "Used only in resource packs. True if the sounds listed in sounds should replace the sounds listed in the default sounds.json for this sound event. False if the sounds listed should be added to the list of default sounds. Optional. If undefined, defaults to \"false\".",
+          "default": false
+        },
+        "subtitle": {
+          "type": "string",
+          "description": "Translated as the subtitle of the sound if Show Subtitles is enabled ingame. Optional."
+        },
+        "sounds": {
+          "type": "array",
+          "description": "The sound files this sound event uses. One of the listed sounds is randomly selected to play when this sound event is triggered. Optional.",
+          "items": {
+            "anyOf": [
+              {
+                "type": "object",
+                "description": "A sound file. This Object is used only when the sound requires additional Strings.",
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "The path to this sound file from the \"namespace/sounds\" folder (excluding the .ogg file extension). The namespace defaults to minecraft but it can be changed by prepending a namespace and separating it with a :. Uses forward slashes instead of backslashes. May instead be the name of another sound event (according to value of \"type\")."
+                  },
+                  "volume": {
+                    "type": "number",
+                    "description": "The volume for playing this sound. Value is a decimal between 0.0 and 1.0. If undefined, defaults to 1.0.",
+                    "default": "1.0",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "pitch": {
+                    "type": "number",
+                    "description": "Plays the pitch at the specified value. If undefined, defaults to 1.0, but higher and lower values can be chosen.",
+                    "default": "1.0",
+                    "minimum": 0,
+                    "maximum": 2
+                  },
+                  "weight": {
+                    "type": "integer",
+                    "description": "The chance that this sound is selected to play when this sound event is triggered. Defaults to 1. An example: putting 2 in for the value would be like placing in the name twice. Only accepts integers.",
+                    "default": "1"
+                  },
+                  "stream": {
+                    "type": "boolean",
+                    "description": "True if this sound should be streamed from its file. It is recommended that this is set to \"true\" for sounds that have a duration longer than a few seconds to avoid lag. Used for all sounds in the \"music\" and \"record\" categories (except Note Block sounds), as (almost) all the sounds that belong to those categories are over a minute long. Optional. If undefined, defaults to \"false\". Setting this to false allows many more instances of the sound to be ran at the same time while setting it to true only allows 4 instances (of that type) to be ran at the same time.",
+                    "default": false
+                  },
+                  "attenuation_distance": {
+                    "type": "integer",
+                    "description": "Modify sound reduction rate based on distance. Used by portals, beacons, and conduits. Defaults to 16.",
+                    "default": "16"
+                  },
+                  "preload": {
+                    "type": "boolean",
+                    "description": "True if this sound should be loaded when loading the pack instead of when the sound is played. Used by the underwater ambience. Defaults to \"false\".",
+                    "default": false
+                  },
+                  "type": {
+                    "type": "string",
+                    "description": "Two values are available: \"sound\" and \"event\"; \"sound\" causes the value of \"name\" to be interpreted as the name of a file, while \"event\" causes the value of \"name\" to be interpreted as the name of an already defined event. If undefined, defaults to \"sound\".",
+                    "default": "\"sound\"",
+                    "enum": [
+                      "sound",
+                      "event"
+                    ]
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              },
+              {
+                "type": "string",
+                "description": "The path to a sound file from the \"namespace/sounds\" folder (excluding the .ogg file extension). Uses forward slashes. The namespace defaults to minecraft but it can be changed by prepending a namespace and separating it with a `:`."
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
