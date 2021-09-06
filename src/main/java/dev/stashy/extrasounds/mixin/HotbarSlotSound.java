@@ -1,7 +1,7 @@
 package dev.stashy.extrasounds.mixin;
 
 import dev.stashy.extrasounds.ExtraSounds;
-import dev.stashy.extrasounds.SoundConfig;
+import dev.stashy.extrasounds.Sounds;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import org.jetbrains.annotations.Nullable;
@@ -35,7 +35,6 @@ public class HotbarSlotSound
 
     private void playScroll()
     {
-        SoundConfig.SoundSource scroll = ExtraSounds.config.hotbarScroll;
-        ExtraSounds.playSound(scroll, scroll.pitch - scroll.pitchRange / 2);
+        ExtraSounds.playSound(Sounds.HOTBAR_SCROLL, 0.8f);
     }
 }

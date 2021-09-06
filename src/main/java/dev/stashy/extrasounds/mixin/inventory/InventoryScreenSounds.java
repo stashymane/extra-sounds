@@ -1,6 +1,7 @@
 package dev.stashy.extrasounds.mixin.inventory;
 
 import dev.stashy.extrasounds.ExtraSounds;
+import dev.stashy.extrasounds.Sounds;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -13,12 +14,12 @@ public class InventoryScreenSounds
     @Inject(at = @At("HEAD"), method = "init")
     void open(CallbackInfo ci)
     {
-        ExtraSounds.playSound(ExtraSounds.config.inventoryOpen);
+        ExtraSounds.playSound(Sounds.INVENTORY_OPEN);
     }
 
     @Inject(at = @At("HEAD"), method = "onClose")
     void close(CallbackInfo ci)
     {
-        ExtraSounds.playSound(ExtraSounds.config.inventoryClose);
+        ExtraSounds.playSound(Sounds.INVENTORY_CLOSE);
     }
 }

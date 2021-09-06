@@ -1,7 +1,7 @@
 package dev.stashy.extrasounds.mixin;
 
 import dev.stashy.extrasounds.ExtraSounds;
-import dev.stashy.extrasounds.SoundConfig;
+import dev.stashy.extrasounds.Sounds;
 import net.minecraft.entity.player.PlayerInventory;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -14,7 +14,6 @@ public class HotbarScrollSound
     @Inject(at = @At("RETURN"), method = "scrollInHotbar")
     private void hotbarSound(CallbackInfo info)
     {
-        SoundConfig.SoundSource scroll = ExtraSounds.config.hotbarScroll;
-        ExtraSounds.playSound(scroll, scroll.pitch + scroll.pitchRange / 2);
+        ExtraSounds.playSound(Sounds.INVENTORY_SCROLL, 1.2f);
     }
 }

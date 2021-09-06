@@ -1,6 +1,7 @@
 package dev.stashy.extrasounds.mixin;
 
 import dev.stashy.extrasounds.ExtraSounds;
+import dev.stashy.extrasounds.Sounds;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.ChatHud;
 import net.minecraft.client.network.ClientPlayerEntity;
@@ -21,8 +22,8 @@ public class ChatSound
         String msg = message.getString();
         ClientPlayerEntity p = MinecraftClient.getInstance().player;
         if (msg.contains("@" + p.getName().getString()) || msg.contains("@" + p.getDisplayName().getString()))
-            ExtraSounds.playSound(ExtraSounds.config.chatMention);
+            ExtraSounds.playSound(Sounds.CHAT_MENTION);
         else
-            ExtraSounds.playSound(ExtraSounds.config.chat);
+            ExtraSounds.playSound(Sounds.CHAT);
     }
 }
