@@ -32,21 +32,21 @@
                   "volume": {
                     "type": "number",
                     "description": "The volume for playing this sound. Value is a decimal between 0.0 and 1.0. If undefined, defaults to 1.0.",
-                    "default": "1.0",
-                    "minimum": 0,
-                    "maximum": 1
+                    "default": 1.0,
+                    "minimum": 0.0,
+                    "maximum": 1.0
                   },
                   "pitch": {
                     "type": "number",
                     "description": "Plays the pitch at the specified value. If undefined, defaults to 1.0, but higher and lower values can be chosen.",
-                    "default": "1.0",
-                    "minimum": 0,
-                    "maximum": 2
+                    "default": 1.0,
+                    "minimum": 0.0,
+                    "maximum": 2.0
                   },
                   "weight": {
                     "type": "integer",
                     "description": "The chance that this sound is selected to play when this sound event is triggered. Defaults to 1. An example: putting 2 in for the value would be like placing in the name twice. Only accepts integers.",
-                    "default": "1"
+                    "default": 1
                   },
                   "stream": {
                     "type": "boolean",
@@ -56,7 +56,7 @@
                   "attenuation_distance": {
                     "type": "integer",
                     "description": "Modify sound reduction rate based on distance. Used by portals, beacons, and conduits. Defaults to 16.",
-                    "default": "16"
+                    "default": 16
                   },
                   "preload": {
                     "type": "boolean",
@@ -66,7 +66,7 @@
                   "type": {
                     "type": "string",
                     "description": "Two values are available: \"sound\" and \"event\"; \"sound\" causes the value of \"name\" to be interpreted as the name of a file, while \"event\" causes the value of \"name\" to be interpreted as the name of an already defined event. If undefined, defaults to \"sound\".",
-                    "default": "\"sound\"",
+                    "default": "sound",
                     "enum": [
                       "sound",
                       "event"

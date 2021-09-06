@@ -2,11 +2,11 @@
   "weed": {
     "sounds": [
       {
-        "name": ""
+        "name": "",
+        "volume": 1.0,
+        "type": "event"
       }
     ]
-  },
-  "weed2": {
   }
 }
 
