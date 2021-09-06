@@ -1,6 +1,6 @@
 package dev.stashy.extrasounds;
 
-import net.fabricmc.api.ModInitializer;
+import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.inventory.CraftingResultInventory;
@@ -10,21 +10,15 @@ import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 
 import java.util.Random;
-import java.util.function.Function;
 
-public class ExtraSounds implements ModInitializer
+public class ExtraSounds implements ClientModInitializer
 {
-    private static final Function<SoundEvent, Text> registryTextProvider = T -> new TranslatableText(
-            T.getId().getPath());
-
     private static final Random r = new Random();
 
     @Override
-    public void onInitialize()
+    public void onInitializeClient()
     {
         Sounds.registerAll();
     }
@@ -85,9 +79,12 @@ public class ExtraSounds implements ModInitializer
 
     public static void playSound(SoundEvent snd, float pitch)
     {
-        if (MinecraftClient.getInstance().player != null)
-            MinecraftClient.getInstance().execute(
-                    () -> MinecraftClient.getInstance().player.playSound(snd, SoundCategory.BLOCKS, 0.5f, pitch));
+        if (MinecraftClient.getInstance().player == null)
+            return;
+
+        MinecraftClient.getInstance().execute(
+                () -> MinecraftClient.getInstance().player.playSound(snd, SoundCategory.BLOCKS, 1f, pitch));
+        System.out.println(snd.getId());
     }
 
     public static float getRandomPitch(float pitch, float pitchRange)
