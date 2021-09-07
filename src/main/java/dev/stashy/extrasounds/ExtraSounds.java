@@ -16,6 +16,7 @@ import java.util.Random;
 public class ExtraSounds implements ClientModInitializer
 {
     private static final Random r = new Random();
+    private static long lastPlayed = System.currentTimeMillis();
 
     @Override
     public void onInitializeClient()
@@ -58,18 +59,11 @@ public class ExtraSounds implements ClientModInitializer
         }
     }
 
-    private static long lastPlayed = System.currentTimeMillis();
-
     public static void playItemSound(ItemStack stack, boolean pickup)
     {
-        long now = System.currentTimeMillis();
-        if (now - lastPlayed > 5)
-        {
-            SoundEvent e = Sounds.ITEM_PICK;
-            playSound(e,
-                      getItemPitch(1f, 0.1f, pickup));
-            lastPlayed = now;
-        }
+        SoundEvent e = Sounds.ITEM_PICK;
+        playSound(e,
+                  getItemPitch(1f, 0.1f, pickup));
     }
 
     public static void playSound(SoundEvent snd)
@@ -81,9 +75,13 @@ public class ExtraSounds implements ClientModInitializer
     {
         if (MinecraftClient.getInstance().player == null)
             return;
-
-        MinecraftClient.getInstance().execute(
-                () -> MinecraftClient.getInstance().player.playSound(snd, SoundCategory.BLOCKS, 1f, pitch));
+        long now = System.currentTimeMillis();
+        if (now - lastPlayed > 5)
+        {
+            MinecraftClient.getInstance().execute(
+                    () -> MinecraftClient.getInstance().player.playSound(snd, SoundCategory.BLOCKS, 1f, pitch));
+            lastPlayed = now;
+        }
     }
 
     public static float getRandomPitch(float pitch, float pitchRange)
