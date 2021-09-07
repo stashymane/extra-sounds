@@ -10,6 +10,8 @@ import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 import java.util.Random;
 
@@ -62,7 +64,8 @@ public class ExtraSounds implements ClientModInitializer
 
     public static void playItemSound(ItemStack stack, boolean pickup)
     {
-        SoundEvent e = Sounds.ITEM_PICK;
+        Identifier id = Identifier.tryParse("extrasounds:item.click." + Registry.ITEM.getId(stack.getItem()).getPath());
+        SoundEvent e = Registry.SOUND_EVENT.get(id);
         playSound(e,
                   getItemPitch(1f, 0.1f, pickup));
     }
