@@ -1,8 +1,27 @@
 # Changelog
 
+## [2.0.0] - N/A
+
+### Added
+
+- Resource pack support (we now depend on ARRP)
+- Better modded item support
+
+### Changed
+
+- Default sounds, including...
+    - Default click (now sounds like wood)
+    - Item delete & item clone (sounds like items sizzling in lava)
+    - Chat mention (different chime)
+
+### Removed
+
+- Config file & screen (replaced by resource pack support)
+
 ## [1.4.1] - 2021-06-10
 
 ### Changed
+
 - Ported to 1.17
 
 ## [1.4.0] - 2021-05-23
