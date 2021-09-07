@@ -1,12 +1,126 @@
 {
-  "weed": {
+  "generic.click": {
     "sounds": [
       {
-        "name": "",
-        "volume": 1.0,
+        "name": "minecraft:random/wood_click",
+        "volume": 0.2,
+        "pitch": 1.6
+      }
+    ]
+  },
+  "generic.scroll": {
+    "sounds": [
+      {
+        "name": "minecraft:note/hat",
+        "volume": 0.15,
+        "pitch": 1.8
+      }
+    ]
+  },
+  "chat.message": {
+    "sounds": [
+      {
+        "name": "minecraft:note/hat",
+        "volume": 0.5,
+        "pitch": 2.0
+      }
+    ]
+  },
+  "chat.mention": {
+    "sounds": [
+      {
+        "name": "minecraft:note/icechime",
+        "volume": 0.5,
+        "pitch": 2.0
+      }
+    ]
+  },
+  "hotbar_scroll": {
+    "sounds": [
+      {
+        "name": "extrasounds:generic.scroll",
+        "type": "event"
+      }
+    ]
+  },
+  "inventory.open": {
+    "sounds": [
+      {
+        "name": "minecraft:ui/toast/in",
+        "volume": 0.1,
+        "pitch": 2.0
+      }
+    ]
+  },
+  "inventory.close": {
+    "sounds": [
+      {
+        "name": "minecraft:ui/toast/out",
+        "volume": 0.1,
+        "pitch": 2.0
+      }
+    ]
+  },
+  "inventory.scroll": {
+    "sounds": [
+      {
+        "name": "extrasounds:generic.scroll",
+        "type": "event"
+      }
+    ]
+  },
+  "item.drop": {
+    "sounds": [
+      {
+        "name": "minecraft:random/bow",
+        "volume": 0.2,
+        "pitch": 1.5
+      }
+    ]
+  },
+  "item.pickup": {
+    "sounds": [
+      {
+        "name": "extrasounds:generic.click",
+        "type": "event"
+      }
+    ]
+  },
+  "item.pickup_all": {
+    "sounds": [
+      {
+        "name": "minecraft:random/pop",
+        "volume": 0.1,
+        "pitch": 1.5
+      }
+    ]
+  },
+  "item.clone": {
+    "sounds": [
+      {
+        "name": "minecraft:random/fizz",
+        "volume": 0.2,
+        "pitch": 2
+      }
+    ]
+  },
+  "item.delete": {
+    "sounds": [
+      {
+        "name": "minecraft:random/fizz",
+        "volume": 0.2,
+        "pitch": 1.8
+      }
+    ]
+  },
+  "item.drag": {
+    "sounds": [
+      {
+        "name": "extrasounds:generic.click",
+        "volume": 0.6,
+        "pitch": 1.6,
         "type": "event"
       }
     ]
   }
 }
-
