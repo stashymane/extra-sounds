@@ -14,6 +14,6 @@ public class HotbarScrollSound
     @Inject(at = @At("RETURN"), method = "scrollInHotbar")
     private void hotbarSound(CallbackInfo info)
     {
-        ExtraSounds.playSound(Sounds.INVENTORY_SCROLL, 1.2f);
+        ExtraSounds.playSound(Sounds.HOTBAR_SCROLL, 1f);
     }
 }
