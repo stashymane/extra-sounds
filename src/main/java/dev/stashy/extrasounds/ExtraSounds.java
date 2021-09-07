@@ -84,7 +84,6 @@ public class ExtraSounds implements ClientModInitializer
 
         MinecraftClient.getInstance().execute(
                 () -> MinecraftClient.getInstance().player.playSound(snd, SoundCategory.BLOCKS, 1f, pitch));
-        System.out.println(snd.getId());
     }
 
     public static float getRandomPitch(float pitch, float pitchRange)
