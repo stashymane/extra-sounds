@@ -22,6 +22,7 @@ public class ExtraSounds implements ClientModInitializer
     public void onInitializeClient()
     {
         Sounds.registerAll();
+        SoundPack.init();
     }
 
     public static void inventoryClick(Slot slot, ItemStack cursor, SlotActionType actionType)
