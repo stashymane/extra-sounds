@@ -7,26 +7,30 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-import java.nio.file.Path;
-
-public class SoundPack
+public class SoundPackLoader
 {
     public static RuntimeResourcePack rp = RuntimeResourcePack.create("extrasounds:sounds");
+    private static final Identifier soundsJsonId = new Identifier("extrasounds:sounds.json");
 
     public static void init()
     {
-        Registry.ITEM.getIds().forEach(SoundPack::loadItem);
+        Registry.ITEM.getIds().forEach(SoundPackLoader::loadItem);
+        Registry.BLOCK.getIds().forEach(SoundPackLoader::loadBlock);
         RegistryEntryAddedCallback.event(Registry.ITEM).register((rawId, id, object) -> loadItem(id));
+        RegistryEntryAddedCallback.event(Registry.BLOCK).register(((rawId, id, object) -> loadBlock(id)));
         RRPCallback.AFTER_VANILLA.register(a -> a.add(rp));
-        rp.dump(Path.of("D:\\dump"));
     }
 
     public static void loadItem(Identifier id)
     {
         Identifier snd = new Identifier("extrasounds:item.click." + id.getPath());
-        rp.addAsset(Identifier.tryParse("extrasounds:sounds.json"),
-                    ("{\"" + snd.getPath() + "\": {\"sounds\": [ \"minecraft:random/wood_click\" ]}}").getBytes());
-
+        //TODO add sound asset
         Registry.register(Registry.SOUND_EVENT, snd, new SoundEvent(snd));
+    }
+
+    public static void loadBlock(Identifier id)
+    {
+        //Block b = Registry.BLOCK.get(id);
+        //TODO replace current sound to block group sound
     }
 }

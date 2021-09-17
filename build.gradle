@@ -26,7 +26,6 @@ dependencies {
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
     modImplementation("net.devtech:arrp:0.5.1")
-
 }
 
 processResources {
