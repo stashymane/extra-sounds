@@ -30,15 +30,18 @@ public class SoundPackLoader
 
     public static void init()
     {
-        Registry.ITEM.getIds().forEach(SoundPackLoader::loadItem);
-        Registry.BLOCK.getIds().forEach(SoundPackLoader::loadBlock);
+        loadItemSounds();
         RegistryEntryAddedCallback.event(Registry.ITEM).register((rawId, id, object) -> loadItem(id));
         RegistryEntryAddedCallback.event(Registry.BLOCK).register(((rawId, id, object) -> loadBlock(id)));
-        genericPack.addLazyResource(ResourceType.CLIENT_RESOURCES, soundsJsonId, (runtimeResourcePack, identifier) -> {
-            System.out.println(gson.toJson(entries));
-            return gson.toJson(entries).getBytes();
-        });
+        genericPack.addLazyResource(ResourceType.CLIENT_RESOURCES, soundsJsonId,
+                                    (runtimeResourcePack, identifier) -> gson.toJson(entries).getBytes());
         RRPCallback.BEFORE_VANILLA.register((packs) -> packs.add(genericPack));
+    }
+
+    private static void loadItemSounds()
+    {
+        Registry.ITEM.getIds().forEach(SoundPackLoader::loadItem);
+        Registry.BLOCK.getIds().forEach(SoundPackLoader::loadBlock);
     }
 
     public static void loadItem(Identifier id)
@@ -55,9 +58,12 @@ public class SoundPackLoader
     {
         Block b = Registry.BLOCK.get(id);
         String soundId = b.getSoundGroup(b.getDefaultState()).getPlaceSound().getId().toString();
+        float vol = 0.2f;
+        if (soundId.equals("minecraft:block.grass.place") || soundId.equals("mineraft:block.slime_block.place"))
+            vol = 0.1f;
         entries.put("item.click." + id.getPath(),
                     new SoundEntry(List.of(
-                            new Sound(soundId, 0.2f, 1.7f, 1, Sound.RegistrationType.SOUND_EVENT, false, false, 0)
+                            new Sound(soundId, vol, 1.7f, 1, Sound.RegistrationType.SOUND_EVENT, false, false, 0)
                     ), false, null));
     }
 }
