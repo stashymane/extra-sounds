@@ -9,7 +9,6 @@
     "HotbarScrollSound",
     "HotbarSlotSound",
     "ItemPickSound",
-    "accessor.BucketItemAccessor",
     "inventory.CreativeInventoryClickSounds",
     "inventory.CreativeListScroll",
     "inventory.InventoryClickSounds",
