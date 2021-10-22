@@ -5,7 +5,6 @@ import com.google.gson.GsonBuilder;
 import dev.stashy.extrasounds.json.SoundSerializer;
 import net.devtech.arrp.api.RRPCallback;
 import net.devtech.arrp.api.RuntimeResourcePack;
-import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
 import net.minecraft.block.Block;
 import net.minecraft.client.sound.Sound;
 import net.minecraft.client.sound.SoundEntry;
@@ -22,7 +21,6 @@ public class SoundPackLoader
 {
     private static RuntimeResourcePack genericPack = RuntimeResourcePack.create("extrasounds");
     private static final Identifier soundsJsonId = new Identifier("extrasounds:sounds.json");
-    private static final Map<String, SoundEntry> entries = new HashMap<>();
 
     private static final Gson gson = new GsonBuilder()
             .registerTypeAdapter(Sound.class, new SoundSerializer())
@@ -30,21 +28,20 @@ public class SoundPackLoader
 
     public static void init()
     {
-        loadItemSounds();
-        RegistryEntryAddedCallback.event(Registry.ITEM).register((rawId, id, object) -> loadItem(id));
-        RegistryEntryAddedCallback.event(Registry.BLOCK).register(((rawId, id, object) -> loadBlock(id)));
         genericPack.addLazyResource(ResourceType.CLIENT_RESOURCES, soundsJsonId,
-                                    (runtimeResourcePack, identifier) -> gson.toJson(entries).getBytes());
+                                    (runtimeResourcePack, identifier) -> generateJson());
         RRPCallback.BEFORE_VANILLA.register((packs) -> packs.add(genericPack));
     }
 
-    private static void loadItemSounds()
+    private static byte[] generateJson()
     {
-        Registry.ITEM.getIds().forEach(SoundPackLoader::loadItem);
-        Registry.BLOCK.getIds().forEach(SoundPackLoader::loadBlock);
+        Map<String, SoundEntry> entries = new HashMap<>();
+        Registry.ITEM.getIds().forEach((i) -> loadItem(i, entries));
+        Registry.BLOCK.getIds().forEach((i) -> loadBlock(i, entries));
+        return gson.toJson(entries).getBytes();
     }
 
-    public static void loadItem(Identifier id)
+    public static void loadItem(Identifier id, Map<String, SoundEntry> entries)
     {
         Identifier snd = new Identifier("extrasounds:item.click." + id.getPath());
         entries.put(snd.getPath(), new SoundEntry(List.of(
@@ -54,7 +51,7 @@ public class SoundPackLoader
         Registry.register(Registry.SOUND_EVENT, snd, new SoundEvent(snd));
     }
 
-    public static void loadBlock(Identifier id)
+    public static void loadBlock(Identifier id, Map<String, SoundEntry> entries)
     {
         Block b = Registry.BLOCK.get(id);
         String soundId = b.getSoundGroup(b.getDefaultState()).getPlaceSound().getId().toString();
