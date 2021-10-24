@@ -2,9 +2,14 @@
 
 ## [2.0.0] - N/A
 
+### IMPORTANT!
+
+ExtraSounds now depends on [ARRP](https://github.com/Devan-Kerman/ARRP). Cloth Config is no longer required, as the
+config screen is replaced by resource packs.
+
 ### Added
 
-- Resource pack support (we now depend on ARRP)
+- Resource pack support (thanks to ARRP)
 - Better modded item support
 
 ### Changed
@@ -13,10 +18,11 @@
     - Default click (now sounds like wood)
     - Item delete & item clone (sounds like items sizzling in lava)
     - Chat mention (different chime)
+    - Other minor changes
 
 ### Removed
 
-- Config file & screen (replaced by resource pack support)
+- Config file & screen
 
 ## [1.4.1] - 2021-06-10
 
