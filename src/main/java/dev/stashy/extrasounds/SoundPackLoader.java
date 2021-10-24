@@ -38,7 +38,9 @@ public class SoundPackLoader
         Map<String, SoundEntry> entries = new HashMap<>();
         Registry.ITEM.getIds().forEach((i) -> loadItem(i, entries));
         Registry.BLOCK.getIds().forEach((i) -> loadBlock(i, entries));
-        return gson.toJson(entries).getBytes();
+        byte[] json = gson.toJson(entries).getBytes();
+        DebugUtils.exportSoundsJson(json);
+        return json;
     }
 
     public static void loadItem(Identifier id, Map<String, SoundEntry> entries)

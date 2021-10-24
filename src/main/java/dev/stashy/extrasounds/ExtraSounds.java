@@ -1,5 +1,6 @@
 package dev.stashy.extrasounds;
 
+import dev.stashy.extrasounds.debug.DebugUtils;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.inventory.CraftingInventory;
@@ -25,6 +26,7 @@ public class ExtraSounds implements ClientModInitializer
     {
         Sounds.registerAll();
         SoundPackLoader.init();
+        DebugUtils.init();
     }
 
     public static void inventoryClick(Slot slot, ItemStack cursor, SlotActionType actionType)
