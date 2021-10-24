@@ -15,7 +15,7 @@ public class DebugUtils
     public static final boolean debug = System.getenv().containsKey(debugVar)
             && System.getenv(debugVar).equals("true");
     public static final String debugPath = System.getenv().containsKey(debugPathVar)
-            ? System.getenv(debugPathVar) : "C:/";
+            ? System.getenv(debugPathVar) : "C:\\";
 
     public static void init()
     {
@@ -29,11 +29,10 @@ public class DebugUtils
         if (!debug) return;
         try
         {
-            Path p = Path.of("D:\\test.json");
+            Path p = Path.of(debugPath).resolve("sounds.json");
             if (!Files.exists(p))
                 Files.createFile(p);
-            Files.write(Path.of(debugPath).resolve("sounds.json"), jsonData,
-                        StandardOpenOption.TRUNCATE_EXISTING);
+            Files.write(p, jsonData, StandardOpenOption.TRUNCATE_EXISTING);
         }
         catch (IOException e)
         {
