@@ -398,6 +398,1279 @@
     ],
     "replace": true
   },
+  "item.click.amethyst_shard": {
+    "sounds": [
+      {
+        "name": "minecraft:block.amethyst_block.place",
+        "volume": 0.2,
+        "pitch": 2,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.anvil": {
+    "sounds": [
+      {
+        "name": "minecraft:block.anvil.place",
+        "volume": 0.05,
+        "pitch": 1.7,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.apple": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet_slippery",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.armor_stand": {
+    "sounds": [
+      {
+        "name": "minecraft:entity.armor_stand.break",
+        "volume": 0.1,
+        "pitch": 2,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.baked_potato": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.food_dry",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.beef": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.meat",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.beetroot": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.crunchy_dry",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.beetroot_seeds": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.dust",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.beetroot_soup": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.bowl",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.bell": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.click.anvil",
+        "volume": 1,
+        "pitch": 1.5,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.blaze_powder": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.dust",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.blaze_rod": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet_slippery",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.bone": {
+    "sounds": [
+      {
+        "name": "minecraft:block.bone_block.place",
+        "volume": 0.2,
+        "pitch": 2,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.bone_meal": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.dust",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.bowl": {
+    "sounds": [
+      {
+        "name": "minecraft:block.wood.place",
+        "volume": 0.2,
+        "pitch": 1.7,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.bread": {
+    "sounds": [
+      {
+        "name": "minecraft:block.wool.place",
+        "volume": 0.2,
+        "pitch": 1.8,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.brick": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.metal",
+        "pitch": 0.8,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.brown_mushroom_block": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.click.mushroom_block",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.carrot": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.crunchy_dry",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.charcoal": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.metal",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.chicken": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.chipped_anvil": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.click.anvil",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.chorus_fruit": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet_slippery",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.clay_ball": {
+    "sounds": [
+      {
+        "name": "minecraft:block.rooted_dirt.place",
+        "volume": 0.2,
+        "pitch": 1.7,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.clock": {
+    "sounds": [
+      {
+        "name": "minecraft:item.armor.equip_gold",
+        "volume": 0.2,
+        "pitch": 1.7,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.coal": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.metal",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.cobweb": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.dust",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.cocoa_beans": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.dust",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.cod": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.meat",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.cooked_beef": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.meat",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.cooked_chicken": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.meat",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.cooked_cod": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.meat",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.cooked_mutton": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.meat",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.cooked_porkchop": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.meat",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.cooked_rabbit": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.meat",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.cooked_salmon": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.meat",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.cookie": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.crunchy_dry",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.copper_ingot": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.metal",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.damaged_anvil": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.click.anvil",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.diamond": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.metal",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.diamond_horse_armor": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.gear.diamond",
+        "pitch": 0.8,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.dragon_breath": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.potion",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.dried_kelp": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.crunchy_dry",
+        "pitch": 1.2,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.egg": {
+    "sounds": [
+      {
+        "name": "minecraft:block.stone.place",
+        "volume": 0.2,
+        "pitch": 1.7,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.emerald": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.metal",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.enchanted_golden_apple": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet_slippery",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.end_crystal": {
+    "sounds": [
+      {
+        "name": "minecraft:block.shroomlight.place",
+        "volume": 0.1,
+        "pitch": 1.4,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.ender_eye": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet_slippery",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.ender_pearl": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet_slippery",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.feather": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.dust",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.fermented_spider_eye": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.fire_charge": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.gear.generic",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.firework_rocket": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.gear.generic",
+        "pitch": 1.2,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.firework_star": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.dust",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.flint": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.metal",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.flint_and_steel": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.metal",
+        "volume": 0.2,
+        "pitch": 1.7,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.ghast_tear": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet_slippery",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.glass_bottle": {
+    "sounds": [
+      {
+        "name": "minecraft:block.glass.place",
+        "volume": 0.2,
+        "pitch": 1.7,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.glistering_melon_slice": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.glow_berries": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.crunchy_dry",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.glow_ink_sac": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet_slippery",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.glowstone_dust": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.dust",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.gold_ingot": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.metal",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.gold_nugget": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.metal_bits",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.golden_apple": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet_slippery",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.golden_carrot": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.food_dry",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.golden_horse_armor": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.gear.golden",
+        "pitch": 0.8,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.gunpowder": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.dust",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.heart_of_the_sea": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet",
+        "pitch": 0.8,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.honey_bottle": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.potion",
+        "pitch": 0.7,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.honeycomb": {
+    "sounds": [
+      {
+        "name": "minecraft:block.honey_block.place",
+        "volume": 0.2,
+        "pitch": 2,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.ink_sac": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet_slippery",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.iron_horse_armor": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.gear.iron",
+        "pitch": 0.8,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.iron_ingot": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.metal",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.iron_nugget": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.metal_bits",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.ladder": {
+    "sounds": [
+      {
+        "name": "minecraft:block.ladder.step",
+        "volume": 0.15,
+        "pitch": 2,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.lapis_lazuli": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.metal",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.leather": {
+    "sounds": [
+      {
+        "name": "minecraft:item.armor.equip_leather",
+        "volume": 0.2,
+        "pitch": 1.7,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.leather_horse_armor": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.gear.leather",
+        "pitch": 0.8,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.magma_cream": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet_slippery",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.melon_seeds": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.dust",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.melon_slice": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.milk_bucket": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.click.water_bucket",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.mushroom_block": {
+    "sounds": [
+      {
+        "name": "minecraft:block.stem.place",
+        "volume": 0.2,
+        "pitch": 1.7,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.mushroom_stem": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.click.mushroom_block",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.mushroom_stew": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.bowl",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.mutton": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.meat",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.nautilus_shell": {
+    "sounds": [
+      {
+        "name": "minecraft:block.tuff.place",
+        "volume": 0.2,
+        "pitch": 1.8,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.nether_brick": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.click.brick",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.nether_star": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.click.end_crystal",
+        "pitch": 1.6,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.netherite_ingot": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.metal",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.netherite_scrap": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.metal_sheets",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.painting": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.frame",
+        "type": "event",
+        "pitch": 0.8
+      }
+    ],
+    "replace": true
+  },
+  "item.click.paper": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.paper",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.phantom_membrane": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet_slippery",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.poisonous_potato": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.crunchy_dry",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.popped_chorus_fruit": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet_slippery",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.porkchop": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.meat",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.potato": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.crunchy_dry",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.powder_snow_bucket": {
+    "sounds": [
+      {
+        "name": "minecraft:item.bucket.empty_powder_snow",
+        "volume": 0.3,
+        "pitch": 1.7,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.prismarine_crystals": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.loose_metal",
+        "pitch": 1.2,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.prismarine_shard": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.loose_metal",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.pufferfish": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.pumpkin_pie": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.pumpkin_seeds": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.dust",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.quartz": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.loose_metal",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.rabbit": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.meat",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.rabbit_foot": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.click.rabbit_hide",
+        "pitch": 1.2,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.rabbit_hide": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.click.leather",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.rabbit_stew": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.bowl",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.raw_copper": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.loose_metal",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.raw_gold": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.loose_metal",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.raw_iron": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.loose_metal",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.red_mushroom_block": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.click.mushroom_block",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.redstone": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.dust",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.rotten_flesh": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.salmon": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.meat",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.scute": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet_slippery",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.shield": {
+    "sounds": [
+      {
+        "name": "minecraft:item.armor.equip_iron",
+        "volume": 0.2,
+        "pitch": 1.6,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.shulker_shell": {
+    "sounds": [
+      {
+        "name": "minecraft:item.armor.equip_iron",
+        "volume": 0.2,
+        "pitch": 1.5,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.slime_ball": {
+    "sounds": [
+      {
+        "name": "minecraft:block.slime_block.place",
+        "volume": 0.1,
+        "pitch": 2,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.slime_block": {
+    "sounds": [
+      {
+        "name": "minecraft:block.slime_block.place",
+        "volume": 0.1,
+        "pitch": 1.7,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.snowball": {
+    "sounds": [
+      {
+        "name": "minecraft:block.snow.place",
+        "volume": 0.2,
+        "pitch": 2,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.spider_eye": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet_slippery",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.stick": {
+    "sounds": [
+      {
+        "name": "minecraft:block.wood.place",
+        "volume": 0.2,
+        "pitch": 2,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.string": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.dust",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.sugar": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.dust",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.suspicious_stew": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.bowl",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.sweet_berries": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.crunchy_dry",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.totem_of_undying": {
+    "sounds": [
+      {
+        "name": "minecraft:item.armor.equip_generic",
+        "volume": 0.2,
+        "pitch": 2,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.trident": {
+    "sounds": [
+      {
+        "name": "minecraft:item.armor.equip_diamond",
+        "volume": 0.2,
+        "pitch": 1.7,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.tropical_fish": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.wet",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.wheat": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.hay",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.wheat_seeds": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.dust",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
   "item.clone": {
     "sounds": [
       {
