@@ -4,13 +4,14 @@
 
 ### IMPORTANT!
 
-ExtraSounds now depends on [ARRP](https://github.com/Devan-Kerman/ARRP). Cloth Config is no longer required, as the
-config screen is replaced by resource packs.
+ExtraSounds no longer depends on Cloth Config! All configuration is now done via resource packs.  
+The only remaining dependency is Fabric API.
 
 ### Added
 
 - Resource pack support (thanks to ARRP)
 - Better modded item support
+- Effect sounds (buffs/debuffs)
 
 ### Changed
 
