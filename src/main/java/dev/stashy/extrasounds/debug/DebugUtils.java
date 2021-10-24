@@ -32,7 +32,7 @@ public class DebugUtils
             Path p = Path.of("D:\\test.json");
             if (!Files.exists(p))
                 Files.createFile(p);
-            Files.write(Path.of("D:/test.json"), jsonData,
+            Files.write(Path.of(debugPath).resolve("sounds.json"), jsonData,
                         StandardOpenOption.TRUNCATE_EXISTING);
         }
         catch (IOException e)

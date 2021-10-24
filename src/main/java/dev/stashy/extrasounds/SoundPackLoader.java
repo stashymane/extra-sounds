@@ -2,6 +2,7 @@ package dev.stashy.extrasounds;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import dev.stashy.extrasounds.debug.DebugUtils;
 import dev.stashy.extrasounds.json.SoundSerializer;
 import net.devtech.arrp.api.RRPCallback;
 import net.devtech.arrp.api.RuntimeResourcePack;
