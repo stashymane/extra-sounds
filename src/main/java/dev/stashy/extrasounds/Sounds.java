@@ -42,6 +42,18 @@ public class Sounds
     public static final Identifier ITEM_DRAG_ID = new Identifier("extrasounds:item.drag");
     public static SoundEvent ITEM_DRAG = new SoundEvent(ITEM_DRAG_ID);
 
+    public static final Identifier EFFECT_ADD_POSITIVE_ID = new Identifier("extrasounds:effect.add.positive");
+    public static SoundEvent EFFECT_ADD_POSITIVE = new SoundEvent(EFFECT_ADD_POSITIVE_ID);
+
+    public static final Identifier EFFECT_ADD_NEGATIVE_ID = new Identifier("extrasounds:effect.add.negative");
+    public static SoundEvent EFFECT_ADD_NEGATIVE = new SoundEvent(EFFECT_ADD_NEGATIVE_ID);
+
+    public static final Identifier EFFECT_REMOVE_POSITIVE_ID = new Identifier("extrasounds:effect.remove.positive");
+    public static SoundEvent EFFECT_REMOVE_POSITIVE = new SoundEvent(EFFECT_REMOVE_POSITIVE_ID);
+
+    public static final Identifier EFFECT_REMOVE_NEGATIVE_ID = new Identifier("extrasounds:effect.remove.negative");
+    public static SoundEvent EFFECT_REMOVE_NEGATIVE = new SoundEvent(EFFECT_REMOVE_NEGATIVE_ID);
+
     protected static void registerAll()
     {
         register(CHAT_ID, CHAT);

@@ -1724,5 +1724,45 @@
         "pitch": 1.5
       }
     ]
+  },
+  "effect.add.positive": {
+    "sounds": [
+      {
+        "name": "minecraft:block.chorus_flower.grow",
+        "volume": 0.6,
+        "pitch": 2,
+        "type": "event"
+      }
+    ]
+  },
+  "effect.add.negative": {
+    "sounds": [
+      {
+        "name": "minecraft:block.conduit.ambient.short",
+        "volume": 0.7,
+        "pitch": 2,
+        "type": "event"
+      }
+    ]
+  },
+  "effect.remove.positive": {
+    "sounds": [
+      {
+        "name": "minecraft:block.chorus_flower.grow",
+        "volume": 0.6,
+        "pitch": 1,
+        "type": "event"
+      }
+    ]
+  },
+  "effect.remove.negative": {
+    "sounds": [
+      {
+        "name": "minecraft:particle.soul_escape",
+        "volume": 0.6,
+        "pitch": 0.8,
+        "type": "event"
+      }
+    ]
   }
 }

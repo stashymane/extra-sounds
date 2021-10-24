@@ -1,5 +1,7 @@
 package dev.stashy.extrasounds.debug;
 
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.sound.SoundEvent;
 
 import java.io.IOException;
@@ -45,5 +47,12 @@ public class DebugUtils
         if (!debug) return;
         if (snd.getId().getPath().startsWith("item.click"))
             System.out.println("Playing sound: " + snd.getId());
+    }
+
+    public static void effectLog(StatusEffect effect, boolean add)
+    {
+        boolean positive = !effect.getCategory().equals(StatusEffectCategory.HARMFUL);
+        if (!debug) return;
+        System.out.println((positive ? "Positive" : "Negative") + " effect " + (add ? "added" : "removed"));
     }
 }

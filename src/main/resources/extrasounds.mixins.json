@@ -7,6 +7,7 @@
   "client": [
     "BucketFluidAccessor",
     "ChatSound",
+    "EffectMixin",
     "HotbarScrollSound",
     "HotbarSlotSound",
     "ItemPickSound",

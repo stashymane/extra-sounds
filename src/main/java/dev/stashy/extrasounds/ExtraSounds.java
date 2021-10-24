@@ -3,6 +3,8 @@ package dev.stashy.extrasounds;
 import dev.stashy.extrasounds.debug.DebugUtils;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.inventory.CraftingResultInventory;
 import net.minecraft.item.ItemStack;
@@ -70,6 +72,23 @@ public class ExtraSounds implements ClientModInitializer
         SoundEvent e = Registry.SOUND_EVENT.get(id);
         playSound(e,
                   getItemPitch(1f, 0.1f, pickup));
+    }
+
+    public static void playEffectSound(StatusEffect effect, boolean add)
+    {
+        DebugUtils.effectLog(effect, add);
+        if (add)
+            switch (effect.getCategory())
+            {
+                case HARMFUL -> playSound(Sounds.EFFECT_ADD_NEGATIVE);
+                case NEUTRAL, BENEFICIAL -> playSound(Sounds.EFFECT_ADD_POSITIVE);
+            }
+        else
+            switch (effect.getCategory())
+            {
+                case HARMFUL -> playSound(Sounds.EFFECT_REMOVE_NEGATIVE);
+                case NEUTRAL, BENEFICIAL -> playSound(Sounds.EFFECT_REMOVE_POSITIVE);
+            }
     }
 
     public static void playSound(SoundEvent snd)
