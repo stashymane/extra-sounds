@@ -118,6 +118,8 @@ public class SoundPackLoader
             return "extrasounds:item.category.gear.golden";
         else if (i instanceof LeadItem || i instanceof ElytraItem || i instanceof SaddleItem)
             return "extrasounds:item.category.gear.leather";
+        else if (i instanceof BowItem || i instanceof CrossbowItem || i instanceof FishingRodItem || i instanceof OnAStickItem)
+            return "extrasounds:item.category.gear.generic";
         else if (i instanceof BucketItem b)
         {
             Fluid f = ((BucketFluidAccessor) b).getFluid();
