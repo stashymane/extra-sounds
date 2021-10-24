@@ -1,4 +1,22 @@
 {
+  "chat.mention": {
+    "sounds": [
+      {
+        "name": "minecraft:note/icechime",
+        "volume": 0.5,
+        "pitch": 2.0
+      }
+    ]
+  },
+  "chat.message": {
+    "sounds": [
+      {
+        "name": "minecraft:note/hat",
+        "volume": 0.5,
+        "pitch": 2.0
+      }
+    ]
+  },
   "generic.click": {
     "sounds": [
       {
@@ -17,24 +35,6 @@
       }
     ]
   },
-  "chat.message": {
-    "sounds": [
-      {
-        "name": "minecraft:note/hat",
-        "volume": 0.5,
-        "pitch": 2.0
-      }
-    ]
-  },
-  "chat.mention": {
-    "sounds": [
-      {
-        "name": "minecraft:note/icechime",
-        "volume": 0.5,
-        "pitch": 2.0
-      }
-    ]
-  },
   "hotbar_scroll": {
     "sounds": [
       {
@@ -43,19 +43,19 @@
       }
     ]
   },
-  "inventory.open": {
+  "inventory.close": {
     "sounds": [
       {
-        "name": "minecraft:ui/toast/in",
+        "name": "minecraft:ui/toast/out",
         "volume": 0.1,
         "pitch": 2.0
       }
     ]
   },
-  "inventory.close": {
+  "inventory.open": {
     "sounds": [
       {
-        "name": "minecraft:ui/toast/out",
+        "name": "minecraft:ui/toast/in",
         "volume": 0.1,
         "pitch": 2.0
       }
@@ -69,59 +69,16 @@
       }
     ]
   },
-  "item.drop": {
+  "item.category.arrow": {
     "sounds": [
       {
-        "name": "minecraft:random/bow",
+        "name": "minecraft:item.axe.strip",
         "volume": 0.2,
-        "pitch": 1.5
-      }
-    ]
-  },
-  "item.pickup": {
-    "sounds": [
-      {
-        "name": "extrasounds:generic.click",
+        "pitch": 2,
         "type": "event"
       }
-    ]
-  },
-  "item.pickup_all": {
-    "sounds": [
-      {
-        "name": "minecraft:random/pop",
-        "volume": 0.1,
-        "pitch": 1.5
-      }
-    ]
-  },
-  "item.clone": {
-    "sounds": [
-      {
-        "name": "minecraft:random/fizz",
-        "volume": 0.2,
-        "pitch": 2
-      }
-    ]
-  },
-  "item.delete": {
-    "sounds": [
-      {
-        "name": "minecraft:random/fizz",
-        "volume": 0.2,
-        "pitch": 1.8
-      }
-    ]
-  },
-  "item.drag": {
-    "sounds": [
-      {
-        "name": "extrasounds:generic.click",
-        "volume": 0.6,
-        "pitch": 1.6,
-        "type": "event"
-      }
-    ]
+    ],
+    "replace": true
   },
   "item.category.banner": {
     "sounds": [
@@ -132,6 +89,17 @@
         "type": "event"
       }
     ]
+  },
+  "item.category.boat": {
+    "sounds": [
+      {
+        "name": "minecraft:block.wood.step",
+        "volume": 0.2,
+        "pitch": 1.5,
+        "type": "event"
+      }
+    ],
+    "replace": true
   },
   "item.category.bowl": {
     "sounds": [
@@ -173,12 +141,23 @@
       }
     ]
   },
+  "item.category.frame": {
+    "sounds": [
+      {
+        "name": "minecraft:entity.item_frame.place",
+        "volume": 0.2,
+        "pitch": 2,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
   "item.category.gear.chain": {
     "sounds": [
       {
-        "name": "minecraft:item.armor.equip_chain",
+        "name": "minecraft:block.chain.place",
         "volume": 0.2,
-        "pitch": 1.7,
+        "pitch": 1.1,
         "type": "event"
       }
     ]
@@ -188,7 +167,7 @@
       {
         "name": "minecraft:item.armor.equip_diamond",
         "volume": 0.2,
-        "pitch": 1.6,
+        "pitch": 1.4,
         "type": "event"
       }
     ]
@@ -208,7 +187,7 @@
       {
         "name": "minecraft:item.armor.equip_gold",
         "volume": 0.2,
-        "pitch": 1.6,
+        "pitch": 1.4,
         "type": "event"
       }
     ]
@@ -218,7 +197,7 @@
       {
         "name": "minecraft:item.armor.equip_iron",
         "volume": 0.2,
-        "pitch": 1.6,
+        "pitch": 1.4,
         "type": "event"
       }
     ]
@@ -228,7 +207,7 @@
       {
         "name": "minecraft:item.armor.equip_leather",
         "volume": 0.2,
-        "pitch": 1.7,
+        "pitch": 1.4,
         "type": "event"
       }
     ]
@@ -238,7 +217,7 @@
       {
         "name": "minecraft:item.armor.equip_netherite",
         "volume": 0.2,
-        "pitch": 1.6,
+        "pitch": 1.3,
         "type": "event"
       }
     ]
@@ -248,7 +227,17 @@
       {
         "name": "minecraft:item.armor.equip_generic",
         "volume": 0.2,
-        "pitch": 1.5,
+        "pitch": 1.2,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.gear.turtle": {
+    "sounds": [
+      {
+        "name": "minecraft:item.armor.equip_turtle",
+        "volume": 0.15,
+        "pitch": 1.7,
         "type": "event"
       }
     ]
@@ -272,6 +261,17 @@
         "type": "event"
       }
     ]
+  },
+  "item.category.leaves": {
+    "sounds": [
+      {
+        "name": "minecraft:block.azalea.hit",
+        "volume": 0.3,
+        "pitch": 1.2,
+        "type": "event"
+      }
+    ],
+    "replace": true
   },
   "item.category.loose_metal": {
     "sounds": [
@@ -323,6 +323,17 @@
       }
     ]
   },
+  "item.category.minecart": {
+    "sounds": [
+      {
+        "name": "minecraft:block.nether_bricks.place",
+        "volume": 0.2,
+        "pitch": 0.6,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
   "item.category.music_disc": {
     "sounds": [
       {
@@ -331,6 +342,28 @@
         "type": "event"
       }
     ]
+  },
+  "item.category.paper": {
+    "sounds": [
+      {
+        "name": "minecraft:item.book.page_turn",
+        "volume": 0.15,
+        "pitch": 2,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.category.potion": {
+    "sounds": [
+      {
+        "name": "minecraft:item.bottle.fill",
+        "volume": 0.15,
+        "pitch": 2,
+        "type": "event"
+      }
+    ],
+    "replace": true
   },
   "item.category.rail": {
     "sounds": [
@@ -364,5 +397,59 @@
       }
     ],
     "replace": true
+  },
+  "item.clone": {
+    "sounds": [
+      {
+        "name": "minecraft:random/fizz",
+        "volume": 0.2,
+        "pitch": 2
+      }
+    ]
+  },
+  "item.delete": {
+    "sounds": [
+      {
+        "name": "minecraft:random/fizz",
+        "volume": 0.2,
+        "pitch": 1.8
+      }
+    ]
+  },
+  "item.drag": {
+    "sounds": [
+      {
+        "name": "extrasounds:generic.click",
+        "volume": 0.6,
+        "pitch": 1.6,
+        "type": "event"
+      }
+    ]
+  },
+  "item.drop": {
+    "sounds": [
+      {
+        "name": "minecraft:random/bow",
+        "volume": 0.2,
+        "pitch": 1.5
+      }
+    ]
+  },
+  "item.pickup": {
+    "sounds": [
+      {
+        "name": "extrasounds:generic.click",
+        "type": "event"
+      }
+    ]
+  },
+  "item.pickup_all": {
+    "sounds": [
+      {
+        "name": "minecraft:random/pop",
+        "volume": 0.1,
+        "pitch": 1.5
+      }
+    ]
   }
 }
