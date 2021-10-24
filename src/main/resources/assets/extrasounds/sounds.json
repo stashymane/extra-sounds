@@ -122,5 +122,247 @@
         "type": "event"
       }
     ]
+  },
+  "item.category.banner": {
+    "sounds": [
+      {
+        "name": "minecraft:block.wool.place",
+        "volume": 0.2,
+        "pitch": 1.5,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.bowl": {
+    "sounds": [
+      {
+        "name": "minecraft:block.bubble_column.bubble_pop",
+        "volume": 0.55,
+        "pitch": 0.6,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.crunchy_dry": {
+    "sounds": [
+      {
+        "name": "minecraft:block.big_dripleaf.place",
+        "volume": 0.2,
+        "pitch": 1,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.dust": {
+    "sounds": [
+      {
+        "name": "minecraft:block.azalea.hit",
+        "volume": 0.3,
+        "pitch": 1.7,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.food_dry": {
+    "sounds": [
+      {
+        "name": "minecraft:block.rooted_dirt.place",
+        "volume": 0.2,
+        "pitch": 1.7,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.gear.chain": {
+    "sounds": [
+      {
+        "name": "minecraft:item.armor.equip_chain",
+        "volume": 0.2,
+        "pitch": 1.7,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.gear.diamond": {
+    "sounds": [
+      {
+        "name": "minecraft:item.armor.equip_diamond",
+        "volume": 0.2,
+        "pitch": 1.6,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.gear.generic": {
+    "sounds": [
+      {
+        "name": "minecraft:item.armor.equip_generic",
+        "volume": 0.2,
+        "pitch": 1.7,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.gear.golden": {
+    "sounds": [
+      {
+        "name": "minecraft:item.armor.equip_gold",
+        "volume": 0.2,
+        "pitch": 1.6,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.gear.iron": {
+    "sounds": [
+      {
+        "name": "minecraft:item.armor.equip_iron",
+        "volume": 0.2,
+        "pitch": 1.6,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.gear.leather": {
+    "sounds": [
+      {
+        "name": "minecraft:item.armor.equip_leather",
+        "volume": 0.2,
+        "pitch": 1.7,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.gear.netherite": {
+    "sounds": [
+      {
+        "name": "minecraft:item.armor.equip_netherite",
+        "volume": 0.2,
+        "pitch": 1.6,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.gear.stone": {
+    "sounds": [
+      {
+        "name": "minecraft:item.armor.equip_generic",
+        "volume": 0.2,
+        "pitch": 1.5,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.gear.wood": {
+    "sounds": [
+      {
+        "name": "minecraft:item.axe.strip",
+        "volume": 0.2,
+        "pitch": 1.4,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.hay": {
+    "sounds": [
+      {
+        "name": "minecraft:block.azalea.hit",
+        "volume": 0.4,
+        "pitch": 1.1,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.loose_metal": {
+    "sounds": [
+      {
+        "name": "minecraft:block.nether_bricks.place",
+        "volume": 0.2,
+        "pitch": 1.2,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.meat": {
+    "sounds": [
+      {
+        "name": "minecraft:entity.cod.flop",
+        "volume": 0.3,
+        "pitch": 1.3,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.metal": {
+    "sounds": [
+      {
+        "name": "minecraft:block.nether_gold_ore.place",
+        "volume": 0.2,
+        "pitch": 1.5,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.metal_bits": {
+    "sounds": [
+      {
+        "name": "minecraft:block.nether_bricks.place",
+        "volume": 0.2,
+        "pitch": 2,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.metal_sheets": {
+    "sounds": [
+      {
+        "name": "minecraft:item.armor.equip_netherite",
+        "volume": 0.2,
+        "pitch": 2,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.music_disc": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.gear.generic",
+        "pitch": 1.2,
+        "type": "event"
+      }
+    ]
+  },
+  "item.category.rail": {
+    "sounds": [
+      {
+        "name": "minecraft:block.nether_gold_ore.place",
+        "volume": 0.2,
+        "pitch": 1.7,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.category.wet": {
+    "sounds": [
+      {
+        "name": "minecraft:block.wet_grass.place",
+        "volume": 0.2,
+        "pitch": 2,
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.category.wet_slippery": {
+    "sounds": [
+      {
+        "name": "minecraft:block.coral_block.place",
+        "volume": 0.2,
+        "pitch": 2,
+        "type": "event"
+      }
+    ],
+    "replace": true
   }
 }
