@@ -1,5 +1,7 @@
 package dev.stashy.extrasounds.debug;
 
+import net.minecraft.sound.SoundEvent;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -37,5 +39,12 @@ public class DebugUtils
         {
             e.printStackTrace();
         }
+    }
+
+    public static void soundLog(SoundEvent snd)
+    {
+        if (!debug) return;
+        if (snd.getId().getPath().startsWith("item.click"))
+            System.out.println("Playing sound: " + snd.getId());
     }
 }

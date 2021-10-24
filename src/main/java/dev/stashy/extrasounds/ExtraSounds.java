@@ -87,6 +87,7 @@ public class ExtraSounds implements ClientModInitializer
             MinecraftClient.getInstance().execute(
                     () -> MinecraftClient.getInstance().player.playSound(snd, SoundCategory.BLOCKS, 1f, pitch));
             lastPlayed = now;
+            DebugUtils.soundLog(snd);
         }
     }
 
