@@ -63,8 +63,8 @@ public class SoundPackLoader
                 new Sound(is, vol, pitch, 1,
                           Sound.RegistrationType.SOUND_EVENT, false, false, 16)
         ), false, null));
-
-        Registry.register(Registry.SOUND_EVENT, snd, new SoundEvent(snd));
+        if (!Registry.SOUND_EVENT.containsId(snd))
+            Registry.register(Registry.SOUND_EVENT, snd, new SoundEvent(snd));
     }
 
     public static void loadBlock(Identifier id, Map<String, SoundEntry> entries)
