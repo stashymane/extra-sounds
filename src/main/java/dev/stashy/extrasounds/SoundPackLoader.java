@@ -20,6 +20,8 @@ import net.minecraft.resource.ResourceType;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;
 import java.util.List;
@@ -29,6 +31,7 @@ public class SoundPackLoader
 {
     private static RuntimeResourcePack genericPack = RuntimeResourcePack.create("extrasounds");
     private static final Identifier soundsJsonId = new Identifier("extrasounds:sounds.json");
+    private static final Logger LOGGER = LogManager.getLogger();
 
     private static final Gson gson = new GsonBuilder()
             .registerTypeAdapter(SoundEntry.class, new SoundEntrySerializer())

@@ -3,6 +3,8 @@ package dev.stashy.extrasounds.debug;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.sound.SoundEvent;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,11 +21,13 @@ public class DebugUtils
     public static final String debugPath = System.getProperties().containsKey(debugPathVar)
             ? System.getProperty(debugPathVar) : "C:\\";
 
+    private static final Logger LOGGER = LogManager.getLogger();
+
     public static void init()
     {
         if (!debug) return;
-        System.out.println("ExtraSounds: DEBUG mode enabled.");
-        System.out.println("Debug path: " + debugPath);
+        LOGGER.info("ExtraSounds: DEBUG mode enabled.");
+        LOGGER.info("Debug path: " + debugPath);
     }
 
     public static void exportSoundsJson(byte[] jsonData)
@@ -46,13 +50,13 @@ public class DebugUtils
     {
         if (!debug) return;
         if (snd.getId().getPath().startsWith("item.click"))
-            System.out.println("Playing sound: " + snd.getId());
+            LOGGER.info("Playing sound: " + snd.getId());
     }
 
     public static void effectLog(StatusEffect effect, boolean add)
     {
-        boolean positive = !effect.getCategory().equals(StatusEffectCategory.HARMFUL);
         if (!debug) return;
-        System.out.println((positive ? "Positive" : "Negative") + " effect " + (add ? "added" : "removed"));
+        boolean positive = !effect.getCategory().equals(StatusEffectCategory.HARMFUL);
+        LOGGER.info((positive ? "Positive" : "Negative") + " effect " + (add ? "added" : "removed"));
     }
 }
