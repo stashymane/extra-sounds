@@ -1206,15 +1206,6 @@
     ],
     "replace": true
   },
-  "item.click.mushroom_stew": {
-    "sounds": [
-      {
-        "name": "extrasounds:item.category.bowl",
-        "type": "event"
-      }
-    ],
-    "replace": true
-  },
   "item.click.mutton": {
     "sounds": [
       {
@@ -1430,15 +1421,6 @@
     ],
     "replace": true
   },
-  "item.click.rabbit_stew": {
-    "sounds": [
-      {
-        "name": "extrasounds:item.category.bowl",
-        "type": "event"
-      }
-    ],
-    "replace": true
-  },
   "item.click.raw_copper": {
     "sounds": [
       {
@@ -1506,17 +1488,6 @@
     "sounds": [
       {
         "name": "extrasounds:item.category.wet_slippery",
-        "type": "event"
-      }
-    ],
-    "replace": true
-  },
-  "item.click.shield": {
-    "sounds": [
-      {
-        "name": "minecraft:item.armor.equip_iron",
-        "volume": 0.2,
-        "pitch": 1.6,
         "type": "event"
       }
     ],
@@ -1599,15 +1570,6 @@
     "sounds": [
       {
         "name": "extrasounds:item.category.dust",
-        "type": "event"
-      }
-    ],
-    "replace": true
-  },
-  "item.click.suspicious_stew": {
-    "sounds": [
-      {
-        "name": "extrasounds:item.category.bowl",
         "type": "event"
       }
     ],

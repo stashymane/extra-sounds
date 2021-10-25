@@ -116,6 +116,8 @@ public class SoundPackLoader
                 default -> {return "extrasounds:item.category.gear.generic";}
             }
         }
+        else if (i instanceof ShieldItem)
+            return "extrasounds:item.category.gear.iron";
         else if (i instanceof HorseArmorItem a || i instanceof CompassItem || i instanceof SpyglassItem || i instanceof ShearsItem)
             return "extrasounds:item.category.gear.golden";
         else if (i instanceof LeadItem || i instanceof ElytraItem || i instanceof SaddleItem)
@@ -143,6 +145,8 @@ public class SoundPackLoader
             return "extrasounds:item.category.dust";
         else if (i instanceof SpawnEggItem)
             return "extrasounds:item.category.wet_slippery";
+        else if (i instanceof MushroomStewItem || i instanceof SuspiciousStewItem)
+            return "extrasounds:item.category.bowl";
 
         return "extrasounds:generic.click";
     }
