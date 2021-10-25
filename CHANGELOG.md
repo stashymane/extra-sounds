@@ -4,8 +4,8 @@
 
 ### IMPORTANT!
 
-ExtraSounds no longer depends on Cloth Config! All configuration is now done via resource packs.  
-The only remaining dependency is Fabric API.
+ExtraSounds no longer depends on Cloth Config - all configuration is now done via resource packs. The only remaining
+dependency is Fabric API.
 
 ### Added
 
@@ -16,7 +16,6 @@ The only remaining dependency is Fabric API.
 ### Changed
 
 - Default sounds, including...
-    - Default click (now sounds like wood)
     - Item delete & item clone (sounds like items sizzling in lava)
     - Chat mention (different chime)
     - Other minor changes
