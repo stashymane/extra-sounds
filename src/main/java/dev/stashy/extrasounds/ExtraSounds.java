@@ -15,6 +15,8 @@ import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Random;
 
@@ -23,6 +25,7 @@ public class ExtraSounds implements ClientModInitializer
     public static final String MODID = "extrasounds";
     private static final Random r = new Random();
     private static long lastPlayed = System.currentTimeMillis();
+    private static final Logger LOGGER = LogManager.getLogger();
 
     @Override
     public void onInitializeClient()
@@ -69,10 +72,17 @@ public class ExtraSounds implements ClientModInitializer
 
     public static void playItemSound(ItemStack stack, boolean pickup)
     {
-        Identifier id = Identifier.tryParse("extrasounds:item.click." + Registry.ITEM.getId(stack.getItem()).getPath());
-        SoundEvent e = Registry.SOUND_EVENT.get(id);
-        playSound(e,
-                  getItemPitch(1f, 0.1f, pickup));
+        String idString = "extrasounds:item.click." + Registry.ITEM.getId(stack.getItem()).getPath();
+        if (!Identifier.isValid(idString))
+        {
+            LOGGER.error("Unable to parse sound from ID: " + idString);
+            return;
+        }
+
+        Identifier id = Identifier.tryParse(idString);
+        Registry.SOUND_EVENT.getOrEmpty(id).ifPresentOrElse(
+                (snd) -> playSound(snd, getItemPitch(1f, 0.1f, pickup)),
+                () -> LOGGER.error("Sound cannot be found in registry: " + id));
     }
 
     public static void playEffectSound(StatusEffect effect, boolean add)
