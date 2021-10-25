@@ -91,30 +91,36 @@ public class SoundPackLoader
             return "extrasounds:item.category.boat";
         else if (i instanceof ToolItem t)
         {
-            switch ((ToolMaterials) t.getMaterial())
-            {
-                case WOOD -> {return "extrasounds:item.category.gear.wood";}
-                case STONE -> {return "extrasounds:item.category.gear.stone";}
-                case IRON -> {return "extrasounds:item.category.gear.iron";}
-                case GOLD -> {return "extrasounds:item.category.gear.golden";}
-                case DIAMOND -> {return "extrasounds:item.category.gear.diamond";}
-                case NETHERITE -> {return "extrasounds:item.category.gear.netherite";}
-                default -> {return "extrasounds:item.category.gear.generic";}
-            }
+            if (t.getMaterial() instanceof ToolMaterials mat)
+                switch (mat)
+                {
+                    case WOOD -> {return "extrasounds:item.category.gear.wood";}
+                    case STONE -> {return "extrasounds:item.category.gear.stone";}
+                    case IRON -> {return "extrasounds:item.category.gear.iron";}
+                    case GOLD -> {return "extrasounds:item.category.gear.golden";}
+                    case DIAMOND -> {return "extrasounds:item.category.gear.diamond";}
+                    case NETHERITE -> {return "extrasounds:item.category.gear.netherite";}
+                    default -> {return "extrasounds:item.category.gear.generic";}
+                }
+            else
+                return "extrasounds:item.category.gear.generic";
         }
         else if (i instanceof ArmorItem a)
         {
-            switch ((ArmorMaterials) a.getMaterial())
-            {
-                case IRON -> {return "extrasounds:item.category.gear.iron";}
-                case GOLD -> {return "extrasounds:item.category.gear.golden";}
-                case DIAMOND -> {return "extrasounds:item.category.gear.diamond";}
-                case NETHERITE -> {return "extrasounds:item.category.gear.netherite";}
-                case CHAIN -> {return "extrasounds:item.category.gear.chain";}
-                case TURTLE -> {return "extrasounds:item.category.gear.turtle";}
-                case LEATHER -> {return "extrasounds:item.category.gear.leather";}
-                default -> {return "extrasounds:item.category.gear.generic";}
-            }
+            if (a.getMaterial() instanceof ArmorMaterials mat)
+                switch (mat)
+                {
+                    case IRON -> {return "extrasounds:item.category.gear.iron";}
+                    case GOLD -> {return "extrasounds:item.category.gear.golden";}
+                    case DIAMOND -> {return "extrasounds:item.category.gear.diamond";}
+                    case NETHERITE -> {return "extrasounds:item.category.gear.netherite";}
+                    case CHAIN -> {return "extrasounds:item.category.gear.chain";}
+                    case TURTLE -> {return "extrasounds:item.category.gear.turtle";}
+                    case LEATHER -> {return "extrasounds:item.category.gear.leather";}
+                    default -> {return "extrasounds:item.category.gear.generic";}
+                }
+            else
+                return "extrasounds:item.category.gear.generic";
         }
         else if (i instanceof ShieldItem)
             return "extrasounds:item.category.gear.iron";
