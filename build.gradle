@@ -81,7 +81,7 @@ curseforge {
         addGameVersion project.minecraft_version
 
         mainArtifact(remapJar) {
-            displayName = "ExtraSounds $project.version"
+            displayName = "$project.version"
 
             relations {
                 requiredDependency "fabric-api"
