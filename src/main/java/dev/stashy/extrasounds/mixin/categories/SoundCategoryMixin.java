@@ -1,6 +1,6 @@
 package dev.stashy.extrasounds.mixin.categories;
 
-import dev.stashy.extrasounds.CustomSoundCategories;
+import dev.stashy.extrasounds.CustomSoundCategory;
 import net.minecraft.sound.SoundCategory;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Final;
@@ -41,7 +41,7 @@ public class SoundCategoryMixin
         var categories = new ArrayList<>(Arrays.asList(field_15255));
         var last = categories.get(categories.size() - 1);
         var ui = newSoundCategory("UI", last.ordinal() + 1, "ui");
-        CustomSoundCategories.UI = ui;
+        CustomSoundCategory.UI = ui;
         categories.add(ui);
 
         field_15255 = categories.toArray(new SoundCategory[0]);
