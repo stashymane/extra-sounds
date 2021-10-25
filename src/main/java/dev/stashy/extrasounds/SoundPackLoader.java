@@ -59,7 +59,7 @@ public class SoundPackLoader
 
         entries.put(snd.getPath(), new SoundEntry(List.of(
                 new Sound(is, vol, pitch, 1,
-                          Sound.RegistrationType.SOUND_EVENT, false, false, 0)
+                          Sound.RegistrationType.SOUND_EVENT, false, false, 16)
         ), false, null));
 
         Registry.register(Registry.SOUND_EVENT, snd, new SoundEvent(snd));
