@@ -12,6 +12,7 @@
     "HotbarSlotSound",
     "ItemPickSound",
     "KeyboardTypingSound",
+    "categories.SoundCategoryMixin",
     "inventory.CreativeInventoryClickSounds",
     "inventory.CreativeListScroll",
     "inventory.InventoryClickSounds",
