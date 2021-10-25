@@ -20,9 +20,10 @@
   "generic.click": {
     "sounds": [
       {
-        "name": "minecraft:random/wood_click",
+        "name": "minecraft:block.stone.hit",
         "volume": 0.2,
-        "pitch": 1.8
+        "pitch": 2,
+        "type": "event"
       }
     ]
   },
