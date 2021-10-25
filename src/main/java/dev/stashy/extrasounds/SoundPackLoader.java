@@ -3,6 +3,7 @@ package dev.stashy.extrasounds;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import dev.stashy.extrasounds.debug.DebugUtils;
+import dev.stashy.extrasounds.json.SoundEntrySerializer;
 import dev.stashy.extrasounds.json.SoundSerializer;
 import dev.stashy.extrasounds.mixin.BucketFluidAccessor;
 import net.devtech.arrp.api.RRPCallback;
@@ -30,6 +31,7 @@ public class SoundPackLoader
     private static final Identifier soundsJsonId = new Identifier("extrasounds:sounds.json");
 
     private static final Gson gson = new GsonBuilder()
+            .registerTypeAdapter(SoundEntry.class, new SoundEntrySerializer())
             .registerTypeAdapter(Sound.class, new SoundSerializer())
             .create();
 
