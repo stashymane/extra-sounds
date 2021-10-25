@@ -3,6 +3,7 @@ package dev.stashy.extrasounds;
 import dev.stashy.extrasounds.debug.DebugUtils;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.inventory.CraftingResultInventory;
@@ -10,7 +11,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.screen.PlayerScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
-import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -98,13 +98,10 @@ public class ExtraSounds implements ClientModInitializer
 
     public static void playSound(SoundEvent snd, float pitch)
     {
-        if (MinecraftClient.getInstance().player == null)
-            return;
         long now = System.currentTimeMillis();
         if (now - lastPlayed > 5)
         {
-            MinecraftClient.getInstance().execute(
-                    () -> MinecraftClient.getInstance().player.playSound(snd, SoundCategory.BLOCKS, 1f, pitch));
+            MinecraftClient.getInstance().getSoundManager().play(PositionedSoundInstance.master(snd, pitch));
             lastPlayed = now;
             DebugUtils.soundLog(snd);
         }
