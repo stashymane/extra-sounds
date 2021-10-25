@@ -14,10 +14,10 @@ public class DebugUtils
     public static final String debugVar = "extrasounds.debug";
     public static final String debugPathVar = "extrasounds.debug.path";
 
-    public static final boolean debug = System.getenv().containsKey(debugVar)
-            && System.getenv(debugVar).equals("true");
-    public static final String debugPath = System.getenv().containsKey(debugPathVar)
-            ? System.getenv(debugPathVar) : "C:\\";
+    public static final boolean debug = System.getProperties().containsKey(debugVar)
+            && System.getProperty(debugVar).equals("true");
+    public static final String debugPath = System.getProperties().containsKey(debugPathVar)
+            ? System.getProperty(debugPathVar) : "C:\\";
 
     public static void init()
     {
