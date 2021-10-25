@@ -76,7 +76,7 @@ public class SoundPackLoader
             vol = 0.2f;
         entries.put("item.click." + id.getPath(),
                     new SoundEntry(List.of(
-                            new Sound(soundId, vol, 1.7f, 1, Sound.RegistrationType.SOUND_EVENT, false, false, 0)
+                            new Sound(soundId, vol, 1.7f, 1, Sound.RegistrationType.SOUND_EVENT, false, false, 16)
                     ), true, null));
     }
 
