@@ -4,6 +4,7 @@ import dev.stashy.extrasounds.debug.DebugUtils;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.sound.PositionedSoundInstance;
+import net.minecraft.client.sound.SoundInstance;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.inventory.CraftingResultInventory;
@@ -101,7 +102,10 @@ public class ExtraSounds implements ClientModInitializer
         long now = System.currentTimeMillis();
         if (now - lastPlayed > 5)
         {
-            MinecraftClient.getInstance().getSoundManager().play(PositionedSoundInstance.master(snd, pitch));
+            MinecraftClient.getInstance().getSoundManager()
+                           .play(new PositionedSoundInstance(snd.getId(), CustomSoundCategory.UI, 1f, pitch, false, 0,
+                                                             SoundInstance.AttenuationType.NONE, 0.0D, 0.0D, 0.0D,
+                                                             true));
             lastPlayed = now;
             DebugUtils.soundLog(snd);
         }
