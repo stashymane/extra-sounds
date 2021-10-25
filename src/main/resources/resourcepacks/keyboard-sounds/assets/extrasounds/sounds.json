@@ -1,0 +1,12 @@
+{
+  "keyboard.type": {
+    "sounds": [
+      {
+        "name": "minecraft:block.stone.break",
+        "volume": 0.2,
+        "pitch": 2,
+        "type": "event"
+      }
+    ]
+  }
+}

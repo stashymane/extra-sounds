@@ -1727,5 +1727,8 @@
         "type": "event"
       }
     ]
+  },
+  "keyboard.type": {
+    "sounds": []
   }
 }

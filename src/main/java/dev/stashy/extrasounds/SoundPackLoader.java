@@ -8,6 +8,9 @@ import dev.stashy.extrasounds.json.SoundSerializer;
 import dev.stashy.extrasounds.mixin.BucketFluidAccessor;
 import net.devtech.arrp.api.RRPCallback;
 import net.devtech.arrp.api.RuntimeResourcePack;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.AbstractRailBlock;
 import net.minecraft.block.BannerBlock;
 import net.minecraft.block.Block;
@@ -43,6 +46,13 @@ public class SoundPackLoader
         genericPack.addLazyResource(ResourceType.CLIENT_RESOURCES, soundsJsonId,
                                     (runtimeResourcePack, identifier) -> generateJson());
         RRPCallback.BEFORE_VANILLA.register((packs) -> packs.add(genericPack));
+
+        FabricLoader.getInstance().getModContainer(ExtraSounds.MODID)
+                    .map(container -> ResourceManagerHelper.registerBuiltinResourcePack(
+                            new Identifier(ExtraSounds.MODID, "keyboard-sounds"),
+                            container, ResourcePackActivationType.NORMAL))
+                    .filter(success -> !success)
+                    .ifPresent(success -> LOGGER.warn("Could not register built-in resource pack."));
     }
 
     private static byte[] generateJson()

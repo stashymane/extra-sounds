@@ -4,7 +4,6 @@ import dev.stashy.extrasounds.debug.DebugUtils;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.inventory.CraftingResultInventory;
 import net.minecraft.item.ItemStack;
@@ -20,6 +19,7 @@ import java.util.Random;
 
 public class ExtraSounds implements ClientModInitializer
 {
+    public static final String MODID = "extrasounds";
     private static final Random r = new Random();
     private static long lastPlayed = System.currentTimeMillis();
 

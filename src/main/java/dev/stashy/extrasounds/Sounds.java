@@ -54,6 +54,9 @@ public class Sounds
     public static final Identifier EFFECT_REMOVE_NEGATIVE_ID = new Identifier("extrasounds:effect.remove.negative");
     public static SoundEvent EFFECT_REMOVE_NEGATIVE = new SoundEvent(EFFECT_REMOVE_NEGATIVE_ID);
 
+    public static final Identifier KEYBOARD_TYPE_ID = new Identifier("extrasounds:keyboard.type");
+    public static SoundEvent KEYBOARD_TYPE = new SoundEvent(KEYBOARD_TYPE_ID);
+
     protected static void registerAll()
     {
         register(CHAT_ID, CHAT);
