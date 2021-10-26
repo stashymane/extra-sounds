@@ -2,7 +2,7 @@
   "keyboard.type": {
     "sounds": [
       {
-        "name": "minecraft:block.stone.break",
+        "name": "minecraft:block.bamboo.hit",
         "volume": 0.2,
         "pitch": 2,
         "type": "event"
