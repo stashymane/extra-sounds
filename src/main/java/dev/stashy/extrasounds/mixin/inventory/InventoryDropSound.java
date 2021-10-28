@@ -1,7 +1,7 @@
 package dev.stashy.extrasounds.mixin.inventory;
 
 import dev.stashy.extrasounds.ExtraSounds;
-import dev.stashy.extrasounds.Sounds;
+import dev.stashy.extrasounds.sounds.Sounds;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;

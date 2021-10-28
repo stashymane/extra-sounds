@@ -1,7 +1,7 @@
 package dev.stashy.extrasounds.mixin.inventory;
 
 import dev.stashy.extrasounds.ExtraSounds;
-import dev.stashy.extrasounds.Sounds;
+import dev.stashy.extrasounds.sounds.Sounds;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.screen.slot.Slot;
 import org.spongepowered.asm.mixin.Final;

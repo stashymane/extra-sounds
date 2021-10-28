@@ -1,7 +1,7 @@
 package dev.stashy.extrasounds.mixin;
 
 import dev.stashy.extrasounds.ExtraSounds;
-import dev.stashy.extrasounds.Sounds;
+import dev.stashy.extrasounds.sounds.Sounds;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.ChatHud;
 import net.minecraft.client.network.ClientPlayerEntity;

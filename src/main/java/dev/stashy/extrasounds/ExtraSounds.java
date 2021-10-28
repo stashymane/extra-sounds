@@ -1,6 +1,7 @@
 package dev.stashy.extrasounds;
 
 import dev.stashy.extrasounds.debug.DebugUtils;
+import dev.stashy.extrasounds.sounds.Sounds;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.sound.PositionedSoundInstance;
@@ -30,7 +31,6 @@ public class ExtraSounds implements ClientModInitializer
     @Override
     public void onInitializeClient()
     {
-        Sounds.registerAll();
         SoundPackLoader.init();
         DebugUtils.init();
     }

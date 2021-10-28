@@ -1,4 +1,4 @@
-package dev.stashy.extrasounds;
+package dev.stashy.extrasounds.sounds;
 
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
