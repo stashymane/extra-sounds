@@ -4,7 +4,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public class Sounds
+public class Sounds extends SoundRegistry
 {
     public static SoundEvent CHAT = register("chat.message");
     public static SoundEvent CHAT_MENTION = register("chat.mention");
@@ -23,16 +23,4 @@ public class Sounds
     public static SoundEvent EFFECT_REMOVE_POSITIVE = register("effect.remove.positive");
     public static SoundEvent EFFECT_REMOVE_NEGATIVE = register("effect.remove.negative");
     public static SoundEvent KEYBOARD_TYPE = register("keyboard.type");
-
-    private static SoundEvent register(Identifier id)
-    {
-        var e = new SoundEvent(id);
-        Registry.register(Registry.SOUND_EVENT, id, e);
-        return e;
-    }
-
-    private static SoundEvent register(String id)
-    {
-        return register(new Identifier("extrasounds:" + id));
-    }
 }
