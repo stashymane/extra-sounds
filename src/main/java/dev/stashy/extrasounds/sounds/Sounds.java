@@ -1,8 +1,11 @@
 package dev.stashy.extrasounds.sounds;
 
+import net.minecraft.client.sound.Sound;
+import net.minecraft.client.sound.SoundEntry;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+
+import java.util.List;
 
 public class Sounds extends SoundRegistry
 {
@@ -23,4 +26,21 @@ public class Sounds extends SoundRegistry
     public static SoundEvent EFFECT_REMOVE_POSITIVE = register("effect.remove.positive");
     public static SoundEvent EFFECT_REMOVE_NEGATIVE = register("effect.remove.negative");
     public static SoundEvent KEYBOARD_TYPE = register("keyboard.type");
+
+    public static SoundEntry aliased(SoundEvent e)
+    {
+        return single(e.getId(), 1f, 1f, Sound.RegistrationType.SOUND_EVENT);
+    }
+
+    public static SoundEntry event(Identifier id)
+    {
+        return single(id, 0.2f, 1.7f, Sound.RegistrationType.SOUND_EVENT);
+    }
+
+    public static SoundEntry single(Identifier id, float volume, float pitch, Sound.RegistrationType type)
+    {
+        return new SoundEntry(List.of(
+                new Sound(id.toString(), volume, pitch, 1, type, false, false, 16)
+        ), false, null);
+    }
 }
