@@ -10,14 +10,14 @@ import java.util.function.Function;
 public record SoundMapper(String namespace,
                           Function<Identifier, SoundEntry> itemSoundMapper)
 {
-    public static SoundMapper of(String modId, Function<Identifier, SoundEntry> itemSoundMapper)
+    public static SoundMapper of(String namespace, Function<Identifier, SoundEntry> itemSoundMapper)
     {
-        return new SoundMapper(modId, itemSoundMapper);
+        return new SoundMapper(namespace, itemSoundMapper);
     }
 
-    public static void register(String modId, Function<Identifier, SoundEntry> itemSoundMapper)
+    public static void register(String namespace, Function<Identifier, SoundEntry> itemSoundMapper)
     {
         FabricLoader.getInstance().getEntrypoints(ExtraSounds.MODID, SoundMapper.class)
-                    .add(SoundMapper.of(modId, itemSoundMapper));
+                    .add(SoundMapper.of(namespace, itemSoundMapper));
     }
 }
