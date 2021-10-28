@@ -7,7 +7,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.function.Function;
 
-public record SoundMapper(String modId,
+public record SoundMapper(String namespace,
                           Function<Identifier, SoundEntry> itemSoundMapper)
 {
     public static SoundMapper of(String modId, Function<Identifier, SoundEntry> itemSoundMapper)
