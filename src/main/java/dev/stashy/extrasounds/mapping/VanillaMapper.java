@@ -1,6 +1,5 @@
 package dev.stashy.extrasounds.mapping;
 
-import dev.stashy.extrasounds.ExtraSounds;
 import dev.stashy.extrasounds.mixin.BucketFluidAccessor;
 import net.minecraft.block.AbstractRailBlock;
 import net.minecraft.block.BannerBlock;
@@ -19,7 +18,7 @@ public class VanillaMapper
     static
     {
         //Vanilla mapper
-        SoundMapper.register(ExtraSounds.MODID, id -> {
+        SoundMapper.register("minecraft", id -> {
             Item i = Registry.ITEM.get(id);
             if (i instanceof BlockItem)
                 return block((BlockItem) i);
