@@ -36,33 +36,33 @@ public class VanillaMapper
         else if (i instanceof ToolItem t)
         {
             if (t.getMaterial() instanceof ToolMaterials mat)
-                switch (mat)
-                {
-                    case WOOD -> {return aliased(Gear.WOOD);}
-                    case STONE -> {return aliased(Gear.STONE);}
-                    case IRON -> {return aliased(Gear.IRON);}
-                    case GOLD -> {return aliased(Gear.GOLDEN);}
-                    case DIAMOND -> {return aliased(Gear.DIAMOND);}
-                    case NETHERITE -> {return aliased(Gear.NETHERITE);}
-                    default -> {return aliased(Gear.GENERIC);}
-                }
+                return switch (mat)
+                        {
+                            case WOOD -> aliased(Gear.WOOD);
+                            case STONE -> aliased(Gear.STONE);
+                            case IRON -> aliased(Gear.IRON);
+                            case GOLD -> aliased(Gear.GOLDEN);
+                            case DIAMOND -> aliased(Gear.DIAMOND);
+                            case NETHERITE -> aliased(Gear.NETHERITE);
+                            default -> aliased(Gear.GENERIC);
+                        };
             else
                 return aliased(Gear.GENERIC);
         }
         else if (i instanceof ArmorItem a)
         {
             if (a.getMaterial() instanceof ArmorMaterials mat)
-                switch (mat)
-                {
-                    case IRON -> {return aliased(Gear.IRON);}
-                    case GOLD -> {return aliased(Gear.GOLDEN);}
-                    case DIAMOND -> {return aliased(Gear.DIAMOND);}
-                    case NETHERITE -> {return aliased(Gear.NETHERITE);}
-                    case CHAIN -> {return aliased(Gear.CHAIN);}
-                    case TURTLE -> {return aliased(Gear.TURTLE);}
-                    case LEATHER -> {return aliased(Gear.LEATHER);}
-                    default -> {return aliased(Gear.GENERIC);}
-                }
+                return switch (mat)
+                        {
+                            case IRON -> aliased(Gear.IRON);
+                            case GOLD -> aliased(Gear.GOLDEN);
+                            case DIAMOND -> aliased(Gear.DIAMOND);
+                            case NETHERITE -> aliased(Gear.NETHERITE);
+                            case CHAIN -> aliased(Gear.CHAIN);
+                            case TURTLE -> aliased(Gear.TURTLE);
+                            case LEATHER -> aliased(Gear.LEATHER);
+                            default -> aliased(Gear.GENERIC);
+                        };
             else
                 return aliased(Gear.GENERIC);
         }
