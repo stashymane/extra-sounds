@@ -49,7 +49,7 @@ public class SoundPackLoader
 
         genericPack.addLazyResource(ResourceType.CLIENT_RESOURCES, soundsJsonId, (rrp, identifier) -> {
             var itemMap = Registry.ITEM.getIds().stream().map(id -> {
-                var sndId = new Identifier(ExtraSounds.MODID, "item.click." + id.getNamespace() + "." + id.getPath());
+                var sndId = new Identifier(ExtraSounds.MODID, ExtraSounds.getClickId(id, false));
                 if (!Registry.SOUND_EVENT.containsId(sndId))
                     Registry.register(Registry.SOUND_EVENT, sndId, new SoundEvent(sndId));
 

@@ -1,6 +1,7 @@
 package dev.stashy.extrasounds;
 
 import dev.stashy.extrasounds.debug.DebugUtils;
+import dev.stashy.extrasounds.mapping.SoundPackLoader;
 import dev.stashy.extrasounds.sounds.Sounds;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.MinecraftClient;
@@ -70,9 +71,20 @@ public class ExtraSounds implements ClientModInitializer
         }
     }
 
+    public static String getClickId(Identifier id, boolean includeNamespace)
+    {
+        return (includeNamespace ? "extrasounds:" : "") + "item.click." + id.getNamespace() + "." + id.getPath();
+    }
+
+    public static String getClickId(Identifier id)
+    {
+        return getClickId(id, true);
+    }
+
     public static void playItemSound(ItemStack stack, boolean pickup)
     {
-        String idString = "extrasounds:item.click." + Registry.ITEM.getId(stack.getItem()).getPath();
+        var itemId = Registry.ITEM.getId(stack.getItem());
+        String idString = getClickId(itemId);
         if (!Identifier.isValid(idString))
         {
             LOGGER.error("Unable to parse sound from ID: " + idString);
