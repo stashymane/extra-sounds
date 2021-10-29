@@ -399,7 +399,7 @@
     ],
     "replace": true
   },
-  "item.click.amethyst_shard": {
+  "item.click.minecraft.amethyst_shard": {
     "sounds": [
       {
         "name": "minecraft:block.amethyst_block.place",
@@ -410,7 +410,7 @@
     ],
     "replace": true
   },
-  "item.click.anvil": {
+  "item.click.minecraft.anvil": {
     "sounds": [
       {
         "name": "minecraft:block.anvil.place",
@@ -421,7 +421,7 @@
     ],
     "replace": true
   },
-  "item.click.apple": {
+  "item.click.minecraft.apple": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet_slippery",
@@ -430,7 +430,7 @@
     ],
     "replace": true
   },
-  "item.click.armor_stand": {
+  "item.click.minecraft.armor_stand": {
     "sounds": [
       {
         "name": "minecraft:entity.armor_stand.break",
@@ -441,7 +441,7 @@
     ],
     "replace": true
   },
-  "item.click.baked_potato": {
+  "item.click.minecraft.baked_potato": {
     "sounds": [
       {
         "name": "extrasounds:item.category.food_dry",
@@ -450,7 +450,7 @@
     ],
     "replace": true
   },
-  "item.click.beef": {
+  "item.click.minecraft.beef": {
     "sounds": [
       {
         "name": "extrasounds:item.category.meat",
@@ -459,7 +459,7 @@
     ],
     "replace": true
   },
-  "item.click.beetroot": {
+  "item.click.minecraft.beetroot": {
     "sounds": [
       {
         "name": "extrasounds:item.category.crunchy_dry",
@@ -468,7 +468,7 @@
     ],
     "replace": true
   },
-  "item.click.beetroot_seeds": {
+  "item.click.minecraft.beetroot_seeds": {
     "sounds": [
       {
         "name": "extrasounds:item.category.dust",
@@ -477,7 +477,7 @@
     ],
     "replace": true
   },
-  "item.click.beetroot_soup": {
+  "item.click.minecraft.beetroot_soup": {
     "sounds": [
       {
         "name": "extrasounds:item.category.bowl",
@@ -486,10 +486,10 @@
     ],
     "replace": true
   },
-  "item.click.bell": {
+  "item.click.minecraft.bell": {
     "sounds": [
       {
-        "name": "extrasounds:item.click.anvil",
+        "name": "extrasounds:item.click.minecraft.anvil",
         "volume": 1,
         "pitch": 1.5,
         "type": "event"
@@ -497,7 +497,7 @@
     ],
     "replace": true
   },
-  "item.click.blaze_powder": {
+  "item.click.minecraft.blaze_powder": {
     "sounds": [
       {
         "name": "extrasounds:item.category.dust",
@@ -506,7 +506,7 @@
     ],
     "replace": true
   },
-  "item.click.blaze_rod": {
+  "item.click.minecraft.blaze_rod": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet_slippery",
@@ -515,7 +515,7 @@
     ],
     "replace": true
   },
-  "item.click.bone": {
+  "item.click.minecraft.bone": {
     "sounds": [
       {
         "name": "minecraft:block.bone_block.place",
@@ -526,7 +526,7 @@
     ],
     "replace": true
   },
-  "item.click.bone_meal": {
+  "item.click.minecraft.bone_meal": {
     "sounds": [
       {
         "name": "extrasounds:item.category.dust",
@@ -535,7 +535,7 @@
     ],
     "replace": true
   },
-  "item.click.bowl": {
+  "item.click.minecraft.bowl": {
     "sounds": [
       {
         "name": "minecraft:block.wood.place",
@@ -546,7 +546,7 @@
     ],
     "replace": true
   },
-  "item.click.bread": {
+  "item.click.minecraft.bread": {
     "sounds": [
       {
         "name": "minecraft:block.wool.place",
@@ -557,7 +557,7 @@
     ],
     "replace": true
   },
-  "item.click.brick": {
+  "item.click.minecraft.brick": {
     "sounds": [
       {
         "name": "extrasounds:item.category.metal",
@@ -567,16 +567,16 @@
     ],
     "replace": true
   },
-  "item.click.brown_mushroom_block": {
+  "item.click.minecraft.brown_mushroom_block": {
     "sounds": [
       {
-        "name": "extrasounds:item.click.mushroom_block",
+        "name": "extrasounds:item.click.minecraft.mushroom_block",
         "type": "event"
       }
     ],
     "replace": true
   },
-  "item.click.carrot": {
+  "item.click.minecraft.carrot": {
     "sounds": [
       {
         "name": "extrasounds:item.category.crunchy_dry",
@@ -585,7 +585,7 @@
     ],
     "replace": true
   },
-  "item.click.charcoal": {
+  "item.click.minecraft.charcoal": {
     "sounds": [
       {
         "name": "extrasounds:item.category.metal",
@@ -594,7 +594,7 @@
     ],
     "replace": true
   },
-  "item.click.chicken": {
+  "item.click.minecraft.chicken": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet",
@@ -603,16 +603,16 @@
     ],
     "replace": true
   },
-  "item.click.chipped_anvil": {
+  "item.click.minecraft.chipped_anvil": {
     "sounds": [
       {
-        "name": "extrasounds:item.click.anvil",
+        "name": "extrasounds:item.click.minecraft.anvil",
         "type": "event"
       }
     ],
     "replace": true
   },
-  "item.click.chorus_fruit": {
+  "item.click.minecraft.chorus_fruit": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet_slippery",
@@ -621,7 +621,7 @@
     ],
     "replace": true
   },
-  "item.click.clay_ball": {
+  "item.click.minecraft.clay_ball": {
     "sounds": [
       {
         "name": "minecraft:block.rooted_dirt.place",
@@ -632,7 +632,7 @@
     ],
     "replace": true
   },
-  "item.click.clock": {
+  "item.click.minecraft.clock": {
     "sounds": [
       {
         "name": "minecraft:item.armor.equip_gold",
@@ -643,7 +643,7 @@
     ],
     "replace": true
   },
-  "item.click.coal": {
+  "item.click.minecraft.coal": {
     "sounds": [
       {
         "name": "extrasounds:item.category.metal",
@@ -652,7 +652,7 @@
     ],
     "replace": true
   },
-  "item.click.cobweb": {
+  "item.click.minecraft.cobweb": {
     "sounds": [
       {
         "name": "extrasounds:item.category.dust",
@@ -661,7 +661,7 @@
     ],
     "replace": true
   },
-  "item.click.cocoa_beans": {
+  "item.click.minecraft.cocoa_beans": {
     "sounds": [
       {
         "name": "extrasounds:item.category.dust",
@@ -670,7 +670,7 @@
     ],
     "replace": true
   },
-  "item.click.cod": {
+  "item.click.minecraft.cod": {
     "sounds": [
       {
         "name": "extrasounds:item.category.meat",
@@ -679,7 +679,7 @@
     ],
     "replace": true
   },
-  "item.click.cooked_beef": {
+  "item.click.minecraft.cooked_beef": {
     "sounds": [
       {
         "name": "extrasounds:item.category.meat",
@@ -688,7 +688,7 @@
     ],
     "replace": true
   },
-  "item.click.cooked_chicken": {
+  "item.click.minecraft.cooked_chicken": {
     "sounds": [
       {
         "name": "extrasounds:item.category.meat",
@@ -697,7 +697,7 @@
     ],
     "replace": true
   },
-  "item.click.cooked_cod": {
+  "item.click.minecraft.cooked_cod": {
     "sounds": [
       {
         "name": "extrasounds:item.category.meat",
@@ -706,7 +706,7 @@
     ],
     "replace": true
   },
-  "item.click.cooked_mutton": {
+  "item.click.minecraft.cooked_mutton": {
     "sounds": [
       {
         "name": "extrasounds:item.category.meat",
@@ -715,7 +715,7 @@
     ],
     "replace": true
   },
-  "item.click.cooked_porkchop": {
+  "item.click.minecraft.cooked_porkchop": {
     "sounds": [
       {
         "name": "extrasounds:item.category.meat",
@@ -724,7 +724,7 @@
     ],
     "replace": true
   },
-  "item.click.cooked_rabbit": {
+  "item.click.minecraft.cooked_rabbit": {
     "sounds": [
       {
         "name": "extrasounds:item.category.meat",
@@ -733,7 +733,7 @@
     ],
     "replace": true
   },
-  "item.click.cooked_salmon": {
+  "item.click.minecraft.cooked_salmon": {
     "sounds": [
       {
         "name": "extrasounds:item.category.meat",
@@ -742,7 +742,7 @@
     ],
     "replace": true
   },
-  "item.click.cookie": {
+  "item.click.minecraft.cookie": {
     "sounds": [
       {
         "name": "extrasounds:item.category.crunchy_dry",
@@ -751,7 +751,7 @@
     ],
     "replace": true
   },
-  "item.click.copper_ingot": {
+  "item.click.minecraft.copper_ingot": {
     "sounds": [
       {
         "name": "extrasounds:item.category.metal",
@@ -760,16 +760,16 @@
     ],
     "replace": true
   },
-  "item.click.damaged_anvil": {
+  "item.click.minecraft.damaged_anvil": {
     "sounds": [
       {
-        "name": "extrasounds:item.click.anvil",
+        "name": "extrasounds:item.click.minecraft.anvil",
         "type": "event"
       }
     ],
     "replace": true
   },
-  "item.click.diamond": {
+  "item.click.minecraft.diamond": {
     "sounds": [
       {
         "name": "extrasounds:item.category.metal",
@@ -778,7 +778,7 @@
     ],
     "replace": true
   },
-  "item.click.diamond_horse_armor": {
+  "item.click.minecraft.diamond_horse_armor": {
     "sounds": [
       {
         "name": "extrasounds:item.category.gear.diamond",
@@ -788,7 +788,7 @@
     ],
     "replace": true
   },
-  "item.click.dragon_breath": {
+  "item.click.minecraft.dragon_breath": {
     "sounds": [
       {
         "name": "extrasounds:item.category.potion",
@@ -797,7 +797,7 @@
     ],
     "replace": true
   },
-  "item.click.dried_kelp": {
+  "item.click.minecraft.dried_kelp": {
     "sounds": [
       {
         "name": "extrasounds:item.category.crunchy_dry",
@@ -807,7 +807,7 @@
     ],
     "replace": true
   },
-  "item.click.egg": {
+  "item.click.minecraft.egg": {
     "sounds": [
       {
         "name": "minecraft:block.stone.place",
@@ -818,7 +818,7 @@
     ],
     "replace": true
   },
-  "item.click.emerald": {
+  "item.click.minecraft.emerald": {
     "sounds": [
       {
         "name": "extrasounds:item.category.metal",
@@ -827,7 +827,7 @@
     ],
     "replace": true
   },
-  "item.click.enchanted_golden_apple": {
+  "item.click.minecraft.enchanted_golden_apple": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet_slippery",
@@ -836,7 +836,7 @@
     ],
     "replace": true
   },
-  "item.click.end_crystal": {
+  "item.click.minecraft.end_crystal": {
     "sounds": [
       {
         "name": "minecraft:block.shroomlight.place",
@@ -847,7 +847,7 @@
     ],
     "replace": true
   },
-  "item.click.ender_eye": {
+  "item.click.minecraft.ender_eye": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet_slippery",
@@ -856,7 +856,7 @@
     ],
     "replace": true
   },
-  "item.click.ender_pearl": {
+  "item.click.minecraft.ender_pearl": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet_slippery",
@@ -865,7 +865,7 @@
     ],
     "replace": true
   },
-  "item.click.feather": {
+  "item.click.minecraft.feather": {
     "sounds": [
       {
         "name": "extrasounds:item.category.dust",
@@ -874,7 +874,7 @@
     ],
     "replace": true
   },
-  "item.click.fermented_spider_eye": {
+  "item.click.minecraft.fermented_spider_eye": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet",
@@ -883,7 +883,7 @@
     ],
     "replace": true
   },
-  "item.click.fire_charge": {
+  "item.click.minecraft.fire_charge": {
     "sounds": [
       {
         "name": "extrasounds:item.category.gear.generic",
@@ -892,7 +892,7 @@
     ],
     "replace": true
   },
-  "item.click.firework_rocket": {
+  "item.click.minecraft.firework_rocket": {
     "sounds": [
       {
         "name": "extrasounds:item.category.gear.generic",
@@ -902,7 +902,7 @@
     ],
     "replace": true
   },
-  "item.click.firework_star": {
+  "item.click.minecraft.firework_star": {
     "sounds": [
       {
         "name": "extrasounds:item.category.dust",
@@ -911,7 +911,7 @@
     ],
     "replace": true
   },
-  "item.click.flint": {
+  "item.click.minecraft.flint": {
     "sounds": [
       {
         "name": "extrasounds:item.category.metal",
@@ -920,7 +920,7 @@
     ],
     "replace": true
   },
-  "item.click.flint_and_steel": {
+  "item.click.minecraft.flint_and_steel": {
     "sounds": [
       {
         "name": "extrasounds:item.category.metal",
@@ -931,7 +931,7 @@
     ],
     "replace": true
   },
-  "item.click.ghast_tear": {
+  "item.click.minecraft.ghast_tear": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet_slippery",
@@ -940,7 +940,7 @@
     ],
     "replace": true
   },
-  "item.click.glass_bottle": {
+  "item.click.minecraft.glass_bottle": {
     "sounds": [
       {
         "name": "minecraft:block.glass.place",
@@ -951,7 +951,7 @@
     ],
     "replace": true
   },
-  "item.click.glistering_melon_slice": {
+  "item.click.minecraft.glistering_melon_slice": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet",
@@ -960,7 +960,7 @@
     ],
     "replace": true
   },
-  "item.click.glow_berries": {
+  "item.click.minecraft.glow_berries": {
     "sounds": [
       {
         "name": "extrasounds:item.category.crunchy_dry",
@@ -969,7 +969,7 @@
     ],
     "replace": true
   },
-  "item.click.glow_ink_sac": {
+  "item.click.minecraft.glow_ink_sac": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet_slippery",
@@ -978,7 +978,7 @@
     ],
     "replace": true
   },
-  "item.click.glowstone_dust": {
+  "item.click.minecraft.glowstone_dust": {
     "sounds": [
       {
         "name": "extrasounds:item.category.dust",
@@ -987,7 +987,7 @@
     ],
     "replace": true
   },
-  "item.click.gold_ingot": {
+  "item.click.minecraft.gold_ingot": {
     "sounds": [
       {
         "name": "extrasounds:item.category.metal",
@@ -996,7 +996,7 @@
     ],
     "replace": true
   },
-  "item.click.gold_nugget": {
+  "item.click.minecraft.gold_nugget": {
     "sounds": [
       {
         "name": "extrasounds:item.category.metal_bits",
@@ -1005,7 +1005,7 @@
     ],
     "replace": true
   },
-  "item.click.golden_apple": {
+  "item.click.minecraft.golden_apple": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet_slippery",
@@ -1014,7 +1014,7 @@
     ],
     "replace": true
   },
-  "item.click.golden_carrot": {
+  "item.click.minecraft.golden_carrot": {
     "sounds": [
       {
         "name": "extrasounds:item.category.food_dry",
@@ -1023,7 +1023,7 @@
     ],
     "replace": true
   },
-  "item.click.golden_horse_armor": {
+  "item.click.minecraft.golden_horse_armor": {
     "sounds": [
       {
         "name": "extrasounds:item.category.gear.golden",
@@ -1033,7 +1033,7 @@
     ],
     "replace": true
   },
-  "item.click.gunpowder": {
+  "item.click.minecraft.gunpowder": {
     "sounds": [
       {
         "name": "extrasounds:item.category.dust",
@@ -1042,7 +1042,7 @@
     ],
     "replace": true
   },
-  "item.click.heart_of_the_sea": {
+  "item.click.minecraft.heart_of_the_sea": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet",
@@ -1052,7 +1052,7 @@
     ],
     "replace": true
   },
-  "item.click.honey_bottle": {
+  "item.click.minecraft.honey_bottle": {
     "sounds": [
       {
         "name": "extrasounds:item.category.potion",
@@ -1062,7 +1062,7 @@
     ],
     "replace": true
   },
-  "item.click.honeycomb": {
+  "item.click.minecraft.honeycomb": {
     "sounds": [
       {
         "name": "minecraft:block.honey_block.place",
@@ -1073,7 +1073,7 @@
     ],
     "replace": true
   },
-  "item.click.ink_sac": {
+  "item.click.minecraft.ink_sac": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet_slippery",
@@ -1082,7 +1082,7 @@
     ],
     "replace": true
   },
-  "item.click.iron_horse_armor": {
+  "item.click.minecraft.iron_horse_armor": {
     "sounds": [
       {
         "name": "extrasounds:item.category.gear.iron",
@@ -1092,7 +1092,7 @@
     ],
     "replace": true
   },
-  "item.click.iron_ingot": {
+  "item.click.minecraft.iron_ingot": {
     "sounds": [
       {
         "name": "extrasounds:item.category.metal",
@@ -1101,7 +1101,7 @@
     ],
     "replace": true
   },
-  "item.click.iron_nugget": {
+  "item.click.minecraft.iron_nugget": {
     "sounds": [
       {
         "name": "extrasounds:item.category.metal_bits",
@@ -1110,7 +1110,7 @@
     ],
     "replace": true
   },
-  "item.click.ladder": {
+  "item.click.minecraft.ladder": {
     "sounds": [
       {
         "name": "minecraft:block.ladder.step",
@@ -1121,7 +1121,7 @@
     ],
     "replace": true
   },
-  "item.click.lapis_lazuli": {
+  "item.click.minecraft.lapis_lazuli": {
     "sounds": [
       {
         "name": "extrasounds:item.category.metal",
@@ -1130,7 +1130,7 @@
     ],
     "replace": true
   },
-  "item.click.leather": {
+  "item.click.minecraft.leather": {
     "sounds": [
       {
         "name": "minecraft:item.armor.equip_leather",
@@ -1141,7 +1141,7 @@
     ],
     "replace": true
   },
-  "item.click.leather_horse_armor": {
+  "item.click.minecraft.leather_horse_armor": {
     "sounds": [
       {
         "name": "extrasounds:item.category.gear.leather",
@@ -1151,7 +1151,7 @@
     ],
     "replace": true
   },
-  "item.click.magma_cream": {
+  "item.click.minecraft.magma_cream": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet_slippery",
@@ -1160,7 +1160,7 @@
     ],
     "replace": true
   },
-  "item.click.melon_seeds": {
+  "item.click.minecraft.melon_seeds": {
     "sounds": [
       {
         "name": "extrasounds:item.category.dust",
@@ -1169,7 +1169,7 @@
     ],
     "replace": true
   },
-  "item.click.melon_slice": {
+  "item.click.minecraft.melon_slice": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet",
@@ -1178,16 +1178,16 @@
     ],
     "replace": true
   },
-  "item.click.milk_bucket": {
+  "item.click.minecraft.milk_bucket": {
     "sounds": [
       {
-        "name": "extrasounds:item.click.water_bucket",
+        "name": "extrasounds:item.click.minecraft.water_bucket",
         "type": "event"
       }
     ],
     "replace": true
   },
-  "item.click.mushroom_block": {
+  "item.click.minecraft.mushroom_block": {
     "sounds": [
       {
         "name": "minecraft:block.stem.place",
@@ -1198,16 +1198,16 @@
     ],
     "replace": true
   },
-  "item.click.mushroom_stem": {
+  "item.click.minecraft.mushroom_stem": {
     "sounds": [
       {
-        "name": "extrasounds:item.click.mushroom_block",
+        "name": "extrasounds:item.click.minecraft.mushroom_block",
         "type": "event"
       }
     ],
     "replace": true
   },
-  "item.click.mutton": {
+  "item.click.minecraft.mutton": {
     "sounds": [
       {
         "name": "extrasounds:item.category.meat",
@@ -1216,7 +1216,7 @@
     ],
     "replace": true
   },
-  "item.click.nautilus_shell": {
+  "item.click.minecraft.nautilus_shell": {
     "sounds": [
       {
         "name": "minecraft:block.tuff.place",
@@ -1227,26 +1227,26 @@
     ],
     "replace": true
   },
-  "item.click.nether_brick": {
+  "item.click.minecraft.nether_brick": {
     "sounds": [
       {
-        "name": "extrasounds:item.click.brick",
+        "name": "extrasounds:item.click.minecraft.brick",
         "type": "event"
       }
     ],
     "replace": true
   },
-  "item.click.nether_star": {
+  "item.click.minecraft.nether_star": {
     "sounds": [
       {
-        "name": "extrasounds:item.click.end_crystal",
+        "name": "extrasounds:item.click.minecraft.end_crystal",
         "pitch": 1.6,
         "type": "event"
       }
     ],
     "replace": true
   },
-  "item.click.netherite_ingot": {
+  "item.click.minecraft.netherite_ingot": {
     "sounds": [
       {
         "name": "extrasounds:item.category.metal",
@@ -1255,7 +1255,7 @@
     ],
     "replace": true
   },
-  "item.click.netherite_scrap": {
+  "item.click.minecraft.netherite_scrap": {
     "sounds": [
       {
         "name": "extrasounds:item.category.metal_sheets",
@@ -1264,7 +1264,7 @@
     ],
     "replace": true
   },
-  "item.click.painting": {
+  "item.click.minecraft.painting": {
     "sounds": [
       {
         "name": "extrasounds:item.category.frame",
@@ -1274,7 +1274,7 @@
     ],
     "replace": true
   },
-  "item.click.paper": {
+  "item.click.minecraft.paper": {
     "sounds": [
       {
         "name": "extrasounds:item.category.paper",
@@ -1283,7 +1283,7 @@
     ],
     "replace": true
   },
-  "item.click.phantom_membrane": {
+  "item.click.minecraft.phantom_membrane": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet_slippery",
@@ -1292,7 +1292,7 @@
     ],
     "replace": true
   },
-  "item.click.poisonous_potato": {
+  "item.click.minecraft.poisonous_potato": {
     "sounds": [
       {
         "name": "extrasounds:item.category.crunchy_dry",
@@ -1301,7 +1301,7 @@
     ],
     "replace": true
   },
-  "item.click.popped_chorus_fruit": {
+  "item.click.minecraft.popped_chorus_fruit": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet_slippery",
@@ -1310,7 +1310,7 @@
     ],
     "replace": true
   },
-  "item.click.porkchop": {
+  "item.click.minecraft.porkchop": {
     "sounds": [
       {
         "name": "extrasounds:item.category.meat",
@@ -1319,7 +1319,7 @@
     ],
     "replace": true
   },
-  "item.click.potato": {
+  "item.click.minecraft.potato": {
     "sounds": [
       {
         "name": "extrasounds:item.category.crunchy_dry",
@@ -1328,7 +1328,7 @@
     ],
     "replace": true
   },
-  "item.click.powder_snow_bucket": {
+  "item.click.minecraft.powder_snow_bucket": {
     "sounds": [
       {
         "name": "minecraft:item.bucket.empty_powder_snow",
@@ -1339,7 +1339,7 @@
     ],
     "replace": true
   },
-  "item.click.prismarine_crystals": {
+  "item.click.minecraft.prismarine_crystals": {
     "sounds": [
       {
         "name": "extrasounds:item.category.loose_metal",
@@ -1349,7 +1349,7 @@
     ],
     "replace": true
   },
-  "item.click.prismarine_shard": {
+  "item.click.minecraft.prismarine_shard": {
     "sounds": [
       {
         "name": "extrasounds:item.category.loose_metal",
@@ -1358,7 +1358,7 @@
     ],
     "replace": true
   },
-  "item.click.pufferfish": {
+  "item.click.minecraft.pufferfish": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet",
@@ -1367,7 +1367,7 @@
     ],
     "replace": true
   },
-  "item.click.pumpkin_pie": {
+  "item.click.minecraft.pumpkin_pie": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet",
@@ -1376,7 +1376,7 @@
     ],
     "replace": true
   },
-  "item.click.pumpkin_seeds": {
+  "item.click.minecraft.pumpkin_seeds": {
     "sounds": [
       {
         "name": "extrasounds:item.category.dust",
@@ -1385,7 +1385,7 @@
     ],
     "replace": true
   },
-  "item.click.quartz": {
+  "item.click.minecraft.quartz": {
     "sounds": [
       {
         "name": "extrasounds:item.category.loose_metal",
@@ -1394,7 +1394,7 @@
     ],
     "replace": true
   },
-  "item.click.rabbit": {
+  "item.click.minecraft.rabbit": {
     "sounds": [
       {
         "name": "extrasounds:item.category.meat",
@@ -1403,35 +1403,26 @@
     ],
     "replace": true
   },
-  "item.click.rabbit_foot": {
+  "item.click.minecraft.rabbit_foot": {
     "sounds": [
       {
-        "name": "extrasounds:item.click.rabbit_hide",
+        "name": "extrasounds:item.click.minecraft.rabbit_hide",
         "pitch": 1.2,
         "type": "event"
       }
     ],
     "replace": true
   },
-  "item.click.rabbit_hide": {
+  "item.click.minecraft.rabbit_hide": {
     "sounds": [
       {
-        "name": "extrasounds:item.click.leather",
+        "name": "extrasounds:item.click.minecraft.leather",
         "type": "event"
       }
     ],
     "replace": true
   },
-  "item.click.raw_copper": {
-    "sounds": [
-      {
-        "name": "extrasounds:item.category.loose_metal",
-        "type": "event"
-      }
-    ],
-    "replace": true
-  },
-  "item.click.raw_gold": {
+  "item.click.minecraft.raw_copper": {
     "sounds": [
       {
         "name": "extrasounds:item.category.loose_metal",
@@ -1440,7 +1431,7 @@
     ],
     "replace": true
   },
-  "item.click.raw_iron": {
+  "item.click.minecraft.raw_gold": {
     "sounds": [
       {
         "name": "extrasounds:item.category.loose_metal",
@@ -1449,16 +1440,25 @@
     ],
     "replace": true
   },
-  "item.click.red_mushroom_block": {
+  "item.click.minecraft.raw_iron": {
     "sounds": [
       {
-        "name": "extrasounds:item.click.mushroom_block",
+        "name": "extrasounds:item.category.loose_metal",
         "type": "event"
       }
     ],
     "replace": true
   },
-  "item.click.redstone": {
+  "item.click.minecraft.red_mushroom_block": {
+    "sounds": [
+      {
+        "name": "extrasounds:item.click.minecraft.mushroom_block",
+        "type": "event"
+      }
+    ],
+    "replace": true
+  },
+  "item.click.minecraft.redstone": {
     "sounds": [
       {
         "name": "extrasounds:item.category.dust",
@@ -1467,7 +1467,7 @@
     ],
     "replace": true
   },
-  "item.click.rotten_flesh": {
+  "item.click.minecraft.rotten_flesh": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet",
@@ -1476,7 +1476,7 @@
     ],
     "replace": true
   },
-  "item.click.salmon": {
+  "item.click.minecraft.salmon": {
     "sounds": [
       {
         "name": "extrasounds:item.category.meat",
@@ -1485,7 +1485,7 @@
     ],
     "replace": true
   },
-  "item.click.scute": {
+  "item.click.minecraft.scute": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet_slippery",
@@ -1494,7 +1494,7 @@
     ],
     "replace": true
   },
-  "item.click.shulker_shell": {
+  "item.click.minecraft.shulker_shell": {
     "sounds": [
       {
         "name": "minecraft:item.armor.equip_iron",
@@ -1505,7 +1505,7 @@
     ],
     "replace": true
   },
-  "item.click.slime_ball": {
+  "item.click.minecraft.slime_ball": {
     "sounds": [
       {
         "name": "minecraft:block.slime_block.place",
@@ -1516,7 +1516,7 @@
     ],
     "replace": true
   },
-  "item.click.slime_block": {
+  "item.click.minecraft.slime_block": {
     "sounds": [
       {
         "name": "minecraft:block.slime_block.place",
@@ -1527,7 +1527,7 @@
     ],
     "replace": true
   },
-  "item.click.snowball": {
+  "item.click.minecraft.snowball": {
     "sounds": [
       {
         "name": "minecraft:block.snow.place",
@@ -1538,7 +1538,7 @@
     ],
     "replace": true
   },
-  "item.click.spider_eye": {
+  "item.click.minecraft.spider_eye": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet_slippery",
@@ -1547,7 +1547,7 @@
     ],
     "replace": true
   },
-  "item.click.stick": {
+  "item.click.minecraft.stick": {
     "sounds": [
       {
         "name": "minecraft:block.wood.place",
@@ -1558,7 +1558,7 @@
     ],
     "replace": true
   },
-  "item.click.string": {
+  "item.click.minecraft.string": {
     "sounds": [
       {
         "name": "extrasounds:item.category.dust",
@@ -1567,7 +1567,7 @@
     ],
     "replace": true
   },
-  "item.click.sugar": {
+  "item.click.minecraft.sugar": {
     "sounds": [
       {
         "name": "extrasounds:item.category.dust",
@@ -1576,7 +1576,7 @@
     ],
     "replace": true
   },
-  "item.click.sweet_berries": {
+  "item.click.minecraft.sweet_berries": {
     "sounds": [
       {
         "name": "extrasounds:item.category.crunchy_dry",
@@ -1585,7 +1585,7 @@
     ],
     "replace": true
   },
-  "item.click.totem_of_undying": {
+  "item.click.minecraft.totem_of_undying": {
     "sounds": [
       {
         "name": "minecraft:item.armor.equip_generic",
@@ -1596,7 +1596,7 @@
     ],
     "replace": true
   },
-  "item.click.trident": {
+  "item.click.minecraft.trident": {
     "sounds": [
       {
         "name": "minecraft:item.armor.equip_diamond",
@@ -1607,7 +1607,7 @@
     ],
     "replace": true
   },
-  "item.click.tropical_fish": {
+  "item.click.minecraft.tropical_fish": {
     "sounds": [
       {
         "name": "extrasounds:item.category.wet",
@@ -1616,7 +1616,7 @@
     ],
     "replace": true
   },
-  "item.click.wheat": {
+  "item.click.minecraft.wheat": {
     "sounds": [
       {
         "name": "extrasounds:item.category.hay",
@@ -1625,7 +1625,7 @@
     ],
     "replace": true
   },
-  "item.click.wheat_seeds": {
+  "item.click.minecraft.wheat_seeds": {
     "sounds": [
       {
         "name": "extrasounds:item.category.dust",
