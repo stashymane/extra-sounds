@@ -13,18 +13,20 @@ import net.minecraft.util.registry.Registry;
 import static dev.stashy.extrasounds.sounds.Categories.*;
 import static dev.stashy.extrasounds.sounds.Sounds.*;
 
-public class VanillaMapper
+public class VanillaGenerator implements SoundGeneratorInitializer
 {
-    static
+    SoundGenerator vanilla = SoundGenerator.of("minecraft", id -> {
+        Item i = Registry.ITEM.get(id);
+        if (i instanceof BlockItem)
+            return block((BlockItem) i);
+        else
+            return item(i);
+    });
+
+    @Override
+    public SoundGenerator getGenerator()
     {
-        //Vanilla mapper
-        SoundMapper.register("minecraft", id -> {
-            Item i = Registry.ITEM.get(id);
-            if (i instanceof BlockItem)
-                return block((BlockItem) i);
-            else
-                return item(i);
-        });
+        return vanilla;
     }
 
     private static SoundEntry item(Item i)

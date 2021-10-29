@@ -17,6 +17,9 @@
   "entrypoints": {
     "client": [
       "dev.stashy.extrasounds.ExtraSounds"
+    ],
+    "extrasounds": [
+      "dev.stashy.extrasounds.mapping.VanillaGenerator"
     ]
   },
   "mixins": [
