@@ -14,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.screen.PlayerScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -46,10 +47,10 @@ public class ExtraSounds implements ClientModInitializer
         {
             case PICKUP_ALL:
                 if (hasCursor)
-                    ExtraSounds.playSound(Sounds.ITEM_PICK_ALL);
+                    ExtraSounds.playSound(Sounds.ITEM_PICK_ALL, Mixers.INVENTORY);
                 return;
             case CLONE:
-                ExtraSounds.playSound(Sounds.ITEM_CLONE);
+                ExtraSounds.playSound(Sounds.ITEM_CLONE, Mixers.INVENTORY);
                 return;
             case QUICK_MOVE:
                 if (MinecraftClient.getInstance().player != null &&
@@ -93,39 +94,46 @@ public class ExtraSounds implements ClientModInitializer
 
         Identifier id = Identifier.tryParse(idString);
         Registry.SOUND_EVENT.getOrEmpty(id).ifPresentOrElse(
-                (snd) -> playSound(snd, getItemPitch(1f, 0.1f, pickup)),
+                (snd) -> playSound(snd, Mixers.INVENTORY, getItemPitch(1f, 0.1f, pickup)),
                 () -> LOGGER.error("Sound cannot be found in registry: " + id));
     }
 
     public static void playEffectSound(StatusEffect effect, boolean add)
     {
         DebugUtils.effectLog(effect, add);
-        if (add)
-            switch (effect.getCategory())
-            {
-                case HARMFUL -> playSound(Sounds.EFFECT_ADD_NEGATIVE);
-                case NEUTRAL, BENEFICIAL -> playSound(Sounds.EFFECT_ADD_POSITIVE);
-            }
-        else
-            switch (effect.getCategory())
-            {
-                case HARMFUL -> playSound(Sounds.EFFECT_REMOVE_NEGATIVE);
-                case NEUTRAL, BENEFICIAL -> playSound(Sounds.EFFECT_REMOVE_POSITIVE);
-            }
+        playSound(
+                add ?
+                        switch (effect.getCategory())
+                                {
+                                    case HARMFUL -> Sounds.EFFECT_ADD_NEGATIVE;
+                                    case NEUTRAL, BENEFICIAL -> Sounds.EFFECT_ADD_POSITIVE;
+                                }
+                        :
+                        switch (effect.getCategory())
+                                {
+                                    case HARMFUL -> Sounds.EFFECT_REMOVE_NEGATIVE;
+                                    case NEUTRAL, BENEFICIAL -> Sounds.EFFECT_REMOVE_POSITIVE;
+                                },
+                Mixers.EFFECTS);
     }
 
     public static void playSound(SoundEvent snd)
     {
-        playSound(snd, 1f);
+        playSound(snd, Mixers.INVENTORY);
     }
 
-    public static void playSound(SoundEvent snd, float pitch)
+    public static void playSound(SoundEvent snd, SoundCategory cat)
+    {
+        playSound(snd, cat, 1f);
+    }
+
+    public static void playSound(SoundEvent snd, SoundCategory cat, float pitch)
     {
         long now = System.currentTimeMillis();
         if (now - lastPlayed > 5)
         {
             MinecraftClient.getInstance().getSoundManager()
-                           .play(new PositionedSoundInstance(snd.getId(), Mixers.INVENTORY, 1f, pitch, false, 0,
+                           .play(new PositionedSoundInstance(snd.getId(), cat, 1f, pitch, false, 0,
                                                              SoundInstance.AttenuationType.NONE, 0.0D, 0.0D, 0.0D,
                                                              true));
             lastPlayed = now;

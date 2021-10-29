@@ -1,6 +1,7 @@
 package dev.stashy.extrasounds.mixin;
 
 import dev.stashy.extrasounds.ExtraSounds;
+import dev.stashy.extrasounds.Mixers;
 import dev.stashy.extrasounds.sounds.Sounds;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import org.spongepowered.asm.mixin.Mixin;
@@ -15,6 +16,6 @@ public class KeyboardTypingSound
     public void type(char chr, int modifiers, CallbackInfoReturnable<Boolean> cir)
     {
         if (cir.getReturnValue())
-            ExtraSounds.playSound(Sounds.KEYBOARD_TYPE);
+            ExtraSounds.playSound(Sounds.KEYBOARD_TYPE, Mixers.CHAT);
     }
 }
