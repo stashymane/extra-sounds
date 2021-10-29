@@ -77,14 +77,4 @@ public class SoundPackLoader
                     .filter(success -> !success)
                     .ifPresent(success -> LOGGER.warn("Could not register built-in resource pack."));
     }
-
-    private static byte[] generateJson()
-    {
-        Map<String, SoundEntry> entries = new HashMap<>();
-        //Registry.ITEM.getIds().forEach((i) -> loadItem(i, entries));
-        //Registry.BLOCK.getIds().forEach((i) -> loadBlock(i, entries));
-        byte[] json = gson.toJson(entries).getBytes();
-        DebugUtils.exportSoundsJson(json);
-        return json;
-    }
 }
