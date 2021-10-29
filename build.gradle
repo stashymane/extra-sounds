@@ -17,6 +17,10 @@ repositories {
     maven {
         url = uri("https://storage.googleapis.com/devan-maven/")
     }
+    maven {
+        name = "CottonMC"
+        url = "https://server.bbkr.space/artifactory/libs-release"
+    }
 }
 
 dependencies {
@@ -25,7 +29,8 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-    include(modImplementation("net.devtech:arrp:0.5.1"))
+    modImplementation include("net.devtech:arrp:0.5.1")
+    modImplementation include("io.github.cottonmc:LibGui:${project.libgui_version}")
 }
 
 processResources {
