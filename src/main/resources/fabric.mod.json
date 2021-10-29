@@ -19,7 +19,7 @@
       "dev.stashy.extrasounds.ExtraSounds"
     ],
     "extrasounds": [
-      "dev.stashy.extrasounds.mapping.VanillaGenerator"
+      "dev.stashy.extrasounds.mapping.VanillaGenerator::generator"
     ]
   },
   "mixins": [

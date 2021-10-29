@@ -13,21 +13,15 @@ import net.minecraft.util.registry.Registry;
 import static dev.stashy.extrasounds.sounds.Categories.*;
 import static dev.stashy.extrasounds.sounds.Sounds.*;
 
-public class VanillaGenerator implements SoundGeneratorInitializer
+public class VanillaGenerator
 {
-    SoundGenerator vanilla = SoundGenerator.of("minecraft", id -> {
+    public static SoundGenerator generator = SoundGenerator.of("minecraft", id -> {
         Item i = Registry.ITEM.get(id);
         if (i instanceof BlockItem)
             return block((BlockItem) i);
         else
             return item(i);
     });
-
-    @Override
-    public SoundGenerator getGenerator()
-    {
-        return vanilla;
-    }
 
     private static SoundEntry item(Item i)
     {
