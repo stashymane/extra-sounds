@@ -125,7 +125,7 @@ public class ExtraSounds implements ClientModInitializer
         if (now - lastPlayed > 5)
         {
             MinecraftClient.getInstance().getSoundManager()
-                           .play(new PositionedSoundInstance(snd.getId(), CustomSoundCategory.UI, 1f, pitch, false, 0,
+                           .play(new PositionedSoundInstance(snd.getId(), Mixers.INVENTORY, 1f, pitch, false, 0,
                                                              SoundInstance.AttenuationType.NONE, 0.0D, 0.0D, 0.0D,
                                                              true));
             lastPlayed = now;
