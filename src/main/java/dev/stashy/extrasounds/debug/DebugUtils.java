@@ -19,7 +19,7 @@ public class DebugUtils
     public static final boolean debug = System.getProperties().containsKey(debugVar)
             && System.getProperty(debugVar).equals("true");
     public static final String debugPath = System.getProperties().containsKey(debugPathVar)
-            ? System.getProperty(debugPathVar) : "C:\\";
+            ? System.getProperty(debugPathVar) : "debug/";
 
     private static final Logger LOGGER = LogManager.getLogger();
 
