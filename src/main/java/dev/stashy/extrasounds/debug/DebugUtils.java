@@ -27,7 +27,7 @@ public class DebugUtils
     {
         if (!debug) return;
         LOGGER.info("ExtraSounds: DEBUG mode enabled.");
-        LOGGER.info("Debug path: " + debugPath);
+        LOGGER.info("Debug path: " + Path.of(debugPath).toAbsolutePath());
     }
 
     public static void exportSoundsJson(byte[] jsonData)
@@ -36,8 +36,7 @@ public class DebugUtils
         try
         {
             Path p = Path.of(debugPath).resolve("sounds.json");
-            if (!Files.exists(p))
-                Files.createFile(p);
+            createFile(p);
             Files.write(p, jsonData, StandardOpenOption.TRUNCATE_EXISTING);
         }
         catch (IOException e)
@@ -58,5 +57,21 @@ public class DebugUtils
         if (!debug) return;
         boolean positive = !effect.getCategory().equals(StatusEffectCategory.HARMFUL);
         LOGGER.info((positive ? "Positive" : "Negative") + " effect " + (add ? "added" : "removed"));
+    }
+
+    private static void createFile(Path p)
+    {
+        try
+        {
+            if (!Files.isDirectory(Path.of(debugPath)))
+                Files.createDirectory(Path.of(debugPath));
+            if (!Files.exists(p))
+                Files.createFile(p);
+        }
+        catch (IOException e)
+        {
+            LOGGER.error("Unable to create file: " + p);
+            e.printStackTrace();
+        }
     }
 }
