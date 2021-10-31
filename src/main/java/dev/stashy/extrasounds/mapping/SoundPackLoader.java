@@ -61,6 +61,7 @@ public class SoundPackLoader
 
             var json = gson.toJson(itemMap).getBytes();
             DebugUtils.exportSoundsJson(json);
+            DebugUtils.exportGenerators();
             return json;
         });
 
