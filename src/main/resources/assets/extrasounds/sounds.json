@@ -267,8 +267,8 @@
     "sounds": [
       {
         "name": "minecraft:block.azalea.hit",
-        "volume": 0.3,
-        "pitch": 1.2,
+        "volume": 0.4,
+        "pitch": 1.1,
         "type": "event"
       }
     ],
