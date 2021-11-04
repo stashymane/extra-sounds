@@ -1692,7 +1692,7 @@
     "sounds": [
       {
         "name": "minecraft:block.chorus_flower.grow",
-        "volume": 0.6,
+        "volume": 0.9,
         "pitch": 2,
         "type": "event"
       }
@@ -1702,7 +1702,7 @@
     "sounds": [
       {
         "name": "minecraft:block.conduit.ambient.short",
-        "volume": 0.7,
+        "volume": 1,
         "pitch": 2,
         "type": "event"
       }
@@ -1712,7 +1712,7 @@
     "sounds": [
       {
         "name": "minecraft:block.chorus_flower.grow",
-        "volume": 0.6,
+        "volume": 0.9,
         "pitch": 1,
         "type": "event"
       }
@@ -1722,7 +1722,7 @@
     "sounds": [
       {
         "name": "minecraft:particle.soul_escape",
-        "volume": 0.6,
+        "volume": 1,
         "pitch": 0.8,
         "type": "event"
       }
