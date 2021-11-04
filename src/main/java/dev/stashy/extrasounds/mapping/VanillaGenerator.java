@@ -22,9 +22,9 @@ public class VanillaGenerator
 
     public static SoundGenerator generator = SoundGenerator.of("minecraft", id -> {
         Item i = Registry.ITEM.get(id);
-        Class<? extends Item> cls = i.getClass();
-        while (!map.containsKey(cls) && cls.getSuperclass() != null && cls.getSuperclass().isAssignableFrom(Item.class))
-            cls = (Class<? extends Item>) cls.getSuperclass();
+        Class cls = i.getClass();
+        while (!map.containsKey(cls) && cls.getSuperclass() != null && Item.class.isAssignableFrom(cls.getSuperclass()))
+            cls = cls.getSuperclass();
         return map.containsKey(cls) ? map.get(cls).apply(i) : aliased(ITEM_PICK);
     });
 
