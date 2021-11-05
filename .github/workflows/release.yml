@@ -25,6 +25,12 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
+      - name: Publish on Maven repo
+        run: ./gradlew publishMavenJavaPublicationToMavenRepository
+        env:
+          ORG_GRADLE_PROJECT_publish_username: ${{ secrets.PUBLISH_USERNAME }}
+          ORG_GRADLE_PROJECT_publish_password: ${{ secrets.PUBLISH_PASSWORD }}
+
       - name: Publish on Curse & Modrinth
         run: ./gradlew publishMod
         env:

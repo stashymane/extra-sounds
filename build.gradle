@@ -80,8 +80,8 @@ publishing {
         maven {
             url = "https://repo.stashy.dev"
             credentials {
-                username = project.publish_username
-                password = project.publish_password
+                username = project.hasProperty("publish_username") ? project.publish_username : ""
+                password = project.hasProperty("publish_password") ? project.publish_password : ""
             }
         }
     }
