@@ -1,17 +1,19 @@
 # Changelog
 
-## [2.0.0] - N/A
+## [2.0.0] - 2021-11-05
 
 ### IMPORTANT!
 
-ExtraSounds no longer depends on Cloth Config - all configuration is now done via resource packs. The only remaining
-dependency is Fabric API.
+ExtraSounds no longer depends on Cloth Config - all sound assignment is now done via resource packs. The only remaining
+dependency is Fabric API. Check [the Wiki](https://github.com/stashymane/extra-sounds/wiki) for more info.
 
 ### Added
 
 - Resource pack support (thanks to ARRP)
 - Better modded item support
+- Auto generation API
 - Effect sounds (buffs/debuffs)
+- Volume control via Minecraft sound menu
 
 ### Changed
 
