@@ -101,7 +101,8 @@ curseforge {
 
             relations {
                 requiredDependency "fabric-api"
-                requiredDependency "arrp"
+                embeddedLibrary "arrp"
+                embeddedLibrary "libgui"
             }
         }
     }
@@ -125,7 +126,7 @@ task publishModrinth(type: TaskModrinthUpload) {
     uploadFile = remapJar
     addGameVersion(project.minecraft_version)
     addLoader("fabric")
-    addDependency("fabric-api", "required")
+    //addDependency("fabric-api", "required")
 }
 
 task publishMod() {
