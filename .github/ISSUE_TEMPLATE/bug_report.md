@@ -12,3 +12,5 @@ Mod: [version]
 
 ## Details
 Detail what happens here, and why or how it should or should not happen.
+
+Please attach a log file as well.
