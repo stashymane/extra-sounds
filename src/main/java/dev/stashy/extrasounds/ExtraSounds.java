@@ -103,13 +103,13 @@ public class ExtraSounds implements ClientModInitializer
         DebugUtils.effectLog(effect, add);
         playSound(
                 add ?
-                        switch (effect.getCategory())
+                        switch (effect.getType())
                                 {
                                     case HARMFUL -> Sounds.EFFECT_ADD_NEGATIVE;
                                     case NEUTRAL, BENEFICIAL -> Sounds.EFFECT_ADD_POSITIVE;
                                 }
                         :
-                        switch (effect.getCategory())
+                        switch (effect.getType())
                                 {
                                     case HARMFUL -> Sounds.EFFECT_REMOVE_NEGATIVE;
                                     case NEUTRAL, BENEFICIAL -> Sounds.EFFECT_REMOVE_POSITIVE;

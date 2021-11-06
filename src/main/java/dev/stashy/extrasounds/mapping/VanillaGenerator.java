@@ -5,8 +5,11 @@ import net.minecraft.block.AbstractRailBlock;
 import net.minecraft.block.BannerBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.LeavesBlock;
+import net.minecraft.client.sound.Sound;
 import net.minecraft.client.sound.SoundEntry;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.registry.Registry;
 
 import java.util.HashMap;
@@ -65,15 +68,19 @@ public class VanillaGenerator
                 return aliased(Gear.GENERIC);
         });
         map.put(ShieldItem.class, it -> aliased(Gear.IRON));
-        putMulti(it -> aliased(Gear.GOLDEN), HorseArmorItem.class, CompassItem.class, SpyglassItem.class,
+        putMulti(it -> aliased(Gear.GOLDEN), HorseArmorItem.class, CompassItem.class,
                  ShearsItem.class);
         putMulti(it -> aliased(Gear.LEATHER), LeadItem.class, ElytraItem.class, SaddleItem.class);
         putMulti(it -> aliased(Gear.GENERIC), BowItem.class, CrossbowItem.class, FishingRodItem.class,
                  OnAStickItem.class);
         map.put(BucketItem.class, it -> {
             var f = ((BucketFluidAccessor) it).getFluid();
-            return f.getBucketFillSound().isPresent() ?
-                    event(f.getBucketFillSound().get().getId()) : aliased(METAL);
+            if (f.getDefaultState().equals(Fluids.WATER.getDefaultState()))
+                return single(SoundEvents.ITEM_BUCKET_FILL.getId(), 0.7f, 1.6f, Sound.RegistrationType.SOUND_EVENT);
+            else if (f.getDefaultState().equals(Fluids.LAVA.getDefaultState()))
+                return single(SoundEvents.ITEM_BUCKET_FILL_LAVA.getId(), 0.7f, 1.6f,
+                              Sound.RegistrationType.SOUND_EVENT);
+            else return aliased(METAL);
         });
         map.put(MinecartItem.class, it -> aliased(MINECART));
         map.put(ItemFrameItem.class, it -> aliased(FRAME));

@@ -39,7 +39,7 @@ public abstract class CreativeInventoryClickSounds
     private List<Slot> slots;
     private long lastDeleteSound;
 
-    @Inject(at = @At("INVOKE"), method = "onMouseClick")
+    @Inject(at = @At("HEAD"), method = "onMouseClick")
     void slotClick(Slot slot, int invSlot, int clickData, SlotActionType actionType, CallbackInfo ci)
     {
         if (slot == null || client == null || client.player == null) return;
@@ -48,7 +48,7 @@ public abstract class CreativeInventoryClickSounds
                 && slot == deleteItemSlot
                 && selectedTab == ItemGroup.INVENTORY.getIndex())
         {
-            if (actionType.equals(SlotActionType.PICKUP) && handler.getCursorStack().isEmpty()
+            if (actionType.equals(SlotActionType.PICKUP) && playerInventory.getCursorStack().isEmpty()
                     || actionType.equals(SlotActionType.QUICK_MOVE)
                     && slots != null && slots.parallelStream().noneMatch(Slot::hasStack))
                 return;
@@ -56,11 +56,11 @@ public abstract class CreativeInventoryClickSounds
             lastDeleteSound = System.currentTimeMillis();
         }
         else
-            ExtraSounds.inventoryClick(slot, handler.getCursorStack(),
+            ExtraSounds.inventoryClick(slot, playerInventory.getCursorStack(),
                                        actionType);
     }
 
-    @Inject(at = @At("INVOKE"), method = "setSelectedTab")
+    @Inject(at = @At("HEAD"), method = "setSelectedTab")
     void tabChange(ItemGroup group, CallbackInfo ci)
     {
         if (selectedTab != -1 && group.getIndex() != selectedTab)

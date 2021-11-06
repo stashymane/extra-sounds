@@ -115,9 +115,9 @@
   "item.category.crunchy_dry": {
     "sounds": [
       {
-        "name": "minecraft:block.big_dripleaf.place",
+        "name": "minecraft:block.sweet_berry_bush.place",
         "volume": 0.2,
-        "pitch": 1,
+        "pitch": 1.7,
         "type": "event"
       }
     ]
@@ -125,9 +125,9 @@
   "item.category.dust": {
     "sounds": [
       {
-        "name": "minecraft:block.azalea.hit",
+        "name": "minecraft:block.sweet_berry_bush.place",
         "volume": 0.3,
-        "pitch": 1.7,
+        "pitch": 2,
         "type": "event"
       }
     ]
@@ -135,9 +135,9 @@
   "item.category.food_dry": {
     "sounds": [
       {
-        "name": "minecraft:block.rooted_dirt.place",
+        "name": "minecraft:block.sweet_berry_bush.place",
         "volume": 0.2,
-        "pitch": 1.7,
+        "pitch": 1.5,
         "type": "event"
       }
     ]
@@ -256,9 +256,9 @@
   "item.category.hay": {
     "sounds": [
       {
-        "name": "minecraft:block.azalea.hit",
+        "name": "minecraft:block.grass.hit",
         "volume": 0.4,
-        "pitch": 1.1,
+        "pitch": 1.6,
         "type": "event"
       }
     ]
@@ -266,9 +266,9 @@
   "item.category.leaves": {
     "sounds": [
       {
-        "name": "minecraft:block.azalea.hit",
+        "name": "minecraft:block.grass.hit",
         "volume": 0.4,
-        "pitch": 1.1,
+        "pitch": 1.9,
         "type": "event"
       }
     ],
@@ -624,9 +624,9 @@
   "item.click.minecraft.clay_ball": {
     "sounds": [
       {
-        "name": "minecraft:block.rooted_dirt.place",
+        "name": "minecraft:block.sweet_berry_bush.place",
         "volume": 0.2,
-        "pitch": 1.7,
+        "pitch": 1.5,
         "type": "event"
       }
     ],

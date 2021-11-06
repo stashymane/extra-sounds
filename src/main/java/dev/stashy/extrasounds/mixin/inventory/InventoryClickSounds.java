@@ -4,6 +4,7 @@ import dev.stashy.extrasounds.ExtraSounds;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.screen.ingame.ScreenHandlerProvider;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
@@ -23,15 +24,19 @@ public abstract class InventoryClickSounds<T extends ScreenHandler> extends Scre
     @Final
     protected T handler;
 
+    @Shadow
+    @Final
+    protected PlayerInventory playerInventory;
+
     protected InventoryClickSounds(Text title)
     {
         super(title);
     }
 
-    @Inject(at = @At("INVOKE"), method = "onMouseClick(Lnet/minecraft/screen/slot/Slot;IILnet/minecraft/screen/slot/SlotActionType;)V")
+    @Inject(at = @At("HEAD"), method = "onMouseClick(Lnet/minecraft/screen/slot/Slot;IILnet/minecraft/screen/slot/SlotActionType;)V")
     void click(Slot slot, int invSlot, int clickData, SlotActionType actionType, CallbackInfo ci)
     {
         if (slot != null)
-            ExtraSounds.inventoryClick(slot, handler.getCursorStack(), actionType);
+            ExtraSounds.inventoryClick(slot, playerInventory.getCursorStack(), actionType);
     }
 }

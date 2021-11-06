@@ -2,7 +2,6 @@ package dev.stashy.extrasounds.mixin;
 
 import dev.stashy.extrasounds.ExtraSounds;
 import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -17,7 +16,7 @@ public abstract class EffectMixin
 {
 
     @Inject(at = @At("HEAD"), method = "onStatusEffectApplied")
-    public void addEffect(StatusEffectInstance effect, Entity source, CallbackInfo ci)
+    public void addEffect(StatusEffectInstance effect, CallbackInfo ci)
     {
         if ((LivingEntity) (Object) this instanceof ClientPlayerEntity)
             ExtraSounds.playEffectSound(effect.getEffectType(), true);

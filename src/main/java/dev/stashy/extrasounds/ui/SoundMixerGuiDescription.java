@@ -7,7 +7,6 @@ import io.github.cottonmc.cotton.gui.widget.WLabeledSlider;
 import io.github.cottonmc.cotton.gui.widget.WScrollPanel;
 import io.github.cottonmc.cotton.gui.widget.data.Axis;
 import io.github.cottonmc.cotton.gui.widget.data.HorizontalAlignment;
-import io.github.cottonmc.cotton.gui.widget.data.Insets;
 import net.fabricmc.fabric.api.util.TriState;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
@@ -27,7 +26,6 @@ public class SoundMixerGuiDescription extends LightweightGuiDescription
         var fullWidth = 33;
 
         var root = new WGridPanel(9);
-        root.setInsets(Insets.ROOT_PANEL);
         setRootPanel(root);
         root.setSize(254, 220);
 
@@ -57,7 +55,7 @@ public class SoundMixerGuiDescription extends LightweightGuiDescription
         back.setAlignment(HorizontalAlignment.CENTER);
         back.setOnClick(() -> {
             MinecraftClient.getInstance().options.write();
-            MinecraftClient.getInstance().setScreen(parent);
+            MinecraftClient.getInstance().openScreen(parent);
         });
 
         root.add(back, 5, 23, 23, 2);

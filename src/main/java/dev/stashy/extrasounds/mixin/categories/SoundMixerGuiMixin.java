@@ -12,10 +12,10 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(OptionsScreen.class)
 public class SoundMixerGuiMixin
 {
-    @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/MinecraftClient;setScreen(Lnet/minecraft/client/gui/screen/Screen;)V"), method = "method_19829")
+    @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/MinecraftClient;openScreen(Lnet/minecraft/client/gui/screen/Screen;)V"), method = "method_19829")
     //soundOptionsScreen lambda
     public void getSoundOptionsScreen(MinecraftClient instance, Screen screen)
     {
-        instance.setScreen(new SoundMixerScreen(new SoundMixerGuiDescription((OptionsScreen) (Object) this)));
+        instance.openScreen(new SoundMixerScreen(new SoundMixerGuiDescription((OptionsScreen) (Object) this)));
     }
 }
