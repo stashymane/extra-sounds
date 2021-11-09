@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: "Prepare env vars"
         if: ${{ github.event.inputs.version != null }}
-        run: "env.RELEASE_NAME = github.event.inputs.version"
+        run: "$env.RELEASE_NAME = $github.event.inputs.version"
 
       - uses: actions/checkout@v2
       - name: Set up JDK 16
