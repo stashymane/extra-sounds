@@ -33,17 +33,16 @@ public abstract class EffectMixin extends AbstractClientPlayerEntity
     @Override
     public void applyStatusEffect(StatusEffectInstance effect)
     {
-        if (effect.getDuration() > minDuration) ExtraSounds.playEffectSound(effect.getEffectType(), true);
+        if (effect.getDuration() > minDuration && !this.hasStatusEffect(effect.getEffectType()))
+            ExtraSounds.playEffectSound(effect.getEffectType(), true);
         super.applyStatusEffect(effect);
     }
 
     @Override
     protected void onStatusEffectRemoved(StatusEffectInstance effect)
     {
-        {
-            super.onStatusEffectRemoved(effect);
-            ExtraSounds.playEffectSound(effect.getEffectType(), false);
-        }
+        super.onStatusEffectRemoved(effect);
+        ExtraSounds.playEffectSound(effect.getEffectType(), false);
     }
 
     @Inject(at = @At("HEAD"), method = "removeStatusEffectInternal")
