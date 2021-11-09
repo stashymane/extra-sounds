@@ -2,7 +2,7 @@ package dev.stashy.extrasounds.debug;
 
 import dev.stashy.extrasounds.mapping.SoundPackLoader;
 import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectType;
+import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.sound.SoundEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -49,6 +49,7 @@ public class DebugUtils
 
     public static void exportGenerators()
     {
+        if (!debug) return;
         Path p = Path.of(debugPath).resolve("generators.txt");
         createFile(p);
         try
@@ -78,8 +79,10 @@ public class DebugUtils
     public static void effectLog(StatusEffect effect, boolean add)
     {
         if (!debug) return;
-        boolean positive = !effect.getType().equals(StatusEffectType.HARMFUL);
-        LOGGER.info((positive ? "Positive" : "Negative") + " effect " + (add ? "added" : "removed"));
+        boolean positive = !effect.getCategory().equals(StatusEffectCategory.HARMFUL);
+        LOGGER.info(
+                (positive ? "Positive" : "Negative") + " effect " + (add ? "added" : "removed") + ": " + effect.getName()
+                                                                                                               .getString());
     }
 
     private static void createFile(Path p)
