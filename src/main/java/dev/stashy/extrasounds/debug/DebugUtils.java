@@ -49,6 +49,7 @@ public class DebugUtils
 
     public static void exportGenerators()
     {
+        if (!debug) return;
         Path p = Path.of(debugPath).resolve("generators.txt");
         createFile(p);
         try
