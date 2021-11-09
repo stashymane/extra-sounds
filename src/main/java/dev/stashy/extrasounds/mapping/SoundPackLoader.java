@@ -14,6 +14,7 @@ import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.sound.Sound;
 import net.minecraft.client.sound.SoundEntry;
+import net.minecraft.item.BlockItem;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
@@ -53,9 +54,18 @@ public class SoundPackLoader
                 if (!Registry.SOUND_EVENT.containsId(sndId))
                     Registry.register(Registry.SOUND_EVENT, sndId, new SoundEvent(sndId));
 
-                var snd = mappers.containsKey(id.getNamespace()) ?
-                        mappers.get(id.getNamespace()).itemSoundGenerator().apply(id) :
-                        Sounds.aliased(Sounds.ITEM_PICK);
+                var snd = Sounds.aliased(Sounds.ITEM_PICK);
+                if (mappers.containsKey(id.getNamespace()))
+                    snd = mappers.get(id.getNamespace()).itemSoundGenerator().apply(id);
+                else if (Registry.ITEM.get(id) instanceof BlockItem b)
+                    try
+                    {
+                        snd = Sounds.event(
+                                b.getBlock().getSoundGroup(b.getBlock().getDefaultState()).getPlaceSound().getId());
+                    }
+                    catch (Exception e)
+                    {
+                    }
                 return new Pair<>(sndId.getPath(), snd);
             }).collect(Collectors.toMap(Pair::getLeft, Pair::getRight, (a, b) -> b, HashMap::new));
 
