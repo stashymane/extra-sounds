@@ -1,13 +1,17 @@
 # This workflow will build a Java project with Gradle
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
 
-name: Publish release
+name: Publish release on GitHub
 
 on:
   push:
     tags:
       - "*"
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version'
+        required: true
 
 jobs:
   build:
@@ -15,8 +19,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: "Prepare env vars"
+        if: ${{ github.event.inputs.version != null }}
+        run: "env.RELEASE_NAME = github.event.inputs.version"
+
       - uses: actions/checkout@v2
-      - name: Set up JDK 8
+      - name: Set up JDK 16
         uses: actions/setup-java@v2
         with:
           java-version: '16'
@@ -24,18 +32,6 @@ jobs:
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-
-      - name: Publish on Maven repo
-        run: ./gradlew publishMavenJavaPublicationToMavenRepository
-        env:
-          ORG_GRADLE_PROJECT_publish_username: ${{ secrets.PUBLISH_USERNAME }}
-          ORG_GRADLE_PROJECT_publish_password: ${{ secrets.PUBLISH_PASSWORD }}
-
-      - name: Publish on Curse & Modrinth
-        run: ./gradlew publishMod
-        env:
-          CURSE_API_KEY: ${{ secrets.CURSE_API_KEY }}
-          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
 
       - name: Publish on GitHub
         uses: docker://antonyurchenko/git-release:latest
@@ -45,7 +41,6 @@ jobs:
           PRE_RELEASE: "false"
           CHANGELOG_FILE: "CHANGELOG.md"
           ALLOW_EMPTY_CHANGELOG: "false"
-          ALLOW_TAG_PREFIX: "true"
         with:
           args: |
             build/libs/*.jar
