@@ -5,10 +5,8 @@ import dev.stashy.extrasounds.ExtraSounds;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.world.ClientWorld;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -25,18 +23,18 @@ public abstract class EffectMixin extends AbstractClientPlayerEntity
     }
 
     @Override
-    public boolean addStatusEffect(StatusEffectInstance effect, @Nullable Entity source)
+    public boolean addStatusEffect(StatusEffectInstance effect)
     {
-        var added = super.addStatusEffect(effect, source);
+        var added = super.addStatusEffect(effect);
         if (added && effect.getDuration() > minDuration) ExtraSounds.playEffectSound(effect.getEffectType(), true);
         return added;
     }
 
     @Override
-    public void setStatusEffect(StatusEffectInstance effect, @Nullable Entity source)
+    public void applyStatusEffect(StatusEffectInstance effect)
     {
         if (effect.getDuration() > minDuration) ExtraSounds.playEffectSound(effect.getEffectType(), true);
-        super.setStatusEffect(effect, source);
+        super.applyStatusEffect(effect);
     }
 
     @Override
