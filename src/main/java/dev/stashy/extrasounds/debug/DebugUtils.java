@@ -79,7 +79,9 @@ public class DebugUtils
     {
         if (!debug) return;
         boolean positive = !effect.getCategory().equals(StatusEffectCategory.HARMFUL);
-        LOGGER.info((positive ? "Positive" : "Negative") + " effect " + (add ? "added" : "removed"));
+        LOGGER.info(
+                (positive ? "Positive" : "Negative") + " effect " + (add ? "added" : "removed") + ": " + effect.getName()
+                                                                                                               .getString());
     }
 
     private static void createFile(Path p)
