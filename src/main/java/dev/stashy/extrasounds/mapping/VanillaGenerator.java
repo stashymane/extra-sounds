@@ -84,7 +84,7 @@ public class VanillaGenerator
         map.put(ArrowItem.class, it -> aliased(ARROW));
         map.put(DyeItem.class, it -> aliased(DUST));
         map.put(SpawnEggItem.class, it -> aliased(WET_SLIPPERY));
-        putMulti(it -> aliased(BOWL), MushroomStewItem.class, SuspiciousStewItem.class);
+        putMulti(it -> aliased(BOWL), StewItem.class, SuspiciousStewItem.class);
         map.put(BlockItem.class, it -> {
             Block b = ((BlockItem) it).getBlock();
             if (b instanceof AbstractRailBlock)
