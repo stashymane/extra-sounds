@@ -18,7 +18,7 @@ public class ChatSound
     @Inject(at = @At("RETURN"), method = "addMessage(Lnet/minecraft/text/Text;IIZ)V")
     private void messageSound(Text message, int messageId, int timestamp, boolean refresh, CallbackInfo ci)
     {
-        if (MinecraftClient.getInstance().player == null)
+        if (MinecraftClient.getInstance().player == null || refresh)
             return;
         String msg = message.getString();
         ClientPlayerEntity p = MinecraftClient.getInstance().player;
