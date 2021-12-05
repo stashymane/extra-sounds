@@ -17,8 +17,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(ClientPlayerEntity.class)
 public abstract class EffectMixin extends AbstractClientPlayerEntity
 {
-    int minDuration = 2;
-
     public EffectMixin(ClientWorld world, GameProfile profile)
     {
         super(world, profile);
@@ -28,30 +26,35 @@ public abstract class EffectMixin extends AbstractClientPlayerEntity
     public boolean addStatusEffect(StatusEffectInstance effect, @Nullable Entity source)
     {
         var added = super.addStatusEffect(effect, source);
-        if (added && effect.getDuration() > minDuration) ExtraSounds.playEffectSound(effect.getEffectType(), true);
+        if (added && !hasEffect(effect.getEffectType()))
+            ExtraSounds.playEffectSound(effect.getEffectType(), true);
         return added;
     }
 
     @Override
     public void setStatusEffect(StatusEffectInstance effect, @Nullable Entity source)
     {
-        if (effect.getDuration() > minDuration) ExtraSounds.playEffectSound(effect.getEffectType(), true);
+        if (!hasEffect(effect.getEffectType()))
+            ExtraSounds.playEffectSound(effect.getEffectType(), true);
         super.setStatusEffect(effect, source);
     }
 
     @Override
     protected void onStatusEffectRemoved(StatusEffectInstance effect)
     {
-        {
-            super.onStatusEffectRemoved(effect);
-            ExtraSounds.playEffectSound(effect.getEffectType(), false);
-        }
+        if (hasEffect(effect.getEffectType())) ExtraSounds.playEffectSound(effect.getEffectType(), false);
+        super.onStatusEffectRemoved(effect);
     }
 
     @Inject(at = @At("HEAD"), method = "removeStatusEffectInternal")
     public void removeStatusEffectInternal(StatusEffect type, CallbackInfoReturnable<StatusEffectInstance> cir)
     {
-        if (this.hasStatusEffect(type))
+        if (hasStatusEffect(type))
             ExtraSounds.playEffectSound(type, false);
+    }
+
+    private boolean hasEffect(StatusEffect e)
+    {
+        return getActiveStatusEffects().containsKey(e) && getActiveStatusEffects().get(e).getDuration() > 1;
     }
 }
