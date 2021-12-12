@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2] - 2021-21-10
+
+### Fixed
+
+* Chat message sound when changing chat opacity
+* Potion effects being played continuously
+
 ## [2.0.1] - 2021-11-09
 
 ### Fixed

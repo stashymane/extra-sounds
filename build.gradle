@@ -97,7 +97,7 @@ curseforge {
         addGameVersion project.minecraft_version
 
         mainArtifact(remapJar) {
-            displayName = "$project.version"
+            displayName = "$project.version for $project.minecraft_version"
 
             relations {
                 requiredDependency "fabric-api"
@@ -109,6 +109,7 @@ curseforge {
 
     options {
         forgeGradleIntegration = false
+        detectNewerJava = true
     }
 }
 
@@ -123,6 +124,7 @@ task publishModrinth(type: TaskModrinthUpload) {
     changelog = project.changelog.getLatest()
     projectId = "uPWCQrVL"
     versionNumber = version
+    versionName = "$project.version for $project.minecraft_version"
     uploadFile = remapJar
     addGameVersion(project.minecraft_version)
     addLoader("fabric")
