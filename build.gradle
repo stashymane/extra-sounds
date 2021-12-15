@@ -13,6 +13,8 @@ archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
+var modVersion = project.version.split("\\+")[0]
+
 repositories {
     maven {
         url = uri("https://storage.googleapis.com/devan-maven/")
@@ -88,7 +90,7 @@ publishing {
 }
 
 changelog {
-    version = project.version.split("\\+")[0]
+    version = modVersion
 }
 
 curseforge {
@@ -101,7 +103,7 @@ curseforge {
         addGameVersion project.minecraft_version
 
         mainArtifact(remapJar) {
-            displayName = "$project.version for $project.minecraft_version"
+            displayName = "$modVersion for $project.minecraft_version"
 
             relations {
                 requiredDependency "fabric-api"
@@ -128,7 +130,7 @@ task publishModrinth(type: TaskModrinthUpload) {
     changelog = project.changelog.getLatest()
     projectId = "uPWCQrVL"
     versionNumber = version
-    versionName = "$project.version for $project.minecraft_version"
+    versionName = "$modVersion for $project.minecraft_version"
     uploadFile = remapJar
     addGameVersion(project.minecraft_version)
     addLoader("fabric")
