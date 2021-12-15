@@ -24,7 +24,7 @@ public class CreativeListScroll
         if (timeDiff > 20 && lastPos != position && !(lastPos != 1 && position == 0))
         {
             ExtraSounds.playSound(
-                    e, Mixers.INVENTORY,
+                    e, Mixers.INTERFACE,
                     (1f - 0.1f + 0.1f * Math.min(1, 50f / timeDiff)));
             lastTime = now;
             lastPos = position;
