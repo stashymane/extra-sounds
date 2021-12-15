@@ -5,13 +5,13 @@ import net.minecraft.sound.SoundCategory;
 
 public class Mixers
 {
-    public static SoundCategory INVENTORY;
+    public static SoundCategory INTERFACE;
     public static SoundCategory CHAT;
     public static SoundCategory EFFECTS;
 
     public static void init()
     {
-        SoundCategories.register("INVENTORY", (it) -> {Mixers.INVENTORY = it;});
+        SoundCategories.register("INTERFACE", (it) -> {Mixers.INTERFACE = it;});
         SoundCategories.register("CHAT", (it) -> {Mixers.CHAT = it;});
         SoundCategories.register("EFFECTS", (it) -> {Mixers.EFFECTS = it;});
     }

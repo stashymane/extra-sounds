@@ -36,6 +36,6 @@ public class HotbarSlotSound
 
     private void playScroll()
     {
-        ExtraSounds.playSound(Sounds.HOTBAR_SCROLL, Mixers.INVENTORY, 0.95f);
+        ExtraSounds.playSound(Sounds.HOTBAR_SCROLL, Mixers.INTERFACE, 0.95f);
     }
 }
