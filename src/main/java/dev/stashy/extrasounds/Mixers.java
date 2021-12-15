@@ -1,18 +1,14 @@
 package dev.stashy.extrasounds;
 
-import dev.stashy.soundcategories.SoundCategories;
+import dev.stashy.soundcategories.CategoryLoader;
 import net.minecraft.sound.SoundCategory;
 
-public class Mixers
+public class Mixers implements CategoryLoader
 {
+    @CategoryLoader.Register
     public static SoundCategory INTERFACE;
+    @CategoryLoader.Register
     public static SoundCategory CHAT;
+    @CategoryLoader.Register
     public static SoundCategory EFFECTS;
-
-    public static void init()
-    {
-        SoundCategories.register("INTERFACE", (it) -> {Mixers.INTERFACE = it;});
-        SoundCategories.register("CHAT", (it) -> {Mixers.CHAT = it;});
-        SoundCategories.register("EFFECTS", (it) -> {Mixers.EFFECTS = it;});
-    }
 }
