@@ -33,6 +33,7 @@ public class ExtraSounds implements ClientModInitializer
     @Override
     public void onInitializeClient()
     {
+        Mixers.init();
         SoundPackLoader.init();
         DebugUtils.init();
     }
