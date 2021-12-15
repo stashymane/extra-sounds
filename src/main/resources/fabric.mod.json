@@ -20,6 +20,9 @@
     ],
     "extrasounds": [
       "dev.stashy.extrasounds.mapping.VanillaGenerator::generator"
+    ],
+    "sound-categories": [
+      "dev.stashy.extrasounds.Mixers"
     ]
   },
   "mixins": [
