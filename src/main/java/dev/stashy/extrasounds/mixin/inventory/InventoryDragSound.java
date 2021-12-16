@@ -25,7 +25,7 @@ public class InventoryDragSound
     @Inject(method = "mouseDragged", at = @At(value = "INVOKE", target = "Ljava/util/Set;add(Ljava/lang/Object;)Z"), locals = LocalCapture.CAPTURE_FAILSOFT)
     private void dragSound(double mouseX, double mouseY, int button, double deltaX, double deltaY, CallbackInfoReturnable<Boolean> cir, Slot slot)
     {
-        if (!cursorDragSlots.contains(slot) && cursorDragSlots.size() > 0)
+        if (!cursorDragSlots.contains(slot) && cursorDragSlots.size() > 0 && ExtraSounds.config.enableItemSounds)
             ExtraSounds.playSound(Sounds.ITEM_DRAG, Mixers.INTERFACE);
     }
 }

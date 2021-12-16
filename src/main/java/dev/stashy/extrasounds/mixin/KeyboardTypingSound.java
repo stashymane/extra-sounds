@@ -15,7 +15,7 @@ public class KeyboardTypingSound
     @Inject(at = @At("RETURN"), method = "charTyped")
     public void type(char chr, int modifiers, CallbackInfoReturnable<Boolean> cir)
     {
-        if (cir.getReturnValue())
+        if (cir.getReturnValue() && ExtraSounds.config.enableKeyboardTypingSounds)
             ExtraSounds.playSound(Sounds.KEYBOARD_TYPE, Mixers.CHAT);
     }
 }

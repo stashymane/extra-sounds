@@ -24,18 +24,24 @@ public class HotbarSlotSound
     @Inject(method = "handleInputEvents", at = @At(value = "FIELD", opcode = Opcodes.PUTFIELD, target = "Lnet/minecraft/entity/player/PlayerInventory;selectedSlot*:I"), locals = LocalCapture.CAPTURE_FAILSOFT)
     private void hotbarKeyboardSound(CallbackInfo info, int i)
     {
-        if (this.player != null && this.player.getInventory().selectedSlot != i)
+        if (this.player != null && this.player.getInventory().selectedSlot != i && ExtraSounds.config.enableHotbarScrollSounds)
             playScroll();
     }
 
     @Inject(method = "handleInputEvents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/hud/SpectatorHud;selectSlot(I)V"))
     private void spectatorHotbarSound(CallbackInfo ci)
     {
-        playScroll();
+        if (ExtraSounds.config.enableHotbarScrollSounds)
+        {
+            playScroll();
+        }
     }
 
     private void playScroll()
     {
-        ExtraSounds.playSound(Sounds.HOTBAR_SCROLL, Mixers.INTERFACE, 0.95f);
+        if (ExtraSounds.config.enableHotbarScrollSounds)
+        {
+            ExtraSounds.playSound(Sounds.HOTBAR_SCROLL, Mixers.INTERFACE, 0.95f);
+        }
     }
 }

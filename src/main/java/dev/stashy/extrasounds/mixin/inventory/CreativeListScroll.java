@@ -21,7 +21,7 @@ public class CreativeListScroll
     {
         long now = System.currentTimeMillis();
         long timeDiff = now - lastTime;
-        if (timeDiff > 20 && lastPos != position && !(lastPos != 1 && position == 0))
+        if (timeDiff > 20 && lastPos != position && !(lastPos != 1 && position == 0) && ExtraSounds.config.enableCreativeInventoryScrollSounds)
         {
             ExtraSounds.playSound(
                     e, Mixers.INTERFACE,

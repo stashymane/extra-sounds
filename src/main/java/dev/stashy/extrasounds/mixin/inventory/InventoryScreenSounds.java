@@ -15,12 +15,19 @@ public class InventoryScreenSounds
     @Inject(at = @At("HEAD"), method = "init")
     void open(CallbackInfo ci)
     {
-        ExtraSounds.playSound(Sounds.INVENTORY_OPEN, Mixers.INTERFACE);
+        if (ExtraSounds.config.enableInventoryOpeningSounds)
+        {
+            ExtraSounds.playSound(Sounds.INVENTORY_OPEN, Mixers.INTERFACE);
+        }
+
     }
 
     @Inject(at = @At("HEAD"), method = "onClose")
     void close(CallbackInfo ci)
     {
-        ExtraSounds.playSound(Sounds.INVENTORY_CLOSE, Mixers.INTERFACE);
+        if (ExtraSounds.config.enableInventoryOpeningSounds)
+        {
+            ExtraSounds.playSound(Sounds.INVENTORY_CLOSE, Mixers.INTERFACE);
+        }
     }
 }

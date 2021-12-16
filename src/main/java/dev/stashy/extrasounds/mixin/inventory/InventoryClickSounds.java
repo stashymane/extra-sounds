@@ -31,7 +31,7 @@ public abstract class InventoryClickSounds<T extends ScreenHandler> extends Scre
     @Inject(at = @At("INVOKE"), method = "onMouseClick(Lnet/minecraft/screen/slot/Slot;IILnet/minecraft/screen/slot/SlotActionType;)V")
     void click(Slot slot, int invSlot, int clickData, SlotActionType actionType, CallbackInfo ci)
     {
-        if (slot != null)
+        if (slot != null && ExtraSounds.config.enableItemSounds)
             ExtraSounds.inventoryClick(slot, handler.getCursorStack(), actionType);
     }
 }

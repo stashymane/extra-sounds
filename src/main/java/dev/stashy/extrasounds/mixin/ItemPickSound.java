@@ -25,7 +25,7 @@ public class ItemPickSound
     })
     void pickSound(ItemStack stack, CallbackInfo ci)
     {
-        if (!player.getMainHandStack().getItem().equals(stack.getItem()))
+        if (!player.getMainHandStack().getItem().equals(stack.getItem()) && ExtraSounds.config.enableItemSounds)
             ExtraSounds.playItemSound(stack, true);
     }
 }

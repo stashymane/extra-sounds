@@ -26,7 +26,7 @@ public abstract class EffectMixin extends AbstractClientPlayerEntity
     public boolean addStatusEffect(StatusEffectInstance effect, @Nullable Entity source)
     {
         var added = super.addStatusEffect(effect, source);
-        if (added && !hasEffect(effect.getEffectType()))
+        if (added && !hasEffect(effect.getEffectType()) && ExtraSounds.config.enableStatusEffectsSounds)
             ExtraSounds.playEffectSound(effect.getEffectType(), true);
         return added;
     }
@@ -34,7 +34,7 @@ public abstract class EffectMixin extends AbstractClientPlayerEntity
     @Override
     public void setStatusEffect(StatusEffectInstance effect, @Nullable Entity source)
     {
-        if (!hasEffect(effect.getEffectType()))
+        if (!hasEffect(effect.getEffectType()) && ExtraSounds.config.enableStatusEffectsSounds)
             ExtraSounds.playEffectSound(effect.getEffectType(), true);
         super.setStatusEffect(effect, source);
     }
@@ -42,14 +42,14 @@ public abstract class EffectMixin extends AbstractClientPlayerEntity
     @Override
     protected void onStatusEffectRemoved(StatusEffectInstance effect)
     {
-        if (hasEffect(effect.getEffectType())) ExtraSounds.playEffectSound(effect.getEffectType(), false);
+        if (hasEffect(effect.getEffectType()) && ExtraSounds.config.enableStatusEffectsSounds) ExtraSounds.playEffectSound(effect.getEffectType(), false);
         super.onStatusEffectRemoved(effect);
     }
 
     @Inject(at = @At("HEAD"), method = "removeStatusEffectInternal")
     public void removeStatusEffectInternal(StatusEffect type, CallbackInfoReturnable<StatusEffectInstance> cir)
     {
-        if (hasStatusEffect(type))
+        if (hasStatusEffect(type) && ExtraSounds.config.enableStatusEffectsSounds)
             ExtraSounds.playEffectSound(type, false);
     }
 

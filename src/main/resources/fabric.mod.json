@@ -23,6 +23,9 @@
     ],
     "sound-categories": [
       "dev.stashy.extrasounds.Mixers"
+    ],
+    "modmenu": [
+      "dev.stashy.extrasounds.ExtraSoundsModMenuIntegration"
     ]
   },
   "mixins": [

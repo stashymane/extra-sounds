@@ -23,6 +23,16 @@ repositories {
         name = "stashymane's repo"
         url = "https://repo.stashy.dev"
     }
+
+    maven {
+        name = "ClothConfig"
+        url "https://maven.shedaniel.me/"
+    }
+
+    maven {
+        name = "ModMenu"
+        url "https://maven.terraformersmc.com/"
+    }
 }
 
 dependencies {
@@ -33,6 +43,12 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
     modImplementation include("net.devtech:arrp:0.5.1")
     modImplementation include("dev.stashy:sound-categories:${project.soundcategories_version}")
+
+    modApi("me.shedaniel.cloth:cloth-config-fabric:5.2.47") {
+        exclude(group: "net.fabricmc.fabric-api")
+    }
+
+    modImplementation "com.terraformersmc:modmenu:2.0.14"
 }
 
 processResources {

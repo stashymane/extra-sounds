@@ -3,6 +3,9 @@ package dev.stashy.extrasounds;
 import dev.stashy.extrasounds.debug.DebugUtils;
 import dev.stashy.extrasounds.mapping.SoundPackLoader;
 import dev.stashy.extrasounds.sounds.Sounds;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
+import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.sound.PositionedSoundInstance;
@@ -16,6 +19,7 @@ import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
@@ -29,12 +33,17 @@ public class ExtraSounds implements ClientModInitializer
     private static final Random r = new Random();
     private static long lastPlayed = System.currentTimeMillis();
     private static final Logger LOGGER = LogManager.getLogger();
+    public static ExtraSoundsConfig config;
 
     @Override
     public void onInitializeClient()
     {
         SoundPackLoader.init();
         DebugUtils.init();
+
+        //InitialiseConfig
+        AutoConfig.register(ExtraSoundsConfig.class, JanksonConfigSerializer::new);
+        config = AutoConfig.getConfigHolder(ExtraSoundsConfig.class).getConfig();
     }
 
     public static void inventoryClick(Slot slot, ItemStack cursor, SlotActionType actionType)

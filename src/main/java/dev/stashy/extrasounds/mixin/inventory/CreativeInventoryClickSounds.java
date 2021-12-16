@@ -52,18 +52,25 @@ public abstract class CreativeInventoryClickSounds
                     || actionType.equals(SlotActionType.QUICK_MOVE)
                     && slots != null && slots.parallelStream().noneMatch(Slot::hasStack))
                 return;
-            ExtraSounds.playSound(Sounds.ITEM_DELETE);
+            if (ExtraSounds.config.enableItemSounds)
+            {
+                ExtraSounds.playSound(Sounds.ITEM_DELETE);
+            }
             lastDeleteSound = System.currentTimeMillis();
         }
         else
+        if (ExtraSounds.config.enableItemSounds)
+        {
             ExtraSounds.inventoryClick(slot, handler.getCursorStack(),
-                                       actionType);
+                    actionType);
+        }
+
     }
 
     @Inject(at = @At("INVOKE"), method = "setSelectedTab")
     void tabChange(ItemGroup group, CallbackInfo ci)
     {
-        if (selectedTab != -1 && group.getIndex() != selectedTab)
+        if (selectedTab != -1 && group.getIndex() != selectedTab && ExtraSounds.config.enableItemSounds)
             ExtraSounds.playItemSound(group.getIcon(), true);
     }
 }

@@ -23,8 +23,17 @@ public class ChatSound
         String msg = message.getString();
         ClientPlayerEntity p = MinecraftClient.getInstance().player;
         if (msg.contains("@" + p.getName().getString()) || msg.contains("@" + p.getDisplayName().getString()))
-            ExtraSounds.playSound(Sounds.CHAT_MENTION, Mixers.CHAT);
-        else
+        {
+            if (ExtraSounds.config.enableChatMentionSounds)
+            {
+                ExtraSounds.playSound(Sounds.CHAT_MENTION, Mixers.CHAT);
+            }
+        }
+
+        else if (ExtraSounds.config.enableChatMessageSounds)
+        {
             ExtraSounds.playSound(Sounds.CHAT, Mixers.CHAT);
+        }
+
     }
 }

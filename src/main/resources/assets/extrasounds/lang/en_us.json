@@ -1,5 +1,15 @@
 {
   "soundCategory.interface": "User Interface",
   "soundCategory.chat": "Chat Messages",
-  "soundCategory.effects": "Effects/Potions"
+  "soundCategory.effects": "Effects/Potions",
+  "text.autoconfig.extrasounds.title": "Extra Sounds",
+  "text.autoconfig.extrasounds.option.enableHotbarScrollSounds": "Hotbar Scroll Sounds",
+  "text.autoconfig.extrasounds.option.enableItemSounds": "Item Sounds",
+  "text.autoconfig.extrasounds.option.enableDropSounds": "Drop Sounds",
+  "text.autoconfig.extrasounds.option.enableCreativeInventoryScrollSounds": "Inventory Scroll Sounds",
+  "text.autoconfig.extrasounds.option.enableChatMessageSounds": "Chat Message Sounds",
+  "text.autoconfig.extrasounds.option.enableChatMentionSounds": "Chat Mention Sounds",
+  "text.autoconfig.extrasounds.option.enableStatusEffectsSounds": "Status Effects Sounds",
+  "text.autoconfig.extrasounds.option.enableKeyboardTypingSounds": "Keyboard Typing Sounds",
+  "text.autoconfig.extrasounds.option.enableInventoryOpeningSounds": "Inventory Opening Sounds"
 }
