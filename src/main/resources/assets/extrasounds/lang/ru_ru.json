@@ -1,5 +1,9 @@
 {
-  "soundCategory.interface": "Инвентарь",
+  "soundCategory.extrasounds_master": "ExtraSounds",
+  "soundCategory.inventory": "Инвентарь",
   "soundCategory.chat": "Сообщения в чате",
-  "soundCategory.effects": "Эффекты/Зелья"
+  "soundCategory.chat_mention": "Упоминания в чате",
+  "soundCategory.effects": "Эффекты/Зелья",
+  "soundCategory.scroll": "Прокрутка",
+  "soundCategory.typing": "Печатание"
 }
