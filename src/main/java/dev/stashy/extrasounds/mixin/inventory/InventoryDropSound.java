@@ -22,7 +22,7 @@ public class InventoryDropSound
             float range = 0.1f;
             float n = 1f + range *
                     (1f * stack.getItem().getMaxCount() / stack.getCount()) - range / 2;
-            ExtraSounds.playSound(Sounds.ITEM_DROP, Mixers.INTERFACE, n);
+            ExtraSounds.playSound(Sounds.ITEM_DROP, Mixers.INVENTORY, n);
         }
     }
 }

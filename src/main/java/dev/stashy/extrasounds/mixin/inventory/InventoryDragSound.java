@@ -26,6 +26,6 @@ public class InventoryDragSound
     private void dragSound(double mouseX, double mouseY, int button, double deltaX, double deltaY, CallbackInfoReturnable<Boolean> cir, Slot slot)
     {
         if (!cursorDragSlots.contains(slot) && cursorDragSlots.size() > 0)
-            ExtraSounds.playSound(Sounds.ITEM_DRAG, Mixers.INTERFACE);
+            ExtraSounds.playSound(Sounds.ITEM_DRAG, Mixers.INVENTORY);
     }
 }
