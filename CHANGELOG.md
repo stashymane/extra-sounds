@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.2.0] - 2021-12-x
+
+### Added
+
+* More granular volume settings
+
+### Removed
+
+* Typing sounds resource pack (previously used to toggle sounds, moved to volume settings)
+
 ## [2.1.0] - 2021-12-15
 
 ### Added
