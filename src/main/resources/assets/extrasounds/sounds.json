@@ -3,8 +3,8 @@
     "sounds": [
       {
         "name": "minecraft:note/icechime",
-        "volume": 0.5,
-        "pitch": 2.0
+        "volume": 0.7,
+        "pitch": 1.8
       }
     ]
   },
