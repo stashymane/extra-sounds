@@ -1,6 +1,7 @@
 package dev.stashy.extrasounds.mixin.inventory;
 
 import dev.stashy.extrasounds.ExtraSounds;
+import dev.stashy.extrasounds.Mixers;
 import dev.stashy.extrasounds.sounds.Sounds;
 import net.minecraft.client.gui.screen.ingame.AbstractInventoryScreen;
 import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen;
@@ -52,7 +53,7 @@ public abstract class CreativeInventoryClickSounds
                     || actionType.equals(SlotActionType.QUICK_MOVE)
                     && slots != null && slots.parallelStream().noneMatch(Slot::hasStack))
                 return;
-            ExtraSounds.playSound(Sounds.ITEM_DELETE);
+            ExtraSounds.playSound(Sounds.ITEM_DELETE, Mixers.INVENTORY);
             lastDeleteSound = System.currentTimeMillis();
         }
         else

@@ -5,10 +5,14 @@ import net.minecraft.sound.SoundCategory;
 
 public class Mixers implements CategoryLoader
 {
-    @CategoryLoader.Register
-    public static SoundCategory INTERFACE;
-    @CategoryLoader.Register
+    @Register(id = "EXTRASOUNDS_MASTER", master = true)
+    public static SoundCategory MASTER;
+    @Register
+    public static SoundCategory INVENTORY;
+    @Register
     public static SoundCategory CHAT;
-    @CategoryLoader.Register
+    @Register
     public static SoundCategory EFFECTS;
+    @Register
+    public static SoundCategory SCROLL;
 }

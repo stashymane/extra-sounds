@@ -47,10 +47,10 @@ public class ExtraSounds implements ClientModInitializer
         {
             case PICKUP_ALL:
                 if (hasCursor)
-                    ExtraSounds.playSound(Sounds.ITEM_PICK_ALL, Mixers.INTERFACE);
+                    ExtraSounds.playSound(Sounds.ITEM_PICK_ALL, Mixers.INVENTORY);
                 return;
             case CLONE:
-                ExtraSounds.playSound(Sounds.ITEM_CLONE, Mixers.INTERFACE);
+                ExtraSounds.playSound(Sounds.ITEM_CLONE, Mixers.INVENTORY);
                 return;
             case QUICK_MOVE:
                 if (MinecraftClient.getInstance().player != null &&
@@ -94,7 +94,7 @@ public class ExtraSounds implements ClientModInitializer
 
         Identifier id = Identifier.tryParse(idString);
         Registry.SOUND_EVENT.getOrEmpty(id).ifPresentOrElse(
-                (snd) -> playSound(snd, Mixers.INTERFACE, getItemPitch(1f, 0.1f, pickup)),
+                (snd) -> playSound(snd, Mixers.INVENTORY, getItemPitch(1f, 0.1f, pickup)),
                 () -> LOGGER.error("Sound cannot be found in registry: " + id));
     }
 
@@ -115,11 +115,6 @@ public class ExtraSounds implements ClientModInitializer
                                     case NEUTRAL, BENEFICIAL -> Sounds.EFFECT_REMOVE_POSITIVE;
                                 },
                 Mixers.EFFECTS);
-    }
-
-    public static void playSound(SoundEvent snd)
-    {
-        playSound(snd, Mixers.INTERFACE);
     }
 
     public static void playSound(SoundEvent snd, SoundCategory cat)
