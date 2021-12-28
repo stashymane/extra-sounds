@@ -16,6 +16,6 @@ public class KeyboardTypingSound
     public void type(char chr, int modifiers, CallbackInfoReturnable<Boolean> cir)
     {
         if (cir.getReturnValue())
-            ExtraSounds.playSound(Sounds.KEYBOARD_TYPE, Mixers.CHAT);
+            ExtraSounds.playSound(Sounds.KEYBOARD_TYPE, Mixers.TYPING);
     }
 }

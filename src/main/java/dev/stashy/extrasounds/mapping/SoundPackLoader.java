@@ -9,8 +9,6 @@ import dev.stashy.extrasounds.json.SoundSerializer;
 import dev.stashy.extrasounds.sounds.Sounds;
 import net.devtech.arrp.api.RRPCallback;
 import net.devtech.arrp.api.RuntimeResourcePack;
-import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
-import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.sound.Sound;
 import net.minecraft.client.sound.SoundEntry;
@@ -76,16 +74,5 @@ public class SoundPackLoader
         });
 
         RRPCallback.BEFORE_VANILLA.register((packs) -> packs.add(genericPack));
-        registerPack("keyboard-sounds");
-    }
-
-    private static void registerPack(String name)
-    {
-        FabricLoader.getInstance().getModContainer(ExtraSounds.MODID)
-                    .map(container -> ResourceManagerHelper.registerBuiltinResourcePack(
-                            new Identifier(ExtraSounds.MODID, name),
-                            container, ResourcePackActivationType.NORMAL))
-                    .filter(success -> !success)
-                    .ifPresent(success -> LOGGER.warn("Could not register built-in resource pack."));
     }
 }

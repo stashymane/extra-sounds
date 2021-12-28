@@ -1729,6 +1729,13 @@
     ]
   },
   "keyboard.type": {
-    "sounds": []
+    "sounds": [
+      {
+        "name": "minecraft:block.bamboo.hit",
+        "volume": 0.2,
+        "pitch": 2,
+        "type": "event"
+      }
+    ]
   }
 }
