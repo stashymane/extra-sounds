@@ -11,6 +11,7 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.inventory.CraftingResultInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.screen.PlayerScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
@@ -35,6 +36,15 @@ public class ExtraSounds implements ClientModInitializer
     {
         SoundPackLoader.init();
         DebugUtils.init();
+    }
+
+    public static void hotbar(int i)
+    {
+        ItemStack stack = MinecraftClient.getInstance().player.getInventory().getStack(i);
+        if (stack.getItem() == Items.AIR)
+            playSound(Sounds.HOTBAR_SCROLL, Mixers.SCROLL);
+        else
+            playItemSound(stack, true, Mixers.SCROLL);
     }
 
     public static void inventoryClick(Slot slot, ItemStack cursor, SlotActionType actionType)
@@ -84,6 +94,11 @@ public class ExtraSounds implements ClientModInitializer
 
     public static void playItemSound(ItemStack stack, boolean pickup)
     {
+        playItemSound(stack, pickup, Mixers.INVENTORY);
+    }
+
+    public static void playItemSound(ItemStack stack, boolean pickup, SoundCategory cat)
+    {
         var itemId = Registry.ITEM.getId(stack.getItem());
         String idString = getClickId(itemId);
         if (!Identifier.isValid(idString))
@@ -94,7 +109,7 @@ public class ExtraSounds implements ClientModInitializer
 
         Identifier id = Identifier.tryParse(idString);
         Registry.SOUND_EVENT.getOrEmpty(id).ifPresentOrElse(
-                (snd) -> playSound(snd, Mixers.INVENTORY, getItemPitch(1f, 0.1f, pickup)),
+                (snd) -> playSound(snd, cat, getItemPitch(1f, 0.1f, pickup)),
                 () -> LOGGER.error("Sound cannot be found in registry: " + id));
     }
 

@@ -25,17 +25,12 @@ public class HotbarSlotSound
     private void hotbarKeyboardSound(CallbackInfo info, int i)
     {
         if (this.player != null && this.player.getInventory().selectedSlot != i)
-            playScroll();
+            ExtraSounds.hotbar(i);
     }
 
     @Inject(method = "handleInputEvents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/hud/SpectatorHud;selectSlot(I)V"))
     private void spectatorHotbarSound(CallbackInfo ci)
     {
-        playScroll();
-    }
-
-    private void playScroll()
-    {
-        ExtraSounds.playSound(Sounds.HOTBAR_SCROLL, Mixers.SCROLL, 0.95f);
+        ExtraSounds.playSound(Sounds.HOTBAR_SCROLL, Mixers.SCROLL);
     }
 }
