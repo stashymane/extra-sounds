@@ -1,6 +1,16 @@
 # Changelog
 
-## [2.2.0] - 2021-12-x
+## [2.2.1] - 2022-03-04
+
+### Added
+
+* Item based sound on hotbar scroll
+
+### Fixed
+
+* 1.18.2 crash on startup (updated ARRP)
+
+## [2.2.0] - 2021-12-28
 
 ### Added
 
