@@ -18,7 +18,7 @@ public class InventoryScreenSounds
         ExtraSounds.playSound(Sounds.INVENTORY_OPEN, Mixers.INVENTORY);
     }
 
-    @Inject(at = @At("HEAD"), method = "onClose")
+    @Inject(at = @At("HEAD"), method = "close")
     void close(CallbackInfo ci)
     {
         ExtraSounds.playSound(Sounds.INVENTORY_CLOSE, Mixers.INVENTORY);
