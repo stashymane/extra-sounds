@@ -1,5 +1,5 @@
 plugins {
-    id "fabric-loom" version "0.10-SNAPSHOT"
+    id "fabric-loom" version "0.11-SNAPSHOT"
     id "maven-publish"
     id "com.matthewprenger.cursegradle" version "1.4.0"
     id "com.modrinth.minotaur" version "1.2.1"
@@ -31,7 +31,7 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-    modImplementation include("net.devtech:arrp:0.5.1")
+    modImplementation include("net.devtech:arrp:0.5.5")
     modImplementation include("dev.stashy:sound-categories:${project.soundcategories_version}")
 }
 
