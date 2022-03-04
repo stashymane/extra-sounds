@@ -125,7 +125,7 @@ task publishModrinth(type: TaskModrinthUpload) {
         versionNumber = version
         versionName = "$modVersion for $project.minecraft_version"
         uploadFile = remapJar
-        gameVersions = [""]
+        gameVersions = [project.minecraft_version]
         loaders = ["fabric"]
     }
 }
