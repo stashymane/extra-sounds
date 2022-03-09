@@ -1,7 +1,8 @@
 package dev.stashy.extrasounds.mixin;
 
 import dev.stashy.extrasounds.ExtraSounds;
-import dev.stashy.extrasounds.Mixers;
+import dev.stashy.extrasounds.SoundManager;
+import dev.stashy.extrasounds.sounds.SoundType;
 import dev.stashy.extrasounds.sounds.Sounds;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
@@ -31,6 +32,6 @@ public class HotbarSlotSound
     @Inject(method = "handleInputEvents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/hud/SpectatorHud;selectSlot(I)V"))
     private void spectatorHotbarSound(CallbackInfo ci)
     {
-        ExtraSounds.playSound(Sounds.HOTBAR_SCROLL, Mixers.SCROLL);
+        SoundManager.playSound(Sounds.HOTBAR_SCROLL, SoundType.HOTBAR);
     }
 }

@@ -44,13 +44,13 @@ public class SoundPackLoader
     public static void init()
     {
         FabricLoader.getInstance().getEntrypoints(ExtraSounds.MODID, SoundGenerator.class)
-                .forEach(it -> mappers.put(it.namespace(), it));
+                    .forEach(it -> mappers.put(it.namespace(), it));
 
         var itemMap = Registry.ITEM.getIds().stream().map(id -> {
             var sndId = new Identifier(ExtraSounds.MODID, ExtraSounds.getClickId(id, false));
             if (!Registry.SOUND_EVENT.containsId(sndId))
                 Registry.register(Registry.SOUND_EVENT, sndId, new SoundEvent(sndId));
-    
+
             var snd = Sounds.aliased(Sounds.ITEM_PICK);
             if (mappers.containsKey(id.getNamespace()))
                 snd = mappers.get(id.getNamespace()).itemSoundGenerator().apply(id);
@@ -65,7 +65,7 @@ public class SoundPackLoader
                 }
             return new Pair<>(sndId.getPath(), snd);
         }).collect(Collectors.toMap(Pair::getLeft, Pair::getRight, (a, b) -> b, HashMap::new));
-    
+
         var json = gson.toJson(itemMap).getBytes();
         DebugUtils.exportSoundsJson(json);
         DebugUtils.exportGenerators();

@@ -1,6 +1,7 @@
 package dev.stashy.extrasounds.mixin;
 
-import dev.stashy.extrasounds.ExtraSounds;
+import dev.stashy.extrasounds.SoundManager;
+import dev.stashy.extrasounds.sounds.SoundType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
@@ -26,6 +27,6 @@ public class ItemPickSound
     void pickSound(ItemStack stack, CallbackInfo ci)
     {
         if (!player.getMainHandStack().getItem().equals(stack.getItem()))
-            ExtraSounds.playItemSound(stack, true);
+            SoundManager.playSound(stack, SoundType.PICKUP);
     }
 }

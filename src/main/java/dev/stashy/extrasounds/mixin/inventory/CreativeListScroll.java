@@ -1,7 +1,7 @@
 package dev.stashy.extrasounds.mixin.inventory;
 
-import dev.stashy.extrasounds.ExtraSounds;
 import dev.stashy.extrasounds.Mixers;
+import dev.stashy.extrasounds.SoundManager;
 import dev.stashy.extrasounds.sounds.Sounds;
 import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen;
 import net.minecraft.sound.SoundEvent;
@@ -23,9 +23,10 @@ public class CreativeListScroll
         long timeDiff = now - lastTime;
         if (timeDiff > 20 && lastPos != position && !(lastPos != 1 && position == 0))
         {
-            ExtraSounds.playSound(
-                    e, Mixers.SCROLL,
-                    (1f - 0.1f + 0.1f * Math.min(1, 50f / timeDiff)));
+            SoundManager.playSound(
+                    e,
+                    (1f - 0.1f + 0.1f * Math.min(1, 50f / timeDiff)),
+                    Mixers.SCROLL);
             lastTime = now;
             lastPos = position;
         }

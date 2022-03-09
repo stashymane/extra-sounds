@@ -1,7 +1,8 @@
 package dev.stashy.extrasounds.mixin.inventory;
 
 import dev.stashy.extrasounds.ExtraSounds;
-import dev.stashy.extrasounds.Mixers;
+import dev.stashy.extrasounds.SoundManager;
+import dev.stashy.extrasounds.sounds.SoundType;
 import dev.stashy.extrasounds.sounds.Sounds;
 import net.minecraft.client.gui.screen.ingame.AbstractInventoryScreen;
 import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen;
@@ -53,7 +54,7 @@ public abstract class CreativeInventoryClickSounds
                     || actionType.equals(SlotActionType.QUICK_MOVE)
                     && slots != null && slots.parallelStream().noneMatch(Slot::hasStack))
                 return;
-            ExtraSounds.playSound(Sounds.ITEM_DELETE, Mixers.INVENTORY);
+            SoundManager.playSound(Sounds.ITEM_DELETE, SoundType.PLACE);
             lastDeleteSound = System.currentTimeMillis();
         }
         else
@@ -65,6 +66,6 @@ public abstract class CreativeInventoryClickSounds
     void tabChange(ItemGroup group, CallbackInfo ci)
     {
         if (selectedTab != -1 && group.getIndex() != selectedTab)
-            ExtraSounds.playItemSound(group.getIcon(), true);
+            SoundManager.playSound(group.getIcon(), SoundType.PICKUP);
     }
 }

@@ -1,7 +1,7 @@
 package dev.stashy.extrasounds.mixin.inventory;
 
-import dev.stashy.extrasounds.ExtraSounds;
 import dev.stashy.extrasounds.Mixers;
+import dev.stashy.extrasounds.SoundManager;
 import dev.stashy.extrasounds.sounds.Sounds;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -22,7 +22,7 @@ public class InventoryDropSound
             float range = 0.1f;
             float n = 1f + range *
                     (1f * stack.getItem().getMaxCount() / stack.getCount()) - range / 2;
-            ExtraSounds.playSound(Sounds.ITEM_DROP, Mixers.INVENTORY, n);
+            SoundManager.playSound(Sounds.ITEM_DROP, n, Mixers.INVENTORY);
         }
     }
 }

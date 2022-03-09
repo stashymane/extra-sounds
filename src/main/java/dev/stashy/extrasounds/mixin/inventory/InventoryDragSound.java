@@ -1,7 +1,7 @@
 package dev.stashy.extrasounds.mixin.inventory;
 
-import dev.stashy.extrasounds.ExtraSounds;
-import dev.stashy.extrasounds.Mixers;
+import dev.stashy.extrasounds.SoundManager;
+import dev.stashy.extrasounds.sounds.SoundType;
 import dev.stashy.extrasounds.sounds.Sounds;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.screen.slot.Slot;
@@ -26,6 +26,6 @@ public class InventoryDragSound
     private void dragSound(double mouseX, double mouseY, int button, double deltaX, double deltaY, CallbackInfoReturnable<Boolean> cir, Slot slot)
     {
         if (!cursorDragSlots.contains(slot) && cursorDragSlots.size() > 0)
-            ExtraSounds.playSound(Sounds.ITEM_DRAG, Mixers.INVENTORY);
+            SoundManager.playSound(Sounds.ITEM_DRAG, SoundType.PLACE);
     }
 }

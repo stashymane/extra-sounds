@@ -1,7 +1,7 @@
 package dev.stashy.extrasounds.mixin;
 
 import com.mojang.authlib.GameProfile;
-import dev.stashy.extrasounds.ExtraSounds;
+import dev.stashy.extrasounds.SoundManager;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.world.ClientWorld;
@@ -27,7 +27,7 @@ public abstract class EffectMixin extends AbstractClientPlayerEntity
     {
         var added = super.addStatusEffect(effect, source);
         if (added && !hasEffect(effect.getEffectType()))
-            ExtraSounds.playEffectSound(effect.getEffectType(), true);
+            SoundManager.playSound(effect.getEffectType(), true);
         return added;
     }
 
@@ -35,14 +35,14 @@ public abstract class EffectMixin extends AbstractClientPlayerEntity
     public void setStatusEffect(StatusEffectInstance effect, @Nullable Entity source)
     {
         if (!hasEffect(effect.getEffectType()))
-            ExtraSounds.playEffectSound(effect.getEffectType(), true);
+            SoundManager.playSound(effect.getEffectType(), true);
         super.setStatusEffect(effect, source);
     }
 
     @Override
     protected void onStatusEffectRemoved(StatusEffectInstance effect)
     {
-        if (hasEffect(effect.getEffectType())) ExtraSounds.playEffectSound(effect.getEffectType(), false);
+        if (hasEffect(effect.getEffectType())) SoundManager.playSound(effect.getEffectType(), false);
         super.onStatusEffectRemoved(effect);
     }
 
@@ -50,7 +50,7 @@ public abstract class EffectMixin extends AbstractClientPlayerEntity
     public void removeStatusEffectInternal(StatusEffect type, CallbackInfoReturnable<StatusEffectInstance> cir)
     {
         if (hasStatusEffect(type))
-            ExtraSounds.playEffectSound(type, false);
+            SoundManager.playSound(type, false);
     }
 
     private boolean hasEffect(StatusEffect e)
