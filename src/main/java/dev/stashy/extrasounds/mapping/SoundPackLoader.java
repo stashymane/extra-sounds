@@ -2,6 +2,7 @@ package dev.stashy.extrasounds.mapping;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParser;
 import dev.stashy.extrasounds.ExtraSounds;
 import dev.stashy.extrasounds.debug.DebugUtils;
 import dev.stashy.extrasounds.json.SoundEntrySerializer;
@@ -119,7 +120,14 @@ public class SoundPackLoader
                 var currentCacheInfo = getCacheInfo();
                 if (lines.get(0).trim().equals(currentCacheInfo.trim()))
                 {
-                    return lines.get(1);
+                    var cache = lines.get(1);
+                    var jsonObj = JsonParser.parseString(cache).getAsJsonObject();
+                    jsonObj.keySet().forEach((it) -> {
+                        var identifier = new Identifier(ExtraSounds.MODID, it);
+                        if (!Registry.SOUND_EVENT.containsId(identifier))
+                            Registry.register(Registry.SOUND_EVENT, identifier, new SoundEvent(identifier));
+                    });
+                    return cache;
                 }
                 else
                 {
