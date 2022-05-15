@@ -98,8 +98,6 @@ public class VanillaGenerator
             var pickup =
                     b.getSoundGroup(b.getDefaultState()).getPlaceSound();
             var place = b.getSoundGroup(b.getDefaultState()).getHitSound();
-//            aliased(pickup), aliased(place),
-//                    aliased(pickup);
             return event(b.getSoundGroup(b.getDefaultState()).getPlaceSound().getId());
         });
     }
