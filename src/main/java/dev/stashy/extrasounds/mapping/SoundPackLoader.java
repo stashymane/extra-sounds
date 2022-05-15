@@ -22,6 +22,10 @@ import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -30,6 +34,7 @@ public class SoundPackLoader
     private static final RuntimeResourcePack genericPack = RuntimeResourcePack.create("extrasounds");
     private static final Identifier soundsJsonId = new Identifier("extrasounds:sounds.json");
     private static final Logger LOGGER = LogManager.getLogger();
+    private static final Path cachePath = FabricLoader.getInstance().getConfigDir().resolve("extrasounds.cache.json");
 
     public static List<RuntimeResourcePack> packs = Collections.emptyList();
     public static Map<String, SoundGenerator> mappers = new HashMap<>();
@@ -44,7 +49,24 @@ public class SoundPackLoader
         FabricLoader.getInstance().getEntrypoints(ExtraSounds.MODID, SoundGenerator.class)
                     .forEach(it -> mappers.put(it.namespace(), it));
 
-        var soundMap = Registry.ITEM.stream().flatMap(item -> {
+        String json = getCache();
+        if (json == null)
+        {
+            json = gson.toJson(processSounds());
+            writeCache(json);
+        }
+        var jsonBytes = json.getBytes();
+
+        DebugUtils.exportSoundsJson(jsonBytes);
+        DebugUtils.exportGenerators();
+
+        genericPack.addResource(ResourceType.CLIENT_RESOURCES, soundsJsonId, jsonBytes);
+        RRPCallback.BEFORE_VANILLA.register((packs) -> packs.add(genericPack));
+    }
+
+    private static Map<String, SoundEntry> processSounds()
+    {
+        return Registry.ITEM.stream().flatMap(item -> {
             var itemId = Registry.ITEM.getId(item);
             SoundDefinition def = new SoundDefinition(Sounds.aliased(Sounds.ITEM_PICK));
 
@@ -66,13 +88,6 @@ public class SoundPackLoader
             entries.add(registerOrDefault(itemId, SoundType.HOTBAR, def.hotbar, Sounds.aliased(pickupSound.getLeft())));
             return entries.stream();
         }).collect(Collectors.toMap(key -> key.getLeft().getId().getPath(), Pair::getRight));
-
-        var json = gson.toJson(soundMap).getBytes();
-        DebugUtils.exportSoundsJson(json);
-        DebugUtils.exportGenerators();
-        genericPack.addResource(ResourceType.CLIENT_RESOURCES, soundsJsonId, json);
-
-        RRPCallback.BEFORE_VANILLA.register((packs) -> packs.add(genericPack));
     }
 
     private static Pair<SoundEvent, SoundEntry> registerOrDefault(Identifier itemId, SoundType type, SoundEntry entry, SoundEntry defaultEntry)
@@ -88,5 +103,50 @@ public class SoundPackLoader
         if (!Registry.SOUND_EVENT.containsId(soundId))
             Registry.register(Registry.SOUND_EVENT, soundId, event);
         return event;
+    }
+
+    private static String getCacheInfo()
+    {
+        return Registry.ITEM.size() + ";" + mappers.keySet() + "\n";
+    }
+
+    private static String getCache()
+    {
+        if (Files.exists(cachePath))
+            try
+            {
+                var lines = Files.readAllLines(cachePath);
+                var currentCacheInfo = getCacheInfo();
+                if (lines.get(0).trim().equals(currentCacheInfo.trim()))
+                {
+                    return lines.get(1);
+                }
+                else
+                {
+                    DebugUtils.genericLog("Invalidating ExtraSounds cache.");
+                    DebugUtils.genericLog("Previous: " + lines.get(0));
+                    DebugUtils.genericLog("Current: " + currentCacheInfo);
+                }
+            }
+            catch (Exception e)
+            {
+                System.err.println("Failed to load ExtraSounds cache.");
+                e.printStackTrace();
+            }
+        return null;
+    }
+
+    private static void writeCache(String json)
+    {
+        try
+        {
+            Files.write(cachePath, (getCacheInfo() + json).getBytes(),
+                        StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.CREATE);
+        }
+        catch (IOException e)
+        {
+            System.err.println("Failed to save ExtraSounds cache.");
+            e.printStackTrace();
+        }
     }
 }

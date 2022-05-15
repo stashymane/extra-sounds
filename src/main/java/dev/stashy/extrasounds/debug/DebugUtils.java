@@ -85,6 +85,12 @@ public class DebugUtils
                                                                                                                .getString());
     }
 
+    public static void genericLog(String message)
+    {
+        if (!debug) return;
+        LOGGER.info(message);
+    }
+
     private static void createFile(Path p)
     {
         try
