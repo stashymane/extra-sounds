@@ -6,6 +6,7 @@ import dev.stashy.extrasounds.ExtraSounds;
 import dev.stashy.extrasounds.debug.DebugUtils;
 import dev.stashy.extrasounds.json.SoundEntrySerializer;
 import dev.stashy.extrasounds.json.SoundSerializer;
+import dev.stashy.extrasounds.sounds.SoundType;
 import dev.stashy.extrasounds.sounds.Sounds;
 import net.devtech.arrp.api.RRPCallback;
 import net.devtech.arrp.api.RuntimeResourcePack;
@@ -21,10 +22,7 @@ import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class SoundPackLoader
@@ -46,31 +44,49 @@ public class SoundPackLoader
         FabricLoader.getInstance().getEntrypoints(ExtraSounds.MODID, SoundGenerator.class)
                     .forEach(it -> mappers.put(it.namespace(), it));
 
-        var itemMap = Registry.ITEM.getIds().stream().map(id -> {
-            var sndId = new Identifier(ExtraSounds.MODID, ExtraSounds.getClickId(id, false));
-            if (!Registry.SOUND_EVENT.containsId(sndId))
-                Registry.register(Registry.SOUND_EVENT, sndId, new SoundEvent(sndId));
+        var soundMap = Registry.ITEM.stream().flatMap(item -> {
+            var itemId = Registry.ITEM.getId(item);
+            SoundDefinition def = new SoundDefinition(Sounds.aliased(Sounds.ITEM_PICK));
 
-            var snd = Sounds.aliased(Sounds.ITEM_PICK);
-            if (mappers.containsKey(id.getNamespace()))
-                snd = mappers.get(id.getNamespace()).itemSoundGenerator().apply(id);
-            else if (Registry.ITEM.get(id) instanceof BlockItem b)
+            if (mappers.containsKey(itemId.getNamespace()))
+                def = mappers.get(itemId.getNamespace()).itemSoundGenerator().apply(item);
+            else if (item instanceof BlockItem b)
                 try
                 {
-                    snd = Sounds.event(
-                            b.getBlock().getSoundGroup(b.getBlock().getDefaultState()).getPlaceSound().getId());
+                    var blockSound =
+                            b.getBlock().getSoundGroup(b.getBlock().getDefaultState()).getPlaceSound();
+                    def = SoundDefinition.of(Sounds.aliased(blockSound));
                 }
-                catch (Exception e)
-                {
-                }
-            return new Pair<>(sndId.getPath(), snd);
-        }).collect(Collectors.toMap(Pair::getLeft, Pair::getRight, (a, b) -> b, HashMap::new));
+                catch (Exception ignored) {}
 
-        var json = gson.toJson(itemMap).getBytes();
+            List<Pair<SoundEvent, SoundEntry>> entries = new ArrayList<>();
+            var pickupSound = registerOrDefault(itemId, SoundType.PICKUP, def.pickup, Sounds.aliased(Sounds.ITEM_PICK));
+            entries.add(pickupSound);
+            entries.add(registerOrDefault(itemId, SoundType.PLACE, def.place, Sounds.aliased(pickupSound.getLeft())));
+            entries.add(registerOrDefault(itemId, SoundType.HOTBAR, def.hotbar, Sounds.aliased(pickupSound.getLeft())));
+            return entries.stream();
+        }).collect(Collectors.toMap(key -> key.getLeft().getId().getPath(), Pair::getRight));
+
+        var json = gson.toJson(soundMap).getBytes();
         DebugUtils.exportSoundsJson(json);
         DebugUtils.exportGenerators();
         genericPack.addResource(ResourceType.CLIENT_RESOURCES, soundsJsonId, json);
 
         RRPCallback.BEFORE_VANILLA.register((packs) -> packs.add(genericPack));
+    }
+
+    private static Pair<SoundEvent, SoundEntry> registerOrDefault(Identifier itemId, SoundType type, SoundEntry entry, SoundEntry defaultEntry)
+    {
+        var soundEntry = entry == null ? defaultEntry : entry;
+        return new Pair<>(registerIfNotExists(itemId, type), soundEntry);
+    }
+
+    private static SoundEvent registerIfNotExists(Identifier itemId, SoundType type)
+    {
+        var soundId = new Identifier(ExtraSounds.MODID, ExtraSounds.getClickId(itemId, type, false));
+        var event = new SoundEvent(soundId);
+        if (!Registry.SOUND_EVENT.containsId(soundId))
+            Registry.register(Registry.SOUND_EVENT, soundId, event);
+        return event;
     }
 }

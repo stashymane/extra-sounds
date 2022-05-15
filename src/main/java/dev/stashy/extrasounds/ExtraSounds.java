@@ -72,13 +72,13 @@ public class ExtraSounds implements ClientModInitializer
         }
     }
 
-    public static String getClickId(Identifier id)
+    public static String getClickId(Identifier id, SoundType type)
     {
-        return getClickId(id, true);
+        return getClickId(id, type, true);
     }
 
-    public static String getClickId(Identifier id, boolean includeNamespace)
+    public static String getClickId(Identifier id, SoundType type, boolean includeNamespace)
     {
-        return (includeNamespace ? "extrasounds:" : "") + "item.click." + id.getNamespace() + "." + id.getPath();
+        return (includeNamespace ? MODID + ":" : "") + type.prefix + "." + id.getNamespace() + "." + id.getPath();
     }
 }

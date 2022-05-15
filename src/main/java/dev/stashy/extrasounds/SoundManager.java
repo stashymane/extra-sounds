@@ -23,7 +23,7 @@ public class SoundManager
     public static void playSound(ItemStack stack, SoundType type)
     {
         var itemId = Registry.ITEM.getId(stack.getItem());
-        String idString = ExtraSounds.getClickId(itemId);
+        String idString = ExtraSounds.getClickId(itemId, type);
         if (!Identifier.isValid(idString))
         {
             LOGGER.error("Unable to parse sound from ID: " + idString);

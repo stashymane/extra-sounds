@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.client.sound.SoundEntry;
 import net.minecraft.item.*;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 import java.util.HashMap;
@@ -20,12 +21,12 @@ public class VanillaGenerator
 {
     public static final Map<Class<? extends Item>, Function<Item, SoundEntry>> map = new HashMap<>();
 
-    public static SoundGenerator generator = SoundGenerator.of("minecraft", id -> {
-        Item i = Registry.ITEM.get(id);
-        Class cls = i.getClass();
+    public static SoundGenerator generator = SoundGenerator.of("minecraft", item -> {
+        Identifier id = Registry.ITEM.getId(item);
+        Class cls = item.getClass();
         while (!map.containsKey(cls) && cls.getSuperclass() != null && Item.class.isAssignableFrom(cls.getSuperclass()))
             cls = cls.getSuperclass();
-        return map.containsKey(cls) ? map.get(cls).apply(i) : aliased(ITEM_PICK);
+        return SoundDefinition.of(map.containsKey(cls) ? map.get(cls).apply(item) : aliased(ITEM_PICK));
     });
 
     static
@@ -93,6 +94,12 @@ public class VanillaGenerator
                 return aliased(BANNER);
             else if (b instanceof LeavesBlock)
                 return aliased(LEAVES);
+
+            var pickup =
+                    b.getSoundGroup(b.getDefaultState()).getPlaceSound();
+            var place = b.getSoundGroup(b.getDefaultState()).getHitSound();
+//            aliased(pickup), aliased(place),
+//                    aliased(pickup);
             return event(b.getSoundGroup(b.getDefaultState()).getPlaceSound().getId());
         });
     }
