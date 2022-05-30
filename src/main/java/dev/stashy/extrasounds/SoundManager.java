@@ -70,8 +70,9 @@ public class SoundManager
         long now = System.currentTimeMillis();
         if (now - lastPlayed > 5)
         {
+            float volume = MinecraftClient.getInstance().options.getSoundVolume(Mixers.MASTER);
             MinecraftClient.getInstance().getSoundManager()
-                           .play(new PositionedSoundInstance(snd.getId(), cat, 1f, pitch, false, 0,
+                           .play(new PositionedSoundInstance(snd.getId(), cat, volume, pitch, false, 0,
                                                              SoundInstance.AttenuationType.NONE, 0.0D, 0.0D, 0.0D,
                                                              true));
             lastPlayed = now;
