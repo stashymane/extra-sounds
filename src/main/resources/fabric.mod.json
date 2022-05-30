@@ -9,7 +9,8 @@
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/extrasounds",
-    "sources": "https://github.com/stashymane/extra-sounds"
+    "sources": "https://github.com/stashymane/extra-sounds",
+    "issues": "https://github.com/stashymane/extra-sounds/issues"
   },
   "license": "CC0-1.0",
   "icon": "assets/extrasounds/icon.png",
