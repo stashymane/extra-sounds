@@ -1,8 +1,8 @@
 plugins {
-    id "fabric-loom" version "0.11-SNAPSHOT"
+    id "fabric-loom" version "0.12-SNAPSHOT"
     id "maven-publish"
     id "com.matthewprenger.cursegradle" version "1.4.0"
-    id "com.modrinth.minotaur" version "2.0.1"
+    id "com.modrinth.minotaur" version "2.2.0"
     id "org.jetbrains.changelog" version "1.3.1"
 }
 
@@ -14,6 +14,7 @@ version = project.mod_version
 group = project.maven_group
 
 var modVersion = project.version.split("\\+")[0]
+var versionTitle = "$modVersion for $project.minecraft_version"
 
 repositories {
     maven {
@@ -99,7 +100,7 @@ curseforge {
         addGameVersion project.minecraft_version
 
         mainArtifact(remapJar) {
-            displayName = "$modVersion for $project.minecraft_version"
+            displayName = versionTitle
 
             relations {
                 requiredDependency "fabric-api"
@@ -123,7 +124,7 @@ task publishModrinth(type: TaskModrinthUpload) {
         changelog = project.changelog.getLatest().toHTML()
         projectId = "uPWCQrVL"
         versionNumber = version
-        versionName = "$modVersion for $project.minecraft_version"
+        versionName = versionTitle
         uploadFile = remapJar
         gameVersions = [project.minecraft_version]
         loaders = ["fabric"]
