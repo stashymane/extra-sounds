@@ -10,6 +10,8 @@ public enum SoundType
     HOTBAR(1f, Mixers.SCROLL, "item.select"),
     EFFECT(1f, Mixers.EFFECTS, "effect"),
     CHAT(1f, Mixers.CHAT, "ui.chat"),
+
+    CHAT_MENTION(1f, Mixers.CHAT_MENTION, "ui.chat"),
     TYPING(1f, Mixers.TYPING, "ui.typing");
 
     public final float pitch;
