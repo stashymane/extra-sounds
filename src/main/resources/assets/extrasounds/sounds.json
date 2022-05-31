@@ -3,7 +3,7 @@
     "sounds": [
       {
         "name": "minecraft:note/icechime",
-        "volume": 0.7,
+        "volume": 0.9,
         "pitch": 1.8
       }
     ]
@@ -12,7 +12,7 @@
     "sounds": [
       {
         "name": "minecraft:note/hat",
-        "volume": 0.5,
+        "volume": 0.8,
         "pitch": 2.0
       }
     ]
@@ -21,7 +21,7 @@
     "sounds": [
       {
         "name": "minecraft:block.stone.hit",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 2,
         "type": "event"
       }
@@ -31,7 +31,7 @@
     "sounds": [
       {
         "name": "minecraft:note/hat",
-        "volume": 0.15,
+        "volume": 0.2,
         "pitch": 1.8
       }
     ]
@@ -48,7 +48,7 @@
     "sounds": [
       {
         "name": "minecraft:ui/toast/out",
-        "volume": 0.1,
+        "volume": 0.5,
         "pitch": 2.0
       }
     ]
@@ -57,7 +57,7 @@
     "sounds": [
       {
         "name": "minecraft:ui/toast/in",
-        "volume": 0.1,
+        "volume": 0.5,
         "pitch": 2.0
       }
     ]
@@ -74,7 +74,7 @@
     "sounds": [
       {
         "name": "minecraft:item.axe.strip",
-        "volume": 0.2,
+        "volume": 0.5,
         "pitch": 2,
         "type": "event"
       }
@@ -85,7 +85,7 @@
     "sounds": [
       {
         "name": "minecraft:block.wool.place",
-        "volume": 0.2,
+        "volume": 0.6,
         "pitch": 1.5,
         "type": "event"
       }
@@ -95,7 +95,7 @@
     "sounds": [
       {
         "name": "minecraft:block.wood.step",
-        "volume": 0.2,
+        "volume": 0.5,
         "pitch": 1.5,
         "type": "event"
       }
@@ -106,7 +106,7 @@
     "sounds": [
       {
         "name": "minecraft:block.bubble_column.bubble_pop",
-        "volume": 0.55,
+        "volume": 1.6,
         "pitch": 0.6,
         "type": "event"
       }
@@ -116,7 +116,7 @@
     "sounds": [
       {
         "name": "minecraft:block.big_dripleaf.place",
-        "volume": 0.2,
+        "volume": 0.5,
         "pitch": 1,
         "type": "event"
       }
@@ -126,7 +126,7 @@
     "sounds": [
       {
         "name": "minecraft:block.azalea.hit",
-        "volume": 0.3,
+        "volume": 0.9,
         "pitch": 1.7,
         "type": "event"
       }
@@ -136,7 +136,7 @@
     "sounds": [
       {
         "name": "minecraft:block.rooted_dirt.place",
-        "volume": 0.2,
+        "volume": 0.45,
         "pitch": 1.7,
         "type": "event"
       }
@@ -146,7 +146,7 @@
     "sounds": [
       {
         "name": "minecraft:entity.item_frame.place",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 2,
         "type": "event"
       }
@@ -157,7 +157,7 @@
     "sounds": [
       {
         "name": "minecraft:block.chain.place",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 1.1,
         "type": "event"
       }
@@ -167,7 +167,7 @@
     "sounds": [
       {
         "name": "minecraft:item.armor.equip_diamond",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 1.4,
         "type": "event"
       }
@@ -177,7 +177,7 @@
     "sounds": [
       {
         "name": "minecraft:item.armor.equip_generic",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 1.7,
         "type": "event"
       }
@@ -187,7 +187,7 @@
     "sounds": [
       {
         "name": "minecraft:item.armor.equip_gold",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 1.4,
         "type": "event"
       }
@@ -197,7 +197,7 @@
     "sounds": [
       {
         "name": "minecraft:item.armor.equip_iron",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 1.4,
         "type": "event"
       }
@@ -207,7 +207,7 @@
     "sounds": [
       {
         "name": "minecraft:item.armor.equip_leather",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 1.4,
         "type": "event"
       }
@@ -217,7 +217,7 @@
     "sounds": [
       {
         "name": "minecraft:item.armor.equip_netherite",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 1.3,
         "type": "event"
       }
@@ -227,7 +227,7 @@
     "sounds": [
       {
         "name": "minecraft:item.armor.equip_generic",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 1.2,
         "type": "event"
       }
@@ -237,7 +237,7 @@
     "sounds": [
       {
         "name": "minecraft:item.armor.equip_turtle",
-        "volume": 0.15,
+        "volume": 0.3,
         "pitch": 1.7,
         "type": "event"
       }
@@ -247,7 +247,7 @@
     "sounds": [
       {
         "name": "minecraft:item.axe.strip",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 1.4,
         "type": "event"
       }
@@ -257,8 +257,8 @@
     "sounds": [
       {
         "name": "minecraft:block.azalea.hit",
-        "volume": 0.4,
-        "pitch": 1.1,
+        "volume": 0.7,
+        "pitch": 1.2,
         "type": "event"
       }
     ]
@@ -267,7 +267,7 @@
     "sounds": [
       {
         "name": "minecraft:block.azalea.hit",
-        "volume": 0.4,
+        "volume": 0.7,
         "pitch": 1.1,
         "type": "event"
       }
@@ -278,7 +278,7 @@
     "sounds": [
       {
         "name": "minecraft:block.nether_bricks.place",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 1.2,
         "type": "event"
       }
@@ -288,8 +288,8 @@
     "sounds": [
       {
         "name": "minecraft:entity.cod.flop",
-        "volume": 0.3,
-        "pitch": 1.3,
+        "volume": 0.7,
+        "pitch": 1.2,
         "type": "event"
       }
     ]
@@ -298,7 +298,7 @@
     "sounds": [
       {
         "name": "minecraft:block.nether_gold_ore.place",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 1.5,
         "type": "event"
       }
@@ -308,7 +308,7 @@
     "sounds": [
       {
         "name": "minecraft:block.nether_bricks.place",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 2,
         "type": "event"
       }
@@ -318,7 +318,7 @@
     "sounds": [
       {
         "name": "minecraft:item.armor.equip_netherite",
-        "volume": 0.2,
+        "volume": 0.5,
         "pitch": 2,
         "type": "event"
       }
@@ -328,7 +328,7 @@
     "sounds": [
       {
         "name": "minecraft:block.nether_bricks.place",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 0.6,
         "type": "event"
       }
@@ -348,7 +348,7 @@
     "sounds": [
       {
         "name": "minecraft:item.book.page_turn",
-        "volume": 0.15,
+        "volume": 0.4,
         "pitch": 2,
         "type": "event"
       }
@@ -359,7 +359,7 @@
     "sounds": [
       {
         "name": "minecraft:item.bottle.fill",
-        "volume": 0.15,
+        "volume": 0.4,
         "pitch": 2,
         "type": "event"
       }
@@ -370,7 +370,7 @@
     "sounds": [
       {
         "name": "minecraft:block.nether_gold_ore.place",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 1.7,
         "type": "event"
       }
@@ -381,7 +381,7 @@
     "sounds": [
       {
         "name": "minecraft:block.wet_grass.place",
-        "volume": 0.2,
+        "volume": 0.6,
         "pitch": 2,
         "type": "event"
       }
@@ -392,7 +392,7 @@
     "sounds": [
       {
         "name": "minecraft:block.coral_block.place",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 2,
         "type": "event"
       }
@@ -403,7 +403,7 @@
     "sounds": [
       {
         "name": "minecraft:random/fizz",
-        "volume": 0.2,
+        "volume": 0.3,
         "pitch": 2
       }
     ]
@@ -412,8 +412,8 @@
     "sounds": [
       {
         "name": "minecraft:random/fizz",
-        "volume": 0.2,
-        "pitch": 1.8
+        "volume": 0.4,
+        "pitch": 1.6
       }
     ]
   },
@@ -431,7 +431,7 @@
     "sounds": [
       {
         "name": "minecraft:random/bow",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 1.5
       }
     ]
@@ -448,7 +448,7 @@
     "sounds": [
       {
         "name": "minecraft:random/pop",
-        "volume": 0.1,
+        "volume": 0.3,
         "pitch": 1.5
       }
     ]
@@ -457,7 +457,7 @@
     "sounds": [
       {
         "name": "minecraft:block.chorus_flower.grow",
-        "volume": 0.9,
+        "volume": 1,
         "pitch": 2,
         "type": "event"
       }
@@ -467,7 +467,7 @@
     "sounds": [
       {
         "name": "minecraft:block.conduit.ambient.short",
-        "volume": 1,
+        "volume": 1.1,
         "pitch": 2,
         "type": "event"
       }
@@ -477,7 +477,7 @@
     "sounds": [
       {
         "name": "minecraft:block.chorus_flower.grow",
-        "volume": 0.9,
+        "volume": 1,
         "pitch": 1,
         "type": "event"
       }
@@ -487,7 +487,7 @@
     "sounds": [
       {
         "name": "minecraft:particle.soul_escape",
-        "volume": 1,
+        "volume": 1.1,
         "pitch": 0.8,
         "type": "event"
       }
@@ -497,7 +497,7 @@
     "sounds": [
       {
         "name": "minecraft:block.bamboo.hit",
-        "volume": 0.2,
+        "volume": 0.4,
         "pitch": 2,
         "type": "event"
       }
@@ -510,7 +510,7 @@
         "name": "minecraft:block.amethyst_block.place",
         "pitch": 2,
         "type": "event",
-        "volume": 0.2
+        "volume": 0.3
       }
     ]
   },
@@ -521,7 +521,7 @@
         "name": "minecraft:block.anvil.place",
         "pitch": 1.7,
         "type": "event",
-        "volume": 0.05
+        "volume": 0.15
       }
     ]
   },
@@ -541,7 +541,7 @@
         "name": "minecraft:entity.armor_stand.break",
         "pitch": 2,
         "type": "event",
-        "volume": 0.1
+        "volume": 0.3
       }
     ]
   },
@@ -626,7 +626,7 @@
         "name": "minecraft:block.bone_block.place",
         "pitch": 2,
         "type": "event",
-        "volume": 0.2
+        "volume": 0.4
       }
     ]
   },
@@ -646,7 +646,7 @@
         "name": "minecraft:block.wood.place",
         "pitch": 1.7,
         "type": "event",
-        "volume": 0.2
+        "volume": 0.4
       }
     ]
   },
@@ -657,7 +657,7 @@
         "name": "minecraft:block.wool.place",
         "pitch": 1.8,
         "type": "event",
-        "volume": 0.2
+        "volume": 0.5
       }
     ]
   },
@@ -732,7 +732,7 @@
         "name": "minecraft:block.rooted_dirt.place",
         "pitch": 1.7,
         "type": "event",
-        "volume": 0.2
+        "volume": 0.5
       }
     ]
   },
@@ -743,7 +743,7 @@
         "name": "minecraft:item.armor.equip_gold",
         "pitch": 1.7,
         "type": "event",
-        "volume": 0.2
+        "volume": 0.4
       }
     ]
   },
@@ -918,7 +918,7 @@
         "name": "minecraft:block.stone.place",
         "pitch": 1.7,
         "type": "event",
-        "volume": 0.2
+        "volume": 0.3
       }
     ]
   },
@@ -947,7 +947,7 @@
         "name": "minecraft:block.shroomlight.place",
         "pitch": 1.4,
         "type": "event",
-        "volume": 0.1
+        "volume": 0.3
       }
     ]
   },
@@ -1031,7 +1031,7 @@
         "name": "extrasounds:item.category.metal",
         "pitch": 1.7,
         "type": "event",
-        "volume": 0.2
+        "volume": 0.6
       }
     ]
   },
@@ -1051,7 +1051,7 @@
         "name": "minecraft:block.glass.place",
         "pitch": 1.7,
         "type": "event",
-        "volume": 0.2
+        "volume": 0.3
       }
     ]
   },
@@ -1173,7 +1173,7 @@
         "name": "minecraft:block.honey_block.place",
         "pitch": 2,
         "type": "event",
-        "volume": 0.2
+        "volume": 0.4
       }
     ]
   },
@@ -1219,9 +1219,9 @@
     "sounds": [
       {
         "name": "minecraft:block.ladder.step",
-        "pitch": 2,
+        "pitch": 1.9,
         "type": "event",
-        "volume": 0.15
+        "volume": 0.25
       }
     ]
   },
@@ -1298,7 +1298,7 @@
         "name": "minecraft:block.stem.place",
         "pitch": 1.7,
         "type": "event",
-        "volume": 0.2
+        "volume": 0.5
       }
     ]
   },
@@ -1327,7 +1327,7 @@
         "name": "minecraft:block.tuff.place",
         "pitch": 1.8,
         "type": "event",
-        "volume": 0.2
+        "volume": 0.4
       }
     ]
   },
@@ -1605,7 +1605,7 @@
         "name": "minecraft:item.armor.equip_iron",
         "pitch": 1.5,
         "type": "event",
-        "volume": 0.2
+        "volume": 0.4
       }
     ]
   },
@@ -1616,7 +1616,7 @@
         "name": "minecraft:block.slime_block.place",
         "pitch": 2,
         "type": "event",
-        "volume": 0.1
+        "volume": 0.25
       }
     ]
   },
@@ -1627,7 +1627,7 @@
         "name": "minecraft:block.slime_block.place",
         "pitch": 1.7,
         "type": "event",
-        "volume": 0.1
+        "volume": 0.25
       }
     ]
   },
@@ -1638,7 +1638,7 @@
         "name": "minecraft:block.snow.place",
         "pitch": 2,
         "type": "event",
-        "volume": 0.2
+        "volume": 0.4
       }
     ]
   },
