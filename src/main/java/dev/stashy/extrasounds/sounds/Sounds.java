@@ -34,7 +34,7 @@ public class Sounds extends SoundRegistry
 
     public static SoundEntry event(Identifier id)
     {
-        return single(id, 0.6f, 1.7f, Sound.RegistrationType.SOUND_EVENT);
+        return single(id, 1f, 1.7f, Sound.RegistrationType.SOUND_EVENT);
     }
 
     public static SoundEntry single(Identifier id, float volume, float pitch, Sound.RegistrationType type)
