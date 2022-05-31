@@ -41,17 +41,17 @@ public abstract class CreativeInventoryClickSounds
         super(screenHandler, playerInventory, text);
     }
 
-    @Inject(at = @At(value = "INVOKE", shift = At.Shift.AFTER, target = "Lnet/minecraft/item/ItemStack;increment(I)V"), method = "onMouseClick")
+    @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;increment(I)V"), method = "onMouseClick")
     void increment(Slot slot, int slotId, int button, SlotActionType actionType, CallbackInfo ci)
     {
         if (slotId >= 0)
             ExtraSounds.inventoryClick(slot, handler.getCursorStack(), actionType);
     }
 
-    @Inject(at = @At(value = "INVOKE", shift = At.Shift.AFTER, target = "Lnet/minecraft/client/gui/screen/ingame/CreativeInventoryScreen$CreativeScreenHandler;setCursorStack(Lnet/minecraft/item/ItemStack;)V"), method = "onMouseClick")
+    @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screen/ingame/CreativeInventoryScreen$CreativeScreenHandler;setCursorStack(Lnet/minecraft/item/ItemStack;)V"), method = "onMouseClick")
     void click(Slot slot, int slotId, int button, SlotActionType actionType, CallbackInfo ci)
     {
-        if (slot == deleteItemSlot)
+        if (slot == deleteItemSlot && !handler.getCursorStack().isEmpty())
             SoundManager.playSound(Sounds.ITEM_DELETE, SoundType.PICKUP);
         else if (slotId >= 0)
             ExtraSounds.inventoryClick(slot, handler.getCursorStack(), actionType);
