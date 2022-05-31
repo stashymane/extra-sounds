@@ -72,8 +72,7 @@ public class DebugUtils
     public static void soundLog(SoundEvent snd)
     {
         if (!debug) return;
-        if (snd.getId().getPath().startsWith("item.click"))
-            LOGGER.info("Playing sound: " + snd.getId());
+        LOGGER.info("Playing sound: " + snd.getId());
     }
 
     public static void effectLog(StatusEffect effect, boolean add)
