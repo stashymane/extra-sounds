@@ -359,7 +359,7 @@
     "sounds": [
       {
         "name": "minecraft:item.bottle.fill",
-        "volume": 0.4,
+        "volume": 0.3,
         "pitch": 2,
         "type": "event"
       }
