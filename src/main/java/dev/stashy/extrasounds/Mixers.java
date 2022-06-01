@@ -5,7 +5,7 @@ import net.minecraft.sound.SoundCategory;
 
 public class Mixers implements CategoryLoader
 {
-    @Register(id = "EXTRASOUNDS_MASTER", master = true)
+    @Register(id = "EXTRASOUNDS_MASTER", master = true, defaultLevel = 0.5f)
     public static SoundCategory MASTER;
     @Register
     public static SoundCategory INVENTORY;
