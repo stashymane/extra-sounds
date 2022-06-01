@@ -113,7 +113,7 @@ public class SoundPackLoader
 
     private static String getCache()
     {
-        if (Files.exists(cachePath))
+        if (Files.exists(cachePath) && !DebugUtils.noCache)
             try
             {
                 var lines = Files.readAllLines(cachePath);
@@ -141,6 +141,7 @@ public class SoundPackLoader
                 System.err.println("Failed to load ExtraSounds cache.");
                 e.printStackTrace();
             }
+        else DebugUtils.genericLog("Cache not found - generating...");
         return null;
     }
 
@@ -150,6 +151,7 @@ public class SoundPackLoader
         {
             Files.write(cachePath, (getCacheInfo() + json).getBytes(),
                         StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.CREATE);
+            DebugUtils.genericLog("Cache saved.");
         }
         catch (IOException e)
         {

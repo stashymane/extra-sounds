@@ -17,11 +17,14 @@ public class DebugUtils
 {
     public static final String debugVar = "extrasounds.debug";
     public static final String debugPathVar = "extrasounds.debug.path";
+    public static final String noCacheVar = "extrasounds.nocache";
 
     public static final boolean debug = System.getProperties().containsKey(debugVar)
             && System.getProperty(debugVar).equals("true");
     public static final String debugPath = System.getProperties().containsKey(debugPathVar)
             ? System.getProperty(debugPathVar) : "debug/";
+    public static final boolean noCache = System.getProperties().containsKey(noCacheVar)
+            && System.getProperties().get(noCacheVar).equals("true");
 
     private static final Logger LOGGER = LogManager.getLogger();
 
