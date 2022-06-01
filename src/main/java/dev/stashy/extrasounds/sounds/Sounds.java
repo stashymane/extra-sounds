@@ -34,12 +34,22 @@ public class Sounds extends SoundRegistry
 
     public static SoundEntry aliased(SoundEvent e)
     {
-        return single(e.getId(), 1f, 1f, Sound.RegistrationType.SOUND_EVENT);
+        return aliased(e, 1f);
+    }
+
+    public static SoundEntry aliased(SoundEvent e, float volume)
+    {
+        return single(e.getId(), volume, 1f, Sound.RegistrationType.SOUND_EVENT);
     }
 
     public static SoundEntry event(Identifier id)
     {
-        return single(id, 1f, 1.7f, Sound.RegistrationType.SOUND_EVENT);
+        return event(id, 0.6f);
+    }
+
+    public static SoundEntry event(Identifier id, float volume)
+    {
+        return single(id, volume, 1.7f, Sound.RegistrationType.SOUND_EVENT);
     }
 
     public static SoundEntry single(Identifier id, float volume, float pitch, Sound.RegistrationType type)

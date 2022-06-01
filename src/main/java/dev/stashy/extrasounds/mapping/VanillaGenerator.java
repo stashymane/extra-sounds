@@ -1,10 +1,7 @@
 package dev.stashy.extrasounds.mapping;
 
 import dev.stashy.extrasounds.mixin.BucketFluidAccessor;
-import net.minecraft.block.AbstractRailBlock;
-import net.minecraft.block.BannerBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.LeavesBlock;
+import net.minecraft.block.*;
 import net.minecraft.client.sound.SoundEntry;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
@@ -74,7 +71,7 @@ public class VanillaGenerator
         map.put(BucketItem.class, it -> {
             var f = ((BucketFluidAccessor) it).getFluid();
             return f.getBucketFillSound().isPresent() ?
-                    event(f.getBucketFillSound().get().getId()) : aliased(METAL);
+                    event(f.getBucketFillSound().get().getId(), 0.4f) : aliased(METAL);
         });
         map.put(MinecartItem.class, it -> aliased(MINECART));
         map.put(ItemFrameItem.class, it -> aliased(FRAME));
@@ -88,17 +85,24 @@ public class VanillaGenerator
         putMulti(it -> aliased(BOWL), StewItem.class, SuspiciousStewItem.class);
         map.put(BlockItem.class, it -> {
             Block b = ((BlockItem) it).getBlock();
+            Identifier blockSound = b.getSoundGroup(b.getDefaultState()).getPlaceSound().getId();
+
             if (b instanceof AbstractRailBlock)
                 return aliased(RAIL);
             else if (b instanceof BannerBlock)
                 return aliased(BANNER);
-            else if (b instanceof LeavesBlock)
-                return aliased(LEAVES);
+            else if (b instanceof SeaPickleBlock)
+                return event(blockSound, 0.4f);
+            else if (b instanceof LeavesBlock || b instanceof PlantBlock || b instanceof SugarCaneBlock)
+            {
+                Identifier soundId = b.getSoundGroup(b.getDefaultState()).getPlaceSound().getId();
+                if (soundId.getPath().equals("block.grass.place"))
+                    return aliased(LEAVES);
+                else
+                    return event(soundId);
+            }
 
-            var pickup =
-                    b.getSoundGroup(b.getDefaultState()).getPlaceSound();
-            var place = b.getSoundGroup(b.getDefaultState()).getHitSound();
-            return event(b.getSoundGroup(b.getDefaultState()).getPlaceSound().getId());
+            return event(blockSound);
         });
     }
 

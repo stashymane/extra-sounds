@@ -1,18 +1,4 @@
 {
-  "item.action.bow": {
-    "sounds": [
-      {
-        "name": "minecraft:item/crossbow/loading_start",
-        "volume": 0.25,
-        "pitch": 0.75
-      },
-      {
-        "name": "minecraft:item/crossbow/loading_middle1",
-        "volume": 0.25,
-        "pitch": 0.95
-      }
-    ]
-  },
   "chat.mention": {
     "sounds": [
       {
@@ -108,8 +94,8 @@
   "item.category.boat": {
     "sounds": [
       {
-        "name": "minecraft:block.wood.step",
-        "volume": 0.5,
+        "name": "minecraft:entity.boat.paddle_land",
+        "volume": 1,
         "pitch": 1.5,
         "type": "event"
       }
@@ -406,12 +392,22 @@
     "sounds": [
       {
         "name": "minecraft:block.coral_block.place",
-        "volume": 0.4,
+        "volume": 0.35,
         "pitch": 2,
         "type": "event"
       }
     ],
     "replace": true
+  },
+  "item.action.bow": {
+    "sounds": [
+      {
+        "name": "minecraft:item.crossbow.loading_middle",
+        "volume": 0.25,
+        "pitch": 1,
+        "type": "event"
+      }
+    ]
   },
   "item.clone": {
     "sounds": [
@@ -426,7 +422,7 @@
     "sounds": [
       {
         "name": "minecraft:random/fizz",
-        "volume": 0.4,
+        "volume": 0.35,
         "pitch": 1.6
       }
     ]
@@ -1453,7 +1449,7 @@
         "name": "minecraft:item.bucket.empty_powder_snow",
         "pitch": 1.7,
         "type": "event",
-        "volume": 0.3
+        "volume": 0.8
       }
     ]
   },
@@ -1710,7 +1706,7 @@
         "name": "minecraft:item.armor.equip_generic",
         "pitch": 2,
         "type": "event",
-        "volume": 0.2
+        "volume": 0.3
       }
     ]
   },
@@ -1721,7 +1717,7 @@
         "name": "minecraft:item.armor.equip_diamond",
         "pitch": 1.7,
         "type": "event",
-        "volume": 0.2
+        "volume": 0.4
       }
     ]
   },
