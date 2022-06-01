@@ -1,6 +1,7 @@
 {
   "soundCategory.extrasounds_master": "ExtraSounds",
   "soundCategory.inventory": "Inventory",
+  "soundCategory.action": "Item Actions",
   "soundCategory.chat": "Chat Messages",
   "soundCategory.chat_mention": "Chat Mention",
   "soundCategory.effects": "Effects/Potions",

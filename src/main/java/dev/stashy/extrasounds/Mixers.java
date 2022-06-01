@@ -10,6 +10,8 @@ public class Mixers implements CategoryLoader
     @Register
     public static SoundCategory INVENTORY;
     @Register
+    public static SoundCategory ACTION;
+    @Register
     public static SoundCategory CHAT;
     @Register
     public static SoundCategory CHAT_MENTION;

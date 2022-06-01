@@ -1,6 +1,7 @@
 {
   "soundCategory.extrasounds_master": "ExtraSounds",
   "soundCategory.inventory": "목록",
+  "soundCategory.action": "아이템 액션",
   "soundCategory.chat": "채팅 메시지",
   "soundCategory.chat_mention": "채팅 언급",
   "soundCategory.effects": "효과/포션",
