@@ -1,4 +1,18 @@
 {
+  "item.action.bow": {
+    "sounds": [
+      {
+        "name": "minecraft:item/crossbow/loading_start",
+        "volume": 0.25,
+        "pitch": 0.75
+      },
+      {
+        "name": "minecraft:item/crossbow/loading_middle1",
+        "volume": 0.25,
+        "pitch": 0.95
+      }
+    ]
+  },
   "chat.mention": {
     "sounds": [
       {

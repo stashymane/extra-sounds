@@ -79,4 +79,9 @@ public class SoundManager
             DebugUtils.soundLog(snd);
         }
     }
+
+    public static void stopSound(SoundEvent e, SoundType type)
+    {
+        MinecraftClient.getInstance().getSoundManager().stopSounds(e.getId(), type.category);
+    }
 }

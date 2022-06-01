@@ -26,6 +26,7 @@ public class ExtraSounds implements ClientModInitializer
         //load classes so they register all resources before they're used
         Object loader = Categories.HAY;
         loader = Sounds.CHAT;
+        loader = Sounds.Actions.BOW_PULL;
 
         SoundPackLoader.init();
         DebugUtils.init();
