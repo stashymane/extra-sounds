@@ -7,11 +7,6 @@ on:
   push:
     tags:
       - "*"
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Release version'
-        required: true
 
 jobs:
   build:
