@@ -1,41 +1,39 @@
-# Changelog
-
 ## [2.2.1] - 2022-03-04
 
 ### Added
 
-* Item based sound on hotbar scroll
+- Item based sound on hotbar scroll
 
 ### Fixed
 
-* 1.18.2 crash on startup (updated ARRP)
+- 1.18.2 crash on startup (updated ARRP)
 
 ## [2.2.0] - 2021-12-28
 
 ### Added
 
-* More granular volume settings
+- More granular volume settings
 
 ### Removed
 
-* Typing sounds resource pack (previously used to toggle sounds, moved to volume settings)
+- Typing sounds resource pack (previously used to toggle sounds, moved to volume settings)
 
 ## [2.1.0] - 2021-12-15
 
 ### Added
 
-* New translations (Russian and Korean)
+- New translations (Russian and Korean)
 
 ### Changed
 
-* Reworked sound options menu (now is a very slightly modified version of the vanilla one)
+- Reworked sound options menu (now is a very slightly modified version of the vanilla one)
 
 ## [2.0.2] - 2021-12-10
 
 ### Fixed
 
-* Chat message sound when changing chat opacity
-* Potion effects being played continuously
+- Chat message sound when changing chat opacity
+- Potion effects being played continuously
 
 ## [2.0.1] - 2021-11-09
 
