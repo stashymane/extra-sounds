@@ -121,7 +121,7 @@ import com.modrinth.minotaur.TaskModrinthUpload
 task publishModrinth(type: TaskModrinthUpload) {
     modrinth {
         token = System.getenv("MODRINTH_TOKEN")
-        changelog = project.changelog.getLatest()
+        changelog = project.changelog.getLatest().toText()
         projectId = "uPWCQrVL"
         versionNumber = version
         versionName = versionTitle
