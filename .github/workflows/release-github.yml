@@ -13,10 +13,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Prepare env vars"
-        if: ${{ github.event.inputs.version != null }}
-        run: echo "RELEASE_NAME = ${{github.event.inputs.version}}" >> $GITHUB_ENV
-
       - name: Checkout
         uses: actions/checkout@v2
 
