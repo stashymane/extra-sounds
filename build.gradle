@@ -128,10 +128,11 @@ task publishModrinth(type: TaskModrinthUpload) {
         uploadFile = remapJar
         gameVersions = [project.minecraft_version]
         loaders = ["fabric"]
+        debugMode = true
     }
 }
 
 task publishMod() {
     dependsOn(publishModrinth)
-    dependsOn(tasks.curseforge)
+    //dependsOn(tasks.curseforge)
 }
