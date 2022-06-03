@@ -15,7 +15,6 @@ group = project.maven_group
 
 var modVersion = project.version.split("\\+")[0]
 var versionTitle = "$modVersion for $project.minecraft_version"
-var modChangelog = changelog.getLatest()
 
 repositories {
     maven {
@@ -90,6 +89,8 @@ publishing {
 changelog {
     version = modVersion
 }
+
+var modChangelog = changelog.getLatest()
 
 curseforge {
     apiKey = System.getenv("CURSE_API_KEY") ?: ""
