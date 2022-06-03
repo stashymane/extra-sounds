@@ -130,6 +130,6 @@ modrinth {
 
 task publishMod() {
     dependsOn(remapJar)
-    dependsOn(modrinth)
+    dependsOn(tasks.modrinth)
     //dependsOn(tasks.curseforge)
 }
