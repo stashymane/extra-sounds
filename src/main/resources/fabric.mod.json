@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "extrasounds",
   "version": "${version}",
-  "name": "Extra Sounds",
+  "name": "ExtraSounds",
   "description": "Adds more sounds to Minecraft UI.",
   "authors": [
     "stashymane"
@@ -32,7 +32,7 @@
   "depends": {
     "fabricloader": ">=0.7.4",
     "fabric": ">=0.40.0",
-    "minecraft": ">=1.17",
+    "minecraft": ">=1.18",
     "advanced_runtime_resource_pack": ">=0.5.1",
     "fabric-resource-loader-v0": "*"
   }
