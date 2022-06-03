@@ -133,6 +133,7 @@ task publishModrinth(type: TaskModrinthUpload) {
 }
 
 task publishMod() {
+    dependsOn(remapJar)
     dependsOn(publishModrinth)
     //dependsOn(tasks.curseforge)
 }
