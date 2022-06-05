@@ -23,6 +23,10 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Make gradlew executable
+        if: runner.os == 'Linux'
+        run: chmod +x ./gradlew
+
       - name: Publish on Maven repository
         uses: gradle/gradle-build-action@v2
         with:
