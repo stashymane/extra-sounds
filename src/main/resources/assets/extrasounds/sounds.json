@@ -399,7 +399,7 @@
     ],
     "replace": true
   },
-  "item.action.bow": {
+  "action.bow": {
     "sounds": [
       {
         "name": "minecraft:item.crossbow.loading_middle",

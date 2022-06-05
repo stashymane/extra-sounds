@@ -29,7 +29,7 @@ public class Sounds extends SoundRegistry
 
     public class Actions
     {
-        public static final SoundEvent BOW_PULL = register("item.action.bow");
+        public static final SoundEvent BOW_PULL = register("action.bow");
     }
 
     public static SoundEntry aliased(SoundEvent e)

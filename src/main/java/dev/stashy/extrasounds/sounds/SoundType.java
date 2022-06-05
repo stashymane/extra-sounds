@@ -12,7 +12,7 @@ public enum SoundType
     CHAT(1f, Mixers.CHAT, "ui.chat"),
     CHAT_MENTION(1f, Mixers.CHAT_MENTION, "ui.chat"),
     TYPING(1f, Mixers.TYPING, "ui.typing"),
-    ACTION(1f, Mixers.ACTION, "item.action");
+    ACTION(1f, Mixers.ACTION, "action");
 
     public final float pitch;
     public final SoundCategory category;
