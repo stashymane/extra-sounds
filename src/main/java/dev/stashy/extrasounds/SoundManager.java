@@ -68,31 +68,38 @@ public class SoundManager
 
     public static void playSound(SoundEvent snd, float pitch, SoundCategory cat)
     {
-        long now = System.currentTimeMillis();
-        if (now - lastPlayed > 5)
-        {
-            MinecraftClient.getInstance().getSoundManager()
+        throttle(() -> {
+            MinecraftClient.getInstance()
+                           .getSoundManager()
                            .play(new PositionedSoundInstance(snd.getId(), cat, getMasterVol(), pitch, false, 0,
                                                              SoundInstance.AttenuationType.NONE, 0.0D, 0.0D, 0.0D,
                                                              true));
-            lastPlayed = now;
             DebugUtils.soundLog(snd);
-        }
+        });
     }
 
     public static void playSound(SoundEvent snd, SoundType type, BlockPos position)
     {
-        MinecraftClient.getInstance().getSoundManager()
-                       .play(new PositionedSoundInstance(snd, type.category, getMasterVol(), type.pitch,
-                                                         position.getX() + 0.5,
-                                                         position.getY() + 0.5,
-                                                         position.getZ() + 0.5));
-        DebugUtils.soundLog(snd);
+        throttle(() -> {
+            MinecraftClient.getInstance().getSoundManager()
+                           .play(new PositionedSoundInstance(snd, type.category, getMasterVol(), type.pitch,
+                                                             position.getX() + 0.5,
+                                                             position.getY() + 0.5,
+                                                             position.getZ() + 0.5));
+            DebugUtils.soundLog(snd);
+        });
     }
 
     public static void stopSound(SoundEvent e, SoundType type)
     {
         MinecraftClient.getInstance().getSoundManager().stopSounds(e.getId(), type.category);
+    }
+
+    private static void throttle(Runnable r)
+    {
+        long now = System.currentTimeMillis();
+        if (now - lastPlayed > 5) r.run();
+        lastPlayed = now;
     }
 
     private static float getMasterVol()
