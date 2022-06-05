@@ -36,7 +36,7 @@ public class SoundPackLoader
     private static final RuntimeResourcePack genericPack = RuntimeResourcePack.create("extrasounds");
     private static final Identifier soundsJsonId = new Identifier("extrasounds:sounds.json");
     private static final Logger LOGGER = LogManager.getLogger();
-    private static final Path cachePath = FabricLoader.getInstance().getConfigDir().resolve("extrasounds.cache.json");
+    private static final Path cachePath = FabricLoader.getInstance().getConfigDir().resolve("extrasounds.cache");
 
     public static List<RuntimeResourcePack> packs = Collections.emptyList();
     public static Map<String, SoundGenerator> mappers = new HashMap<>();
