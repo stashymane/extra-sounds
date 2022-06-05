@@ -97,9 +97,17 @@ public class SoundManager
 
     private static void throttle(Runnable r)
     {
-        long now = System.currentTimeMillis();
-        if (now - lastPlayed > 5) r.run();
-        lastPlayed = now;
+        try
+        {
+            long now = System.currentTimeMillis();
+            if (now - lastPlayed > 5) r.run();
+            lastPlayed = now;
+        }
+        catch (Exception e)
+        {
+            System.err.println("Failed to play sound:");
+            e.printStackTrace();
+        }
     }
 
     private static float getMasterVol()
