@@ -32,6 +32,7 @@ import java.util.stream.Collectors;
 
 public class SoundPackLoader
 {
+    private static final int CACHE_VERSION = 1;
     private static final RuntimeResourcePack genericPack = RuntimeResourcePack.create("extrasounds");
     private static final Identifier soundsJsonId = new Identifier("extrasounds:sounds.json");
     private static final Logger LOGGER = LogManager.getLogger();
@@ -106,19 +107,13 @@ public class SoundPackLoader
         return event;
     }
 
-    private static String getCacheInfo()
-    {
-        return Registry.ITEM.size() + ";" + mappers.keySet() + "\n";
-    }
-
     private static String getCache()
     {
         if (Files.exists(cachePath) && !DebugUtils.noCache)
             try
             {
                 var lines = Files.readAllLines(cachePath);
-                var currentCacheInfo = getCacheInfo();
-                if (lines.get(0).trim().equals(currentCacheInfo.trim()))
+                if (CacheInfo.fromString(lines.get(0)).equals(CacheInfo.getCurrent()))
                 {
                     var cache = lines.get(1);
                     var jsonObj = JsonParser.parseString(cache).getAsJsonObject();
@@ -133,7 +128,7 @@ public class SoundPackLoader
                 {
                     DebugUtils.genericLog("Invalidating ExtraSounds cache.");
                     DebugUtils.genericLog("Previous: " + lines.get(0));
-                    DebugUtils.genericLog("Current: " + currentCacheInfo);
+                    DebugUtils.genericLog("Current: " + CacheInfo.getCurrent());
                 }
             }
             catch (Exception e)
@@ -149,7 +144,7 @@ public class SoundPackLoader
     {
         try
         {
-            Files.write(cachePath, (getCacheInfo() + json).getBytes(),
+            Files.write(cachePath, (CacheInfo.getCurrent() + "\n" + json).getBytes(),
                         StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.CREATE);
             DebugUtils.genericLog("Cache saved.");
         }
@@ -157,6 +152,53 @@ public class SoundPackLoader
         {
             System.err.println("Failed to save ExtraSounds cache.");
             e.printStackTrace();
+        }
+    }
+
+    record CacheInfo(int version, int itemCount, String[] mappers)
+    {
+        public static CacheInfo getCurrent()
+        {
+            var versionInfos = SoundPackLoader.mappers
+                    .values().stream().map(it -> getModVersion(it.modId())).toArray(String[]::new);
+            return new CacheInfo(CACHE_VERSION, Registry.ITEM.size(), versionInfos);
+        }
+
+        public static CacheInfo fromString(String s)
+        {
+            try
+            {
+                var arr = s.split(";");
+                return new CacheInfo(Integer.parseInt(arr[0]), Integer.parseInt(arr[1]), arr[2].split(","));
+            }
+            catch (Exception e)
+            {
+                return new CacheInfo(0, 0, new String[0]);
+            }
+        }
+
+        @Override
+        public boolean equals(Object obj)
+        {
+            if (obj instanceof CacheInfo comp)
+                return this.version == comp.version
+                        && this.itemCount == comp.itemCount
+                        && Arrays.equals(this.mappers, comp.mappers);
+            return false;
+        }
+
+        public String toString()
+        {
+            return "%d;%d;%s".formatted(version, itemCount, String.join(",", mappers));
+        }
+
+        private static String getModVersion(String modId)
+        {
+            return FabricLoader.getInstance()
+                               .getModContainer(modId)
+                               .map(modContainer ->
+                                            modId + " " + modContainer.getMetadata().getVersion().getFriendlyString())
+                               .orElse("nope");
         }
     }
 }

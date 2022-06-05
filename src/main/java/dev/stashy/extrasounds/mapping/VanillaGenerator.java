@@ -1,5 +1,6 @@
 package dev.stashy.extrasounds.mapping;
 
+import dev.stashy.extrasounds.ExtraSounds;
 import dev.stashy.extrasounds.mixin.BucketFluidAccessor;
 import net.minecraft.block.*;
 import net.minecraft.client.sound.SoundEntry;
@@ -18,7 +19,7 @@ public class VanillaGenerator
 {
     public static final Map<Class<? extends Item>, Function<Item, SoundEntry>> map = new HashMap<>();
 
-    public static SoundGenerator generator = SoundGenerator.of("minecraft", item -> {
+    public static SoundGenerator generator = SoundGenerator.of("minecraft", ExtraSounds.MODID, item -> {
         Identifier id = Registry.ITEM.getId(item);
         Class cls = item.getClass();
         while (!map.containsKey(cls) && cls.getSuperclass() != null && Item.class.isAssignableFrom(cls.getSuperclass()))
