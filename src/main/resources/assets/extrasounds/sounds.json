@@ -409,6 +409,26 @@
       }
     ]
   },
+  "action.repeater.add": {
+    "sounds": [
+      {
+        "name": "minecraft:block.stone_button.click_on",
+        "volume": 0.3,
+        "pitch": 0.95,
+        "type": "event"
+      }
+    ]
+  },
+  "action.repeater.reset": {
+    "sounds": [
+      {
+        "name": "minecraft:block.stone_button.click_off",
+        "volume": 0.3,
+        "pitch": 0.85,
+        "type": "event"
+      }
+    ]
+  },
   "item.clone": {
     "sounds": [
       {

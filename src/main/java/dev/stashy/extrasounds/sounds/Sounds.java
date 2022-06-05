@@ -27,9 +27,11 @@ public class Sounds extends SoundRegistry
     public static final SoundEvent EFFECT_REMOVE_NEGATIVE = register("effect.remove.negative");
     public static final SoundEvent KEYBOARD_TYPE = register("keyboard.type");
 
-    public class Actions
+    public static class Actions
     {
         public static final SoundEvent BOW_PULL = register("action.bow");
+        public static final SoundEvent REPEATER_ADD = register("action.repeater.add");
+        public static final SoundEvent REPEATER_RESET = register("action.repeater.reset");
     }
 
     public static SoundEntry aliased(SoundEvent e)

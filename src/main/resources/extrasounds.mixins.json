@@ -13,6 +13,7 @@
     "HotbarSlotSound",
     "ItemPickSound",
     "KeyboardTypingSound",
+    "RepeaterSwitchSound",
     "inventory.CreativeInventoryClickSounds",
     "inventory.CreativeListScroll",
     "inventory.InventoryClickSounds",
