@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -70,9 +71,8 @@ public class SoundManager
         long now = System.currentTimeMillis();
         if (now - lastPlayed > 5)
         {
-            float volume = MinecraftClient.getInstance().options.getSoundVolume(Mixers.MASTER);
             MinecraftClient.getInstance().getSoundManager()
-                           .play(new PositionedSoundInstance(snd.getId(), cat, volume, pitch, false, 0,
+                           .play(new PositionedSoundInstance(snd.getId(), cat, getMasterVol(), pitch, false, 0,
                                                              SoundInstance.AttenuationType.NONE, 0.0D, 0.0D, 0.0D,
                                                              true));
             lastPlayed = now;
@@ -80,8 +80,23 @@ public class SoundManager
         }
     }
 
+    public static void playSound(SoundEvent snd, SoundType type, BlockPos position)
+    {
+        MinecraftClient.getInstance().getSoundManager()
+                       .play(new PositionedSoundInstance(snd, type.category, getMasterVol(), type.pitch,
+                                                         position.getX() + 0.5,
+                                                         position.getY() + 0.5,
+                                                         position.getZ() + 0.5));
+        DebugUtils.soundLog(snd);
+    }
+
     public static void stopSound(SoundEvent e, SoundType type)
     {
         MinecraftClient.getInstance().getSoundManager().stopSounds(e.getId(), type.category);
+    }
+
+    private static float getMasterVol()
+    {
+        return MinecraftClient.getInstance().options.getSoundVolume(Mixers.MASTER);
     }
 }
