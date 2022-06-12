@@ -1,3 +1,9 @@
+## [2.3.1] - 2022-06-12
+
+### Fixed
+
+* a very large oopsie, should no longer crash immediately
+
 ## [2.3.0] - 2022-06-12
 
 ### Added
