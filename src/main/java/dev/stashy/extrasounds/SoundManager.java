@@ -72,7 +72,7 @@ public class SoundManager
             MinecraftClient.getInstance()
                            .getSoundManager()
                            .play(new PositionedSoundInstance(snd.getId(), cat, getMasterVol(), pitch,
-                                                             MinecraftClient.getInstance().player.getRandom(), false, 0,
+                                                             ExtraSounds.mcRandom, false, 0,
                                                              SoundInstance.AttenuationType.NONE, 0.0D, 0.0D, 0.0D,
                                                              true));
             DebugUtils.soundLog(snd);
@@ -84,7 +84,7 @@ public class SoundManager
         throttle(() -> {
             MinecraftClient.getInstance().getSoundManager()
                            .play(new PositionedSoundInstance(snd, type.category, getMasterVol(), type.pitch,
-                                                             MinecraftClient.getInstance().player.getRandom(),
+                                                             ExtraSounds.mcRandom,
                                                              position.getX() + 0.5,
                                                              position.getY() + 0.5,
                                                              position.getZ() + 0.5));

@@ -12,13 +12,12 @@ import net.minecraft.item.Items;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.util.Identifier;
-
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 public class ExtraSounds implements ClientModInitializer
 {
     public static final String MODID = "extrasounds";
-    static final Random r = new Random();
+    static final Random mcRandom = Random.create();
 
     @Override
     public void onInitializeClient()
