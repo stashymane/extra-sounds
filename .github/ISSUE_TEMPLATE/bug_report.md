@@ -13,4 +13,6 @@ Mod: [version]
 ## Details
 Detail what happens here, and why or how it should or should not happen.
 
-Please run the game with `-Dextrasounds.debug=true` added to your Java arguments and attach a log file as well.
+
+**PLEASE attach your `latest.log` (and crash log if your game crashes), makes it much easier to troubleshoot, thank you!**
+You can also run the game with the `-Dextrasounds.debug=true` Java launch parameter to see more info about what's going on.
