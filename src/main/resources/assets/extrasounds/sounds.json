@@ -433,7 +433,7 @@
     "sounds": [
       {
         "name": "minecraft:random/fizz",
-        "volume": 0.3,
+        "volume": 0.25,
         "pitch": 2
       }
     ]
@@ -442,7 +442,7 @@
     "sounds": [
       {
         "name": "minecraft:random/fizz",
-        "volume": 0.35,
+        "volume": 0.25,
         "pitch": 1.6
       }
     ]
