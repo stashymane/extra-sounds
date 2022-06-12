@@ -14,11 +14,11 @@ public class SoundRegistry
         {
             Registry.register(Registry.SOUND_EVENT, id, e);
         }
-        catch (IllegalStateException e)
+        catch (IllegalStateException exception)
         {
             LogManager.getLogger()
                       .error("Failed to register SoundEvent - please report this on ExtraSounds' Github page!");
-            e.printStackTrace();
+            exception.printStackTrace();
         }
         return e;
     }
