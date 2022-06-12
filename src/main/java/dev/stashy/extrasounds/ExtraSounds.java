@@ -17,7 +17,7 @@ import java.util.Random;
 public class ExtraSounds implements ClientModInitializer
 {
     public static final String MODID = "extrasounds";
-    private static final Random r = new Random();
+    static final Random r = new Random();
 
     @Override
     public void onInitializeClient()

@@ -1,8 +1,10 @@
 package dev.stashy.extrasounds.mapping;
 
 import dev.stashy.extrasounds.ExtraSounds;
+import dev.stashy.extrasounds.mixin.BlockMaterialAccessor;
 import dev.stashy.extrasounds.mixin.BucketFluidAccessor;
 import net.minecraft.block.*;
+import net.minecraft.client.sound.Sound;
 import net.minecraft.client.sound.SoundEntry;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
@@ -84,6 +86,7 @@ public class VanillaGenerator
         map.put(DyeItem.class, it -> aliased(DUST));
         map.put(SpawnEggItem.class, it -> aliased(WET_SLIPPERY));
         putMulti(it -> aliased(BOWL), StewItem.class, SuspiciousStewItem.class);
+        map.put(GoatHornItem.class, it -> single(LOOSE_METAL.getId(), 0.6f, 0.9f, Sound.RegistrationType.SOUND_EVENT));
         map.put(BlockItem.class, it -> {
             Block b = ((BlockItem) it).getBlock();
             Identifier blockSound = b.getSoundGroup(b.getDefaultState()).getPlaceSound().getId();
@@ -101,6 +104,10 @@ public class VanillaGenerator
                     return aliased(LEAVES);
                 else
                     return event(soundId);
+            }
+            else if (b instanceof PillarBlock && ((BlockMaterialAccessor) b).getMaterial().equals(Material.FROGLIGHT))
+            {
+                return event(blockSound, 0.3f);
             }
 
             return event(blockSound);

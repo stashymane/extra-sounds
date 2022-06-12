@@ -1768,6 +1768,27 @@
       }
     ]
   },
+  "item.pickup.minecraft.recovery_compass": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "extrasounds:item.category.gear.golden",
+        "pitch": 0.9,
+        "type": "event"
+      }
+    ]
+  },
+  "item.pickup.minecraft.echo_shard": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "minecraft:block.deepslate_bricks.place",
+        "pitch": 2,
+        "volume": 0.3,
+        "type": "event"
+      }
+    ]
+  },
   "item.place.minecraft.amethyst_shard": {
     "sounds": [
       {

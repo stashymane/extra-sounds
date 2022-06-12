@@ -32,7 +32,7 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-    modImplementation include("net.devtech:arrp:0.5.5")
+    modImplementation include("net.devtech:arrp:0.6.2")
     modImplementation include("dev.stashy:sound-categories:${project.soundcategories_version}")
 }
 

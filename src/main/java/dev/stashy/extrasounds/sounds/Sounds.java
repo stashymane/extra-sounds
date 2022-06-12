@@ -4,6 +4,7 @@ import net.minecraft.client.sound.Sound;
 import net.minecraft.client.sound.SoundEntry;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.floatprovider.ConstantFloatProvider;
 
 import java.util.List;
 
@@ -57,7 +58,8 @@ public class Sounds extends SoundRegistry
     public static SoundEntry single(Identifier id, float volume, float pitch, Sound.RegistrationType type)
     {
         return new SoundEntry(List.of(
-                new Sound(id.toString(), volume, pitch, 1, type, false, false, 16)
+                new Sound(id.toString(), ConstantFloatProvider.create(volume), ConstantFloatProvider.create(pitch), 1,
+                          type, false, false, 16)
         ), false, null);
     }
 }
