@@ -1,3 +1,27 @@
+## [2.3.0] - 2022-06-12
+
+### Added
+
+- New sounds:
+    - Bow pulling
+    - Repeater clicking
+- Support for different sounds for types of actions
+- Sound caching (very slightly faster startup, will mostly help in heavily modded scenarios)
+- Optifine is now compatible!
+
+### Changed
+
+- New colorful icon :)
+- Various sound and volume changes (not final, will make an automated solution eventually)
+- Russian translation (thank you, Felix14-v2!)
+
+### Fixed
+
+- Inventory open/close sounds playing when resizing window
+- Transfer sounds being played when no items are transferred
+- Inventory Profiles (& perhaps other inventory mod) compatibility
+- Master mod volume being ignored
+
 ## [2.2.1] - 2022-03-04
 
 ### Added
