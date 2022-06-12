@@ -6,8 +6,10 @@ import dev.stashy.extrasounds.sounds.SoundType;
 import dev.stashy.extrasounds.sounds.Sounds;
 import net.minecraft.client.gui.screen.ingame.AbstractInventoryScreen;
 import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.text.Text;
@@ -17,6 +19,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
 
@@ -64,10 +67,20 @@ public abstract class CreativeInventoryClickSounds
             SoundManager.playSound(Sounds.ITEM_DELETE, SoundType.PICKUP);
     }
 
-    @Inject(at = @At("INVOKE"), method = "setSelectedTab")
+    @Inject(at = @At("HEAD"), method = "setSelectedTab")
     void tabChange(ItemGroup group, CallbackInfo ci)
     {
         if (selectedTab != -1 && group.getIndex() != selectedTab)
             SoundManager.playSound(group.getIcon(), SoundType.PICKUP);
+    }
+}
+
+@Mixin(CreativeInventoryScreen.CreativeScreenHandler.class)
+class CreativeScreenHandlerSounds
+{
+    @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/screen/slot/Slot;setStack(Lnet/minecraft/item/ItemStack;)V"), method = "transferSlot")
+    void transfer(PlayerEntity player, int index, CallbackInfoReturnable<ItemStack> cir)
+    {
+        SoundManager.playSound(Sounds.ITEM_DELETE, SoundType.PICKUP);
     }
 }

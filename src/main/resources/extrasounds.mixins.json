@@ -5,7 +5,6 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [],
   "client": [
-    "action.BowPullSound",
     "BucketFluidAccessor",
     "ChatSound",
     "EffectMixin",
@@ -13,12 +12,15 @@
     "HotbarSlotSound",
     "ItemPickSound",
     "KeyboardTypingSound",
+    "action.BowPullSound",
     "action.RepeaterSwitchSound",
     "inventory.CreativeInventoryClickSounds",
     "inventory.CreativeListScroll",
+    "inventory.CreativeScreenHandlerSounds",
     "inventory.InventoryClickSounds",
     "inventory.InventoryDragSound",
     "inventory.InventoryDropSound",
+    "inventory.InventoryKeyPressSound",
     "inventory.InventoryScreenSounds"
   ],
   "injectors": {

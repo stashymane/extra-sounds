@@ -3,6 +3,8 @@ package dev.stashy.extrasounds.mixin.inventory;
 import dev.stashy.extrasounds.ExtraSounds;
 import dev.stashy.extrasounds.SoundManager;
 import dev.stashy.extrasounds.sounds.SoundType;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
@@ -11,12 +13,14 @@ import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.util.ClickType;
 import net.minecraft.util.collection.DefaultedList;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(ScreenHandler.class)
@@ -55,5 +59,41 @@ public abstract class InventoryClickSounds
     {
         if (!itemStack.isEmpty())
             SoundManager.playSound(itemStack, SoundType.PLACE);
+    }
+}
+
+@Mixin(HandledScreen.class)
+abstract
+class InventoryKeyPressSound<T extends ScreenHandler>
+{
+    @Shadow
+    @Nullable
+    protected Slot focusedSlot;
+
+    @Shadow
+    public abstract T getScreenHandler();
+
+    @Shadow
+    @Final
+    protected T handler;
+
+    @Inject(at = @At(value = "INVOKE", ordinal = 0, target = "Lnet/minecraft/client/gui/screen/ingame/HandledScreen;onMouseClick(Lnet/minecraft/screen/slot/Slot;IILnet/minecraft/screen/slot/SlotActionType;)V"), method = "handleHotbarKeyPressed")
+    void handSwap(int keyCode, int scanCode, CallbackInfoReturnable<Boolean> cir)
+    {
+        if (focusedSlot != null && focusedSlot.hasStack())
+            SoundManager.playSound(focusedSlot.getStack(), SoundType.PICKUP);
+    }
+
+    @Inject(at = @At(value = "INVOKE", ordinal = 1, target = "Lnet/minecraft/client/gui/screen/ingame/HandledScreen;onMouseClick(Lnet/minecraft/screen/slot/Slot;IILnet/minecraft/screen/slot/SlotActionType;)V"), method = "handleHotbarKeyPressed", locals = LocalCapture.CAPTURE_FAILSOFT)
+    void slotSwap(int keyCode, int scanCode, CallbackInfoReturnable<Boolean> cir, int i)
+    {
+        if (focusedSlot != null && focusedSlot.hasStack())
+            SoundManager.playSound(focusedSlot.getStack(), SoundType.PICKUP);
+        else if (MinecraftClient.getInstance().player != null)
+        {
+            var stack = MinecraftClient.getInstance().player.getInventory().main.get(i);
+            if (!stack.isEmpty())
+                SoundManager.playSound(stack, SoundType.PICKUP);
+        }
     }
 }
