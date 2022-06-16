@@ -68,25 +68,28 @@ public class SoundManager
 
     public static void playSound(SoundEvent snd, float pitch, SoundCategory cat)
     {
-        throttle(() -> {
-            MinecraftClient.getInstance()
-                           .getSoundManager()
-                           .play(new PositionedSoundInstance(snd.getId(), cat, getMasterVol(), pitch, false, 0,
-                                                             SoundInstance.AttenuationType.NONE, 0.0D, 0.0D, 0.0D,
-                                                             true));
-            DebugUtils.soundLog(snd);
-        });
+        playSound(new PositionedSoundInstance(snd.getId(), cat, getMasterVol(), pitch, false, 0,
+                                              SoundInstance.AttenuationType.NONE, 0.0D, 0.0D, 0.0D,
+                                              true));
+        DebugUtils.soundLog(snd);
     }
 
     public static void playSound(SoundEvent snd, SoundType type, BlockPos position)
     {
+        playSound(new PositionedSoundInstance(snd, type.category, getMasterVol(), type.pitch,
+                                              position.getX() + 0.5,
+                                              position.getY() + 0.5,
+                                              position.getZ() + 0.5));
+        DebugUtils.soundLog(snd);
+    }
+
+    public static void playSound(PositionedSoundInstance instance)
+    {
         throttle(() -> {
-            MinecraftClient.getInstance().getSoundManager()
-                           .play(new PositionedSoundInstance(snd, type.category, getMasterVol(), type.pitch,
-                                                             position.getX() + 0.5,
-                                                             position.getY() + 0.5,
-                                                             position.getZ() + 0.5));
-            DebugUtils.soundLog(snd);
+            var client = MinecraftClient.getInstance();
+            client.send(() -> {
+                client.getSoundManager().play(instance);
+            });
         });
     }
 
