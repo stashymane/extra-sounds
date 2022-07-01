@@ -68,8 +68,8 @@ public class SoundManager
 
     public static void playSound(SoundEvent snd, float pitch, SoundCategory cat)
     {
-        playSound(new PositionedSoundInstance(snd.getId(), cat, getMasterVol(), pitch, false, 0,
-                                              SoundInstance.AttenuationType.NONE, 0.0D, 0.0D, 0.0D,
+        playSound(new PositionedSoundInstance(snd.getId(), cat, getMasterVol(), pitch, ExtraSounds.mcRandom,
+                                              false, 0, SoundInstance.AttenuationType.NONE, 0.0D, 0.0D, 0.0D,
                                               true));
         DebugUtils.soundLog(snd);
     }
@@ -77,6 +77,7 @@ public class SoundManager
     public static void playSound(SoundEvent snd, SoundType type, BlockPos position)
     {
         playSound(new PositionedSoundInstance(snd, type.category, getMasterVol(), type.pitch,
+                                              ExtraSounds.mcRandom,
                                               position.getX() + 0.5,
                                               position.getY() + 0.5,
                                               position.getZ() + 0.5));

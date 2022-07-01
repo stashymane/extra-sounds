@@ -3,8 +3,10 @@
   "minVersion": "0.8",
   "package": "dev.stashy.extrasounds.mixin",
   "compatibilityLevel": "JAVA_8",
-  "mixins": [],
+  "mixins": [
+  ],
   "client": [
+    "BlockMaterialAccessor",
     "BucketFluidAccessor",
     "ChatSound",
     "EffectMixin",

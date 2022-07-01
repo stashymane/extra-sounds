@@ -3,6 +3,7 @@ package dev.stashy.extrasounds.mixin;
 import dev.stashy.extrasounds.SoundManager;
 import dev.stashy.extrasounds.sounds.SoundType;
 import dev.stashy.extrasounds.sounds.Sounds;
+import net.minecraft.class_7591;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.ChatHud;
 import net.minecraft.client.network.ClientPlayerEntity;
@@ -15,8 +16,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ChatHud.class)
 public class ChatSound
 {
-    @Inject(at = @At("RETURN"), method = "addMessage(Lnet/minecraft/text/Text;IIZ)V")
-    private void messageSound(Text message, int messageId, int timestamp, boolean refresh, CallbackInfo ci)
+    @Inject(at = @At("RETURN"), method = "addMessage(Lnet/minecraft/text/Text;ILnet/minecraft/class_7591;Z)V")
+    private void messageSound(Text message, int messageId, class_7591 arg, boolean refresh, CallbackInfo ci)
     {
         if (MinecraftClient.getInstance().player == null || refresh)
             return;
