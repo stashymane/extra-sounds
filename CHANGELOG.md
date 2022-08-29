@@ -1,3 +1,13 @@
+## [2.3.2] - ????-??-??
+
+### Added
+
+* 1.19.1+ support
+
+### Fixed
+
+* Crashes when playing sounds in edge cases (ConcurrentModificationException)
+
 ## [2.3.1] - 2022-06-12
 
 ### Fixed
