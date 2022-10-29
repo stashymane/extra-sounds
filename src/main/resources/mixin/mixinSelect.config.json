@@ -5,5 +5,12 @@
     ]
   },
   "mixinConditions": {
+    "versioned.ChatMixin1_19": [
+      {
+        "minecraft": [
+          "~1.19"
+        ]
+      }
+    ]
   }
 }
