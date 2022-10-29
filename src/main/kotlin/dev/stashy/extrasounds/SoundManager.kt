@@ -18,11 +18,9 @@ object SoundManager {
     fun playItemSound(item: Item, type: SoundType) {
         val idString = getClickId(Registry.ITEM.getId(item), type)
         if (!Identifier.isValid(idString))
-            return LogManager.getLogger().error("Unable to get sound from ID: $idString")
+            return LogManager.getLogger().error("Sound ID is not valid: $idString")
         val id = Identifier.tryParse(idString)
-        Registry.SOUND_EVENT.get(id)?.let {
-            playSound(it, type)
-        } ?: LogManager.getLogger().error("Sound cannot be found in registry: $id")
+        playSound(SoundEvent(id), type)
     }
 
     @JvmOverloads
