@@ -2,6 +2,7 @@ package dev.stashy.extrasounds
 
 import dev.stashy.extrasounds.Main.Companion.getClickId
 import dev.stashy.extrasounds.sounds.SoundType
+import dev.stashy.extrasounds.sounds.Sounds
 import net.minecraft.client.MinecraftClient
 import net.minecraft.client.sound.PositionedSoundInstance
 import net.minecraft.client.sound.SoundInstance
@@ -16,11 +17,16 @@ object SoundManager {
     private var lastPlayed = 0L
 
     fun playItemSound(item: Item, type: SoundType) {
-        val idString = getClickId(Registry.ITEM.getId(item), type)
-        if (!Identifier.isValid(idString))
-            return LogManager.getLogger().error("Sound ID is not valid: $idString")
-        val id = Identifier.tryParse(idString)
-        playSound(SoundEvent(id), type)
+        playSound(getItemSound(item, type), type)
+    }
+
+    fun getItemSound(item: Item, type: SoundType): SoundEvent {
+        val id = getClickId(Registry.ITEM.getId(item), type)
+        if (!Identifier.isValid(id)) {
+            LogManager.getLogger().error("Sound ID is not valid: \"$id\", returning default")
+            return Sounds.ITEM_PICK
+        }
+        return SoundEvent(Identifier.tryParse(id))
     }
 
     @JvmOverloads

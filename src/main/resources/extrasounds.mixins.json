@@ -6,6 +6,7 @@
   "plugin": "dev.stashy.extrasounds.mixin.MixinSelector",
   "mixins": [],
   "client": [
+    "DropActionMixin",
     "InventoryKeyPressSound",
     "ScreenHandlerMixin",
     "accessors.BlockAccessor",

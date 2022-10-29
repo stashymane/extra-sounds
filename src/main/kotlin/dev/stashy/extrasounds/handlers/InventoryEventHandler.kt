@@ -27,4 +27,8 @@ object InventoryEventHandler {
         }
     }
 
+
+    fun hotbar(item: Item) {
+
+    }
 }
