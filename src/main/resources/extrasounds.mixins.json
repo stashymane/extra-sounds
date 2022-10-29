@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.stashy.extrasounds.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "plugin": "dev.stashy.extrasounds.mixin.MixinSelector",
+  "mixins": [],
+  "client": [
+    "accessors.BlockAccessor",
+    "accessors.BucketAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

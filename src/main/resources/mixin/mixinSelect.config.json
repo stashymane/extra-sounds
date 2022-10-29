@@ -1,0 +1,9 @@
+{
+  "defaultConditions": {
+    "ENVIRONMENT": [
+      "CLIENT"
+    ]
+  },
+  "mixinConditions": {
+  }
+}

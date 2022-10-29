@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "extrasounds",
+  "version": "${version}",
+  "name": "ExtraSounds",
+  "description": "More sounds. UI and other.",
+  "authors": [
+    "stashymane"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/extrasounds",
+    "sources": "https://github.com/stashymane/extra-sounds",
+    "issues": "https://github.com/stashymane/extra-sounds/issues"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/extrasounds/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "dev.stashy.extrasounds.Main"
+      }
+    ],
+    "sound-categories": [
+      "dev.stashy.extrasounds.Mixers"
+    ],
+    "extrasounds": [
+      "dev.stashy.extrasounds.mapping.VanillaGenerator::generator"
+    ]
+  },
+  "mixins": [
+    "extrasounds.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": ">=0.40.0",
+    "fabric-resource-loader-v0": "*",
+    "minecraft": "~1.19",
+    "java": ">=17",
+    "fabric-language-kotlin": ">=${fabricKotlinVersion}",
+    "advanced_runtime_resource_pack": ">=0.5.1",
+    "soundcategories": ">=${soundCategoriesVersion}"
+  }
+}
