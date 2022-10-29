@@ -94,12 +94,10 @@ class InventoryKeyPressSound<T extends ScreenHandler>
     {
         if (focusedSlot != null && focusedSlot.hasStack())
         {
-            System.out.println("focusedSlot");
             InventoryEventHandler.INSTANCE.click(Items.AIR, focusedSlot.getStack().getItem(), SlotActionType.SWAP);
         }
         else if (MinecraftClient.getInstance().player != null)
         {
-            System.out.println("handStack");
             var stack = MinecraftClient.getInstance().player.getInventory().main.get(i);
             if (!stack.isEmpty())
                 InventoryEventHandler.INSTANCE.click(stack.getItem(), Items.AIR, SlotActionType.SWAP);
