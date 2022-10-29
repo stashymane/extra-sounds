@@ -18,6 +18,7 @@ having to release new versions.
 
 - [x] Rewrite base code in Kotlin
 - [ ] Reimplement all v2 sounds for 1.19
+- [ ] New sounds??
 - [ ] Backport sounds to at least 2 older major versions (1.18, 1.17)
 
 ## Features
