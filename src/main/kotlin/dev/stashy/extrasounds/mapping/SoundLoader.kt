@@ -62,10 +62,16 @@ object SoundLoader {
                     ?: if (item is BlockItem) ItemSound(Sounds.aliased(item.block.getSoundGroup(item.block.defaultState).placeSound))
                     else ItemSound(Sounds.aliased(Sounds.ITEM_PICK))
 
+                val pickup = Pair(SoundEvent(Identifier(getClickId(id, SoundType.PICKUP))), def.pickup)
                 val entries = mutableListOf<Pair<SoundEvent, SoundEntry>>()
-                entries += Pair(SoundEvent(Identifier(getClickId(id, SoundType.PICKUP))), def.pickup)
-                entries += Pair(SoundEvent(Identifier(getClickId(id, SoundType.PLACE))), def.place)
-                entries += Pair(SoundEvent(Identifier(getClickId(id, SoundType.HOTBAR))), def.hotbar)
+                entries += pickup
+
+                entries.addAll(
+                    mapOf(SoundType.PLACE to def.place, SoundType.HOTBAR to def.hotbar).map {
+                        val clickId = Identifier(getClickId(id, it.key))
+                        if (it.value != pickup.second) Pair(SoundEvent(clickId), it.value)
+                        else Pair(SoundEvent(clickId), Sounds.aliased(pickup.first))
+                    })
                 return@flatMap entries.stream()
             } catch (e: Exception) {
                 System.err.println("Failed to generate sounds for ${mapper?.namespace} provided by ${mapper?.modId}")
