@@ -27,6 +27,16 @@ object InventoryEventHandler {
         }
     }
 
+    fun drop(stack: ItemStack) {
+        if (!stack.isEmpty) {
+            val pitch = 0.5f + stack.item.maxCount / stack.count
+            SoundManager.playSound(
+                SoundManager.getItemSound(stack.item, SoundType.ACTION),
+                SoundType.ACTION,
+                pitch = pitch
+            )
+        }
+    }
 
     fun hotbar(item: Item) {
 
