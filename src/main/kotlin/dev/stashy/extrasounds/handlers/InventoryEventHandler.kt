@@ -19,7 +19,6 @@ object InventoryEventHandler {
             }
 
             SlotActionType.QUICK_CRAFT -> SoundManager.playItemSound(hand, SoundType.PLACE)
-
             SlotActionType.PICKUP_ALL -> SoundManager.playSound(Sounds.ITEM_PICK_ALL, SoundType.PICKUP)
             SlotActionType.CLONE -> SoundManager.playSound(Sounds.ITEM_CLONE, SoundType.PICKUP)
 
@@ -39,6 +38,8 @@ object InventoryEventHandler {
     }
 
     fun hotbar(item: Item) {
-
+        if (item != Items.AIR)
+            SoundManager.playItemSound(item, SoundType.HOTBAR)
+        else SoundManager.playSound(Sounds.HOTBAR_SCROLL, SoundType.HOTBAR)
     }
 }
