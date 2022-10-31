@@ -37,7 +37,13 @@ object InventoryEventHandler {
         }
     }
 
-    fun hotbar(item: Item) {
+    var lastSelectedSlot = -1
+
+    @JvmOverloads
+    fun hotbar(item: Item, slot: Int, ignoreLast: Boolean = false) {
+        if (!ignoreLast && slot == lastSelectedSlot) return
+
+        lastSelectedSlot = slot
         if (item != Items.AIR)
             SoundManager.playItemSound(item, SoundType.HOTBAR)
         else SoundManager.playSound(Sounds.HOTBAR_SCROLL, SoundType.HOTBAR)

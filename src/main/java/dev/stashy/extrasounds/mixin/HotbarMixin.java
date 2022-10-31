@@ -18,39 +18,33 @@ public abstract class HotbarMixin
     @Shadow
     public abstract ItemStack getMainHandStack();
 
-    private int lastSelectedSlot = -1;
-
     @Inject(at = @At(value = "TAIL"), method = "scrollInHotbar(D)V")
     private void hotbarScroll(double scrollAmount, CallbackInfo ci)
     {
         if (scrollAmount != 0)
-            playMainHandSound();
+            playMainHandSound(true);
     }
 
     @Inject(at = @At(value = "FIELD", ordinal = 0, shift = At.Shift.AFTER, target = "Lnet/minecraft/entity/player/PlayerInventory;selectedSlot:I"), method = "addPickBlock(Lnet/minecraft/item/ItemStack;)V")
     private void pickBlockSelect(ItemStack stack, CallbackInfo ci)
     {
-        if (lastSelectedSlot != selectedSlot)
-        {
-            playMainHandSound();
-            lastSelectedSlot = selectedSlot;
-        }
+        playMainHandSound(false);
     }
 
     @Inject(at = @At(value = "INVOKE", ordinal = 1, shift = At.Shift.AFTER, target = "Lnet/minecraft/util/collection/DefaultedList;set(ILjava/lang/Object;)Ljava/lang/Object;"), method = "addPickBlock(Lnet/minecraft/item/ItemStack;)V")
     private void pickBlockAdd(ItemStack stack, CallbackInfo ci)
     {
-        playMainHandSound();
+        playMainHandSound(true);
     }
 
     @Inject(at = @At(value = "INVOKE", ordinal = 1, shift = At.Shift.AFTER, target = "Lnet/minecraft/util/collection/DefaultedList;set(ILjava/lang/Object;)Ljava/lang/Object;"), method = "swapSlotWithHotbar(I)V")
     private void pickBlockMove(int slot, CallbackInfo ci)
     {
-        playMainHandSound();
+        playMainHandSound(true);
     }
 
-    private void playMainHandSound()
+    private void playMainHandSound(boolean ignoreLast)
     {
-        InventoryEventHandler.INSTANCE.hotbar(getMainHandStack().getItem());
+        InventoryEventHandler.INSTANCE.hotbar(getMainHandStack().getItem(), selectedSlot, ignoreLast);
     }
 }
