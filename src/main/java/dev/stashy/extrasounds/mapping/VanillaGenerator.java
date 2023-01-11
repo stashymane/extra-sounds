@@ -7,8 +7,8 @@ import net.minecraft.block.*;
 import net.minecraft.client.sound.Sound;
 import net.minecraft.client.sound.SoundEntry;
 import net.minecraft.item.*;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +22,7 @@ public class VanillaGenerator
     public static final Map<Class<? extends Item>, Function<Item, SoundEntry>> map = new HashMap<>();
 
     public static SoundGenerator generator = SoundGenerator.of("minecraft", ExtraSounds.MODID, item -> {
-        Identifier id = Registry.ITEM.getId(item);
+        Identifier id = Registries.ITEM.getId(item);
         Class cls = item.getClass();
         while (!map.containsKey(cls) && cls.getSuperclass() != null && Item.class.isAssignableFrom(cls.getSuperclass()))
             cls = cls.getSuperclass();

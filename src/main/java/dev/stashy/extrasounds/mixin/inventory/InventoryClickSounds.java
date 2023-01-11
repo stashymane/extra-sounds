@@ -54,7 +54,7 @@ public abstract class InventoryClickSounds
             ExtraSounds.inventoryClick(slots.get(slotIndex), getCursorStack(), actionType);
     }
 
-    @Inject(at = @At(value = "INVOKE_ASSIGN", ordinal = 0, target = "Lnet/minecraft/screen/ScreenHandler;transferSlot(Lnet/minecraft/entity/player/PlayerEntity;I)Lnet/minecraft/item/ItemStack;"), method = "internalOnSlotClick", locals = LocalCapture.CAPTURE_FAILSOFT)
+    @Inject(at = @At(value = "INVOKE_ASSIGN", ordinal = 0, target = "Lnet/minecraft/screen/ScreenHandler;quickMove(Lnet/minecraft/entity/player/PlayerEntity;I)Lnet/minecraft/item/ItemStack;"), method = "internalOnSlotClick", locals = LocalCapture.CAPTURE_FAILSOFT)
     void transfer(int slotIndex, int button, SlotActionType actionType, PlayerEntity player, CallbackInfo ci, PlayerInventory playerInventory, ClickType clickType, Slot slot, ItemStack itemStack)
     {
         if (!itemStack.isEmpty())
