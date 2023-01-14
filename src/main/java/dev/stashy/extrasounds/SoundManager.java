@@ -8,11 +8,11 @@ import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.client.sound.SoundInstance;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,7 +23,7 @@ public class SoundManager
 
     public static void playSound(ItemStack stack, SoundType type)
     {
-        var itemId = Registry.ITEM.getId(stack.getItem());
+        var itemId = Registries.ITEM.getId(stack.getItem());
         String idString = ExtraSounds.getClickId(itemId, type);
         if (!Identifier.isValid(idString))
         {
@@ -32,7 +32,7 @@ public class SoundManager
         }
 
         Identifier id = Identifier.tryParse(idString);
-        Registry.SOUND_EVENT.getOrEmpty(id).ifPresentOrElse(
+        Registries.SOUND_EVENT.getOrEmpty(id).ifPresentOrElse(
                 (snd) -> playSound(snd, type),
                 () -> LOGGER.error("Sound cannot be found in registry: " + id));
     }

@@ -1,8 +1,7 @@
 package dev.stashy.extrasounds.mapping;
 
 import net.minecraft.client.sound.SoundEntry;
-
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public class SoundDefinition
 {
@@ -15,19 +14,19 @@ public class SoundDefinition
         this(sound, null, null);
     }
 
-    public SoundDefinition(@Nonnull SoundEntry pickup, SoundEntry place, SoundEntry hotbar)
+    public SoundDefinition(@NotNull SoundEntry pickup, SoundEntry place, SoundEntry hotbar)
     {
         this.pickup = pickup;
         this.place = place;
         this.hotbar = hotbar;
     }
 
-    public static SoundDefinition of(@Nonnull SoundEntry pickup, SoundEntry place, SoundEntry hotbar)
+    public static SoundDefinition of(@NotNull SoundEntry pickup, SoundEntry place, SoundEntry hotbar)
     {
         return new SoundDefinition(pickup, place, hotbar);
     }
 
-    public static SoundDefinition of(@Nonnull SoundEntry sound)
+    public static SoundDefinition of(@NotNull SoundEntry sound)
     {
         return new SoundDefinition(sound);
     }

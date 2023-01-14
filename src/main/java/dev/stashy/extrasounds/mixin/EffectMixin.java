@@ -8,7 +8,6 @@ import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.network.encryption.PlayerPublicKey;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -18,9 +17,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(ClientPlayerEntity.class)
 public abstract class EffectMixin extends AbstractClientPlayerEntity
 {
-    public EffectMixin(ClientWorld world, GameProfile profile, @Nullable PlayerPublicKey publicKey)
+    public EffectMixin(ClientWorld world, GameProfile profile)
     {
-        super(world, profile, publicKey);
+        super(world, profile);
     }
 
     @Override

@@ -15,11 +15,12 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.sound.Sound;
 import net.minecraft.client.sound.SoundEntry;
 import net.minecraft.item.BlockItem;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Pair;
-import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -68,8 +69,8 @@ public class SoundPackLoader
 
     private static Map<String, SoundEntry> processSounds()
     {
-        return Registry.ITEM.stream().flatMap(item -> {
-            var itemId = Registry.ITEM.getId(item);
+        return Registries.ITEM.stream().flatMap(item -> {
+            var itemId = Registries.ITEM.getId(item);
             SoundDefinition def = new SoundDefinition(Sounds.aliased(Sounds.ITEM_PICK));
 
             if (mappers.containsKey(itemId.getNamespace()))
@@ -101,9 +102,9 @@ public class SoundPackLoader
     private static SoundEvent registerIfNotExists(Identifier itemId, SoundType type)
     {
         var soundId = new Identifier(ExtraSounds.MODID, ExtraSounds.getClickId(itemId, type, false));
-        var event = new SoundEvent(soundId);
-        if (!Registry.SOUND_EVENT.containsId(soundId))
-            Registry.register(Registry.SOUND_EVENT, soundId, event);
+        var event = SoundEvent.of(soundId);
+        if (!Registries.SOUND_EVENT.containsId(soundId))
+            Registry.register(Registries.SOUND_EVENT, soundId, event);
         return event;
     }
 
@@ -119,8 +120,8 @@ public class SoundPackLoader
                     var jsonObj = JsonParser.parseString(cache).getAsJsonObject();
                     jsonObj.keySet().forEach((it) -> {
                         var identifier = new Identifier(ExtraSounds.MODID, it);
-                        if (!Registry.SOUND_EVENT.containsId(identifier))
-                            Registry.register(Registry.SOUND_EVENT, identifier, new SoundEvent(identifier));
+                        if (!Registries.SOUND_EVENT.containsId(identifier))
+                            Registry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
                     });
                     return cache;
                 }
@@ -161,7 +162,7 @@ public class SoundPackLoader
         {
             var versionInfos = SoundPackLoader.mappers
                     .values().stream().map(it -> getModVersion(it.modId())).toArray(String[]::new);
-            return new CacheInfo(CACHE_VERSION, Registry.ITEM.size(), versionInfos);
+            return new CacheInfo(CACHE_VERSION, Registries.ITEM.size(), versionInfos);
         }
 
         public static CacheInfo fromString(String s)
