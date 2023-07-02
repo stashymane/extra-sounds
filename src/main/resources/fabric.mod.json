@@ -22,7 +22,7 @@
         "value": "dev.stashy.extrasounds.Main"
       }
     ],
-    "sound-categories": [
+    "soundcategories": [
       "dev.stashy.extrasounds.Mixers"
     ],
     "extrasounds": [
@@ -36,10 +36,10 @@
     "fabricloader": ">=0.14.9",
     "fabric": ">=0.40.0",
     "fabric-resource-loader-v0": "*",
-    "minecraft": "~1.19",
+    "minecraft": ">=1.19",
     "java": ">=17",
     "fabric-language-kotlin": ">=${fabricKotlinVersion}",
-    "advanced_runtime_resource_pack": ">=0.5.1",
+    "advanced_runtime_resource_pack": ">=0.6.7",
     "soundcategories": ">=${soundCategoriesVersion}"
   }
 }

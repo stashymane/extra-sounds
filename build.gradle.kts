@@ -6,14 +6,25 @@ plugins {
     id("fabric-loom") version "1.0-SNAPSHOT"
 }
 
-group = "dev.stashy.extrasounds"
-version = "3.0-SNAPSHOT"
+allprojects {
+    group = "dev.stashy.extrasounds"
+    version = "3.0-SNAPSHOT"
 
-repositories {
-    mavenCentral()
-    maven("https://repo.stashy.dev/releases")
-    maven("https://jitpack.io")
-    maven("https://storage.googleapis.com/devan-maven/")
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven("https://repo.stashy.dev/releases")
+        maven("https://jitpack.io")
+        maven("https://ueaj.dev/maven")
+    }
+}
+
+subprojects {
+    dependencies {
+        pluginManager.withPlugin("fabric-loom") {
+            modCompileOnly("dev.stashy:MixinSwap:1.0.0-SNAPSHOT")
+        }
+    }
 }
 
 val kotlinVersion: String by System.getProperties()
@@ -24,23 +35,17 @@ val fabricVersion: String by project
 val fabricKotlinVersion: String by project
 val soundCategoriesVersion: String by project
 
-fun DependencyHandler.includeImplementation(dependencyNotation: Any) {
-    modImplementation(dependencyNotation)
-    include(dependencyNotation)
-}
-
 dependencies {
     minecraft("com.mojang:minecraft:$minecraftVersion")
     mappings("net.fabricmc:yarn:$yarnVersion:v2")
     modImplementation("net.fabricmc:fabric-loader:$loaderVersion")
     modImplementation("net.fabricmc.fabric-api:fabric-api:$fabricVersion")
 
-    modApi("com.github.Klotzi111:FabricMultiVersionHelper:1.0.1")
-    include("com.github.Klotzi111:FabricMultiVersionHelper:1.0.1")
+    modImplementation("dev.stashy:MixinSwap:1.0.0-SNAPSHOT")?.let { include(it) }
 
     modImplementation("net.fabricmc:fabric-language-kotlin:$fabricKotlinVersion+kotlin.$kotlinVersion")
-    includeImplementation("dev.stashy:sound-categories:$soundCategoriesVersion")
-    includeImplementation("net.devtech:arrp:0.6.2")
+    modImplementation("dev.stashy:sound-categories:$soundCategoriesVersion")
+    modImplementation("net.devtech:arrp:0.6.7")?.let { include(it) }
 }
 
 kotlin {
