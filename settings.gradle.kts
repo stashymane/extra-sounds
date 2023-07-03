@@ -7,4 +7,4 @@ pluginManagement {
 }
 
 rootProject.name = "extrasounds"
-include(":versioned:v1_19")
+include(":shared", ":versioned:v1_19")

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "extrasounds-shared",
+  "version": "${version}",
+  "name": "ExtraSounds Shared",
+  "description": "Shared content for modules",
+  "authors": [
+    "stashymane"
+  ],
+  "contact": {
+    "homepage": "${mod_page}",
+    "sources": "${mod_sources}",
+    "issues": "${mod_issues}"
+  },
+  "license": "${mod_license}",
+  "environment": "client",
+  "depends": {
+    "extrasounds": "*"
+  }
+}

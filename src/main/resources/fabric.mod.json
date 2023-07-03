@@ -8,11 +8,11 @@
     "stashymane"
   ],
   "contact": {
-    "homepage": "https://modrinth.com/mod/extrasounds",
-    "sources": "https://github.com/stashymane/extra-sounds",
-    "issues": "https://github.com/stashymane/extra-sounds/issues"
+    "homepage": "${mod_page}",
+    "sources": "${mod_sources}",
+    "issues": "${mod_issues}"
   },
-  "license": "CC0-1.0",
+  "license": "${mod_license}",
   "icon": "assets/extrasounds/icon.png",
   "environment": "client",
   "entrypoints": {
@@ -38,8 +38,8 @@
     "fabric-resource-loader-v0": "*",
     "minecraft": ">=1.19",
     "java": ">=17",
-    "fabric-language-kotlin": ">=${fabricKotlinVersion}",
+    "fabric-language-kotlin": ">=${fabric_kotlin_version}",
     "advanced_runtime_resource_pack": ">=0.6.7",
-    "soundcategories": ">=${soundCategoriesVersion}"
+    "soundcategories": ">=${soundcategories_version}"
   }
 }

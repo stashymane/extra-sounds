@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "extrasounds-${moduleId}-module",
+  "version": "${version}",
+  "name": "${moduleName}",
+  "authors": [
+    "stashymane"
+  ],
+  "contact": {
+    "homepage": "${mod_page}",
+    "sources": "${mod_sources}",
+    "issues": "${mod_issues}"
+  },
+  "license": "${mod_license}",
+  "environment": "client",
+  "depends": {
+    "extrasounds": "*"
+  }
+}
