@@ -76,9 +76,9 @@ dependencies {
     modImplementation("dev.stashy:MixinSwap:$mixinswap_version")?.let { include(it) }
 
     modImplementation("net.fabricmc:fabric-language-kotlin:$fabric_kotlin_version+kotlin.$kotlin_version")
-    modImplementation("dev.stashy.soundcategories:soundcategories:$soundcategories_version")
     modImplementation("net.devtech:arrp:$arrp_version")?.let { include(it) }
 
+    implementation(project(":shared", "namedElements"))?.let { include(it) }
     implementation(project(":versioned:v1_19", "namedElements"))?.let { include(it) }
 }
 
