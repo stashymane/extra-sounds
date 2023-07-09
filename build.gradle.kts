@@ -1,7 +1,7 @@
 plugins {
     val kotlin_version: String by System.getProperties()
     kotlin("jvm") version kotlin_version
-    id("fabric-loom") version "1.2-SNAPSHOT"
+    id("fabric-loom") version "1.3-SNAPSHOT"
 }
 
 allprojects {
