@@ -1,0 +1,10 @@
+{
+  "soundCategory.extrasounds_master": "ExtraSounds",
+  "soundCategory.inventory": "インベントリ",
+  "soundCategory.action": "アイテムアクション",
+  "soundCategory.chat": "チャット",
+  "soundCategory.chat_mention": "チャットメンション",
+  "soundCategory.effects": "エフェクト/ポーション",
+  "soundCategory.scroll": "スクロール",
+  "soundCategory.typing": "タイピング"
+}
