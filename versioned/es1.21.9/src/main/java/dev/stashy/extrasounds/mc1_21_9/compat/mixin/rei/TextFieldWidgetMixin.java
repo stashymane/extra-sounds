@@ -21,7 +21,7 @@ import java.util.Objects;
 @Mixin(TextFieldWidget.class)
 public abstract class TextFieldWidgetMixin implements TextField {
     @Unique
-    private final TextFieldHandler soundHandler = new TextFieldHandler();
+    private static final TextFieldHandler SOUND_HANDLER = new TextFieldHandler();
     @Unique
     @NotNull
     private static final RecordKeyInputProvider KEY_INPUT_PROVIDER = Objects.requireNonNull(RecordKeyInputProvider.INSTANCE);
@@ -31,21 +31,21 @@ public abstract class TextFieldWidgetMixin implements TextField {
 
     @Inject(method = "erase", at = @At("HEAD"), remap = false)
     private void extrasounds$eraseStrHead(int offset, CallbackInfo ci) {
-        this.soundHandler.onCharErase(offset, this.getText().length(), this.cursorPos, this.cursorPos);
+        SOUND_HANDLER.onCharErase(offset, this.getText().length(), this.cursorPos, this.cursorPos);
     }
 
     @Inject(method = "erase", at = @At("RETURN"), remap = false)
     private void extrasounds$eraseStrReturn(CallbackInfo ci) {
-        this.soundHandler.setCursor(this.cursorPos);
+        SOUND_HANDLER.setCursor(this.cursorPos);
     }
 
     @Inject(method = "charTyped", at = @At("RETURN"))
     private void extrasounds$appendChar(CallbackInfoReturnable<Boolean> cir) {
-        if (!cir.getReturnValue() || !this.soundHandler.isPosUpdated(this.cursorPos, this.cursorPos)) {
+        if (!cir.getReturnValue() || !SOUND_HANDLER.isPosUpdated(this.cursorPos, this.cursorPos)) {
             return;
         }
-        this.soundHandler.onKey(TextFieldHandler.KeyType.INSERT);
-        this.soundHandler.setCursor(this.cursorPos);
+        SOUND_HANDLER.onKey(TextFieldHandler.KeyType.INSERT);
+        SOUND_HANDLER.setCursor(this.cursorPos);
     }
 
     @Inject(
@@ -61,8 +61,8 @@ public abstract class TextFieldWidgetMixin implements TextField {
             if (!KEY_INPUT_PROVIDER.invokeKeyInput$isCut(input) || this.getSelectedText().isEmpty()) {
                 return;
             }
-            this.soundHandler.onKey(TextFieldHandler.KeyType.CUT);
-            this.soundHandler.setCursor(this.cursorPos);
+            SOUND_HANDLER.onKey(TextFieldHandler.KeyType.CUT);
+            SOUND_HANDLER.setCursor(this.cursorPos);
         } catch (Exception ignored) {
         }
     }
@@ -77,11 +77,11 @@ public abstract class TextFieldWidgetMixin implements TextField {
     )
     private void extrasounds$pasteAction(KeyInput input, CallbackInfoReturnable<Boolean> cir) {
         try {
-            if (!KEY_INPUT_PROVIDER.invokeKeyInput$isPaste(input) || !this.soundHandler.isPosUpdated(this.cursorPos, this.cursorPos)) {
+            if (!KEY_INPUT_PROVIDER.invokeKeyInput$isPaste(input) || !SOUND_HANDLER.isPosUpdated(this.cursorPos, this.cursorPos)) {
                 return;
             }
-            this.soundHandler.onKey(TextFieldHandler.KeyType.PASTE);
-            this.soundHandler.setCursor(this.cursorPos);
+            SOUND_HANDLER.onKey(TextFieldHandler.KeyType.PASTE);
+            SOUND_HANDLER.setCursor(this.cursorPos);
         } catch (Exception ignored) {
         }
     }
@@ -95,11 +95,11 @@ public abstract class TextFieldWidgetMixin implements TextField {
             }
     )
     private void extrasounds$cursorMoveKeyTyped(CallbackInfoReturnable<Boolean> cir) {
-        this.soundHandler.onCursorChanged(this.cursorPos, this.cursorPos);
+        SOUND_HANDLER.onCursorChanged(this.cursorPos, this.cursorPos);
     }
 
     @Inject(method = "mouseClicked", at = @At(value = "INVOKE", target = "Lme/shedaniel/rei/impl/client/gui/widget/basewidgets/TextFieldWidget;moveCursorTo(I)V", shift = At.Shift.AFTER))
     private void extrasounds$clickEvent(CallbackInfoReturnable<Boolean> cir) {
-        this.soundHandler.onCursorChanged(this.cursorPos, this.cursorPos);
+        SOUND_HANDLER.onCursorChanged(this.cursorPos, this.cursorPos);
     }
 }
