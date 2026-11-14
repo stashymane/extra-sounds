@@ -1,5 +1,10 @@
 # Changelog
 
+## [3.0.1-legacy+1.21.11+1.14-build.4] - 2026-11-14
+### 🔧 Fixed
+
+* Typing sounds on OverlaySearchField of [RoughlyEnoughItems](https://modrinth.com/mod/rei): 1.21.9 - 1.21.11
+
 ## [3.0.1-legacy+1.21.11+1.14-build.3] - 2026-07-15
 ### ✨ Added
 

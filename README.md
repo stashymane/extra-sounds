@@ -9,8 +9,6 @@
 [![Latest build on GitHub]](https://github.com/extrasounds/extra-sounds/releases?q=v3)
 [![Legacy build on GitHub]](https://github.com/extrasounds/extra-sounds/releases?q=legacy)
 
-**[Modrinth](https://modrinth.com/mod/extrasounds)**
-
 Originally created by the great Stashymane, which has sadly been discontinued.
 
 Alpha version artifacts may still be available
